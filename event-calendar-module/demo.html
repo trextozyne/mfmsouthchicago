@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/demo.css"/>
+    <link rel="stylesheet" href="css/theme1.css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <style type="text/css">
+      .cld-main {
+        width: auto !important;
+      }
+      .cld-datetime .today, .cld-number {
+        font-size: x-large !important;
+      }
+      .cld-number.eventday, .cld-day.today .cld-number {
+        height: 35px !important;
+        width: 35px !important;
+        border-radius: 0;
+        border: none;
+      }
+
+      .cld-day {
+        width: 14.28%;
+        height: 70px;
+        border: 1px solid #999;
+        border-left: none;
+        border-top: none;
+        padding: 10px;
+        padding-top: 0;
+          cursor: pointer;
+      }
+
+      .cld-title {
+        position: absolute;
+        z-index: 5;
+        display: block;
+        top: 40px;
+        left: -23px;
+        /*white-space: unset;*/
+        width: 80px;
+        text-overflow:ellipsis;white-space: nowrap;overflow: hidden;
+        padding: 1px;
+        background-color: #005EFF;
+        color: #ffffff;
+      }
+
+      .cld-main a {
+        color: #ffffff;
+      }
+      .cld-number{
+          padding: 0 !important;
+      }
+      /*==================================for modalcalendar===============================*/
+      .close {
+          z-index: 10;
+        position: absolute;
+          top: -30px;
+          right: 0px;
+          width: 35px;
+          height: 30px;
+          /* background: #000; */
+          color: #fff !important;
+          opacity: 1;
+        text-align: center;
+        cursor: pointer;
+        border: 0;
+      }
+      .mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(52, 73, 94, 0.8);
+        z-index: 50;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.7s;
+      }
+      .modalcalendar {
+          overflow-y: auto;
+          position: fixed;
+          top: 30%;
+          left: 30%;
+          width: 900px;
+          padding: 20px;
+          height: 560px;
+          margin-left: -200px;
+          margin-top: -150px;
+          background: #fff;
+          z-index: 100;
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.5s ease-out;
+          transform: translateY(45px);
+      }
+      .active {
+        visibility: visible;
+        opacity: 1;
+      }
+      .active + .modalcalendar {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /*<!--================for modalcalendar==============================-->*/
+      /*<!--=================for recurring scheduling============================-->*/
+      .content {
+          width: 100%;
+          margin: 20px auto;
+          border: 1px solid #0082c8;
+          /*   padding: 10px; */
+          max-height: 0px;
+          overflow: hidden;
+          transition: max-height 1s;
+          -webkit-transition: max-height 1s;
+      }
+
+      .open {
+          max-height: 1000px;
+          transition: max-height 1s;
+          -webkit-transition: max-height 1s;
+      }
+
+      /* ================ */
+      .labels {
+          display: inline-block;
+          text-align: right;
+          width:20%;
+          padding:5px;
+          margin-top:10px;
+          vertical-align: top;
+      }
+
+      .rightTab {
+          display: inline-block;
+          text-align: left;
+          width:75%;
+          vertical-align: middle;
+      }
+
+      .rowTab{
+          /*   margin: 10px; */
+      }
+      .radio, .checkbox{
+          display: block;
+          position: relative;
+          left:-40px;
+          margin-bottom:10px;
+      }
+
+      ul{
+          list-style: none;
+      }
+
+      li:not(.radio){ float: left}
+
+      .radio input[type=number]:not(#scheduleendson){
+          width:50px;
+      }
+
+      input[type=date], input[type=number], #scheduleType {
+          width:180px;
+          padding: 12px ;
+          margin: 3px 0;
+          box-sizing: border-box;
+          border: none;
+          border-bottom: 2px solid #0082c8;
+          background: inherit;
+      }
+      /* ----for checkbox---------- */
+
+      /*<!--=================for recurring scheduling============================-->*/
+
+    </style>
+  </head>
+  <body>
+    <div id="caleandar">
+
+    </div>
+
+
+    <div class="mask" role="dialog"></div>
+    <div class="modalcalendar" role="alert">
+      <a class="close" role="button">X</a>
+        <form enctype="multipart/form-data" id="event_form" name="event_form" method="POST">
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <label for="event_name">Event Name</label>
+                        <input type="text" class="form-control" id="event_name" name="event_name" placeholder="Event Name">
+                    </div>
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <label for="event_desc">Event Description</label>
+                        <textarea type="text" id="event_desc" name="event_desc" rows="2" class="form-control md-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form">
+
+                        <div class="form-group">
+                            <label for="eventImg">Choose Image</label>
+                            <div class="input-group input-file">
+                                <input type='file' name='eventFileInput' id='eventFileInput' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
+                                <span class="input-group-btn">
+                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
+                                                        </span>
+                                <input type="text" class="form-control" id="eventImg" name="eventImg" placeholder='Choose a file...' />
+                                <span class="input-group-btn">
+                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
+                                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+
+                        <div class="form-group">
+                            <label for="start_date">Start Date</label>
+                            <input type="text" class="form-control" id="start_date" name="start_date" placeholder="Start Date">
+                        </div>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="end_date">End Date</label>
+                        <input type="text" class="form-control" id="end_date" name="end_date" placeholder="End Date">
+                    </div>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+
+                        <div class="form-group">
+                            <label for="start_time">Start Time</label>
+                            <input type="text" class="form-control" id="start_time" name="start_time" placeholder="Start Time">
+                        </div>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="end_time">End Time</label>
+                        <input type="text" class="form-control" id="end_time" name="end_time" placeholder="End Time">
+                    </div>
+                </div>
+                <!--Grid column-->
+            </div>
+
+            <label><input type="checkbox" name="recur" id="recur" value="Recurring" > Recurring</label>
+            <div id="content" class="content">
+
+                <div id="box-inner">
+                    <div class="rowTab">
+                        <div class="labels">
+                            <label for="scheduleStart">Starts on:</label>
+                        </div>
+                        <div class="rightTab">
+                            <input type="date" id="scheduleStart" name="scheduleStart" placeholder="Enter date" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowTab">
+                    <div class="labels">
+                        <label for="scheduleType">Repeats:</label>
+                    </div>
+                    <div class="rightTab">
+                        <select id="scheduleType" name="scheduleType">
+                            <option value>Select how</option>
+                            <option value="1">Weekly</option>
+                            <option value="2">2 Weeks</option>
+                            <option value="3">3 Weeks</option>
+                            <option value="4">4 weeks</option>
+                            <option value="5">Last day(specific)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="rowTab">
+                    <div class="labels">
+                        <label>Repeat On:</label>
+                    </div>
+                    <div class="rightTab">
+                        <ul>
+                            <li class="checkbox"><label><input type="checkbox" name="dayofWeek" value="Sunday" > Sunday</label><li>
+                            <li class="checkbox"><label><input type="checkbox" name="dayofWeek" value="Monday"> Monday</label><li>
+                            <li class="checkbox"><label><input type="checkbox" name="dayofWeek" value="Tuesday"> Tuesday</label><li>
+                            <li class="checkbox"><label><input type="checkbox" name="dayofWeek" value="Wednesday"> Wednesday</label><li>
+                            <li class="checkbox"><label><input type="checkbox" name="dayofWeek" value="Thursday"> Thursday</label><li>
+                            <li class="checkbox"><label><input type="checkbox" name="dayofWeek" value="Friday"> Friday</label><li>
+                            <li class="checkbox"><label><input type="checkbox" name="dayofWeek" value="Saturday"> Saturday</label><li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rowTab">
+                    <div class="labels">
+                        <label>Ends:</label>
+                    </div>
+                    <div class="rightTab">
+                        <ul>
+                            <li class="radio"><label><input type="radio" checked name="scheduleends"  id="neverends" onclick="toggle(this)"value="1"> Never</label></li>
+                            <li class="radio"><label><input type="radio" id="occurences" name="scheduleends" value="2" onclick="toggle(this)"> After <input type="number" min="1" max="20" id="scheduleendsafter" onkeypress="return Validate(event);" name="scheduleendsafter" disabled required> Occurrences(months)</label></li>
+                            <li class="radio"><label><input type="radio" id="specificDate" name="scheduleends" value="3" onclick="toggle(this)"> On <input type="date" id="scheduleendson" onfocusout="getText(this);" name="scheduleendson" disabled required></label></li>
+                        </ul>
+                    </div>
+                </div>
+                <input type="button" style="margin: 0 auto;display:block" onclick="validateAllInputs()" value="submit"/>
+            </div>
+            <!--Grid row-->
+
+        </form>
+
+    </div>
+    <script type="text/javascript" src="js/caleandar.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/recurring_schedule.js"></script>
+
+    <script src="assets/changes-cookie-detect/detect-ajax.js"></script>
+    <script src="assets/changes-cookie-detect/detect-login-logout.js"></script>
+  </body>
+</html>

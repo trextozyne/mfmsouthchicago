@@ -1,0 +1,210 @@
+  body {
+      font-family: "Avenir", "Helvetica Neue", Arial;
+  }
+.background {
+    background-color: blue;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #225faa;
+    background: linear-gradient(135deg, #225faa 0%, #2989d8 50%, #7db9e8 100%);
+    overflow: scroll;
+}
+
+.message {
+    position: absolute;
+    top: 85px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 14px 5px #0006;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+}
+
+
+.container {
+    width: 400px;
+    margin: 0px auto;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+.form {
+    margin-top: 150px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-size: 0.8em;
+    text-align: center;
+    color: white;
+}
+
+main {
+    background-color: #FFFFFF;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 40px 20px 20px 20px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input {
+    position: relative;
+}
+
+label {
+    bottom: 30px;
+    padding: 5px 5px 5px 40px;
+    left: -20px;
+    position: absolute;
+    font-family: "Courier", Monospace;
+    color: #aaa;
+    font-size: 0.8em;
+    transition: all 0.4s ease;
+    border-radius: 3px;
+}
+
+label.active {
+    bottom: 50px;
+    background-color: #D9EEFF;
+    color: #444;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+button {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    float: right;
+    font-weight: 200;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.card a {
+    color: #ddd;
+    font-size: 0.8em;
+    margin-top: 20px;
+    display: block;
+    padding: 5px 10px;
+    float: left;
+}
+
+.container.flip .card {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.card {
+    transition: 0.8s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+#email {
+    border-bottom: 1px dotted #ccc;
+}
+
+.forgot {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.forgot {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+/* Signature */
+.signature {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 150px;
+    padding: 20px;
+    float: left;
+    margin: 0px 20px;
+    opacity: 0.2;
+    transition: 0.4s ease all;
+    box-shadow: 0px 2px 4px black;
+}
+.signature:hover {
+    opacity: 1;
+}
+.signature img {
+    width: 100px;
+}
+.signature p {
+    margin: 0;
+}
+.signature p span {
+    font-family: "Courier", Monospace;
+    font-size: 0.8em;
+}
+
+
+  .alert-user {
+      border-radius: 5px;
+      display: block;
+      font-size: 0.7em;
+      text-align: center;
+      position: absolute;
+      background: #2F558E;
+      left: 105%;
+      top: 25px;
+      width: 160px;
+      padding: 7px 10px;
+      color: #fff;
+      display: none;
+  }
+  .alert-user:after {
+      right: 100%;
+      top: 50%;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border: 8px solid rgba(136, 183, 213, 0);
+      border-right-color: #2F558E;
+      margin-top: -8px;
+  }
+  input[type="submit"] {
+      padding: 20px 10px;
+      box-shadow: 0px -5px 0px rgba(0, 0, 0, 0.25);
+      position: relative;
+      top: 0px;
+      transition: all ease 0.3s;
+  }
+  input[type="submit"]:active {
+      box-shadow: inset 0px 1px 6px 4px rgba(0, 0, 0, 0.25);
+      top: 3px;
+  }
+
+button{
+    cursor: pointer;
+}

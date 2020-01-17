@@ -1,0 +1,228 @@
+.wrapper {
+    box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, .25), 8px 8px 2px 0px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.inner-right-wrapper {
+    width: 55%;
+    float: right;
+    height: auto;
+    /*margin: 10px;*/
+    position: relative;
+    overflow: hidden;
+
+    font-family: "Exo", sans-serif;
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+
+    box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, .25), 5px 5px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.inner-left-wrapper {
+    width: 40%;
+    float: left;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+.questions {
+    width: 90%;
+    /*border: 1px solid #000;*/
+    margin: 10px 0;
+    box-shadow: 1px 3px 4px 1px rgba(0, 0, 0, 0.26);
+
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0,0, 0);
+    transform: translate3d(0,0,0);
+    cursor: pointer;
+}
+
+.questions:active {
+    background: #ffffff;
+    -webkit-box-shadow: inset 0px 0px 5px #767676;
+    -moz-box-shadow: inset 0px 0px 5px #767676;
+    box-shadow: inset 0px 0px 5px #767676;
+    outline: none;
+}
+
+.effect-move:hover .questions {
+    -webkit-transform: translate3d(20px,0,0);
+    transform: translate3d(20px,0,0);
+}
+
+.questionStyle {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    text-align: left;
+    margin: 0 !important;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.inner-right-wrapper span:nth-child(1)
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(to right, #ff9b02, #f8ff3c);
+    animation: animate1 2s linear infinite;
+    animation-delay:1s;
+
+}
+@keyframes animate1
+{
+    0%
+    {
+        transform:translateX(-100%);
+    }
+    100%
+    {
+        transform:translateX(100%);
+    }
+}
+.inner-right-wrapper span:nth-child(2)
+{
+    position:absolute;
+    top:0;
+    right:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(to bottom, #ff9b02, #f8ff3c);
+    animation: animate2 2s linear infinite;
+    animation-delay:2s;
+}
+@keyframes animate2
+{
+    0%
+    {
+        transform:translateY(-100%);
+    }
+    100%
+    {
+        transform:translateY(100%);
+    }
+}
+.inner-right-wrapper span:nth-child(3)
+{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(to left, #ff9b02, #f8ff3c);
+    animation: animate3 2s linear infinite;
+    animation-delay:1s;
+
+}
+@keyframes animate3
+{
+    0%
+    {
+        transform:translateX(100%);
+    }
+    100%
+    {
+        transform:translateX(-100%);
+    }
+}
+.inner-right-wrapper span:nth-child(4)
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(to top, #ff9b02, #f8ff3c);
+    animation: animate4 2s linear infinite;
+    animation-delay:2s;
+
+}
+@keyframes animate4
+{
+    0%
+    {
+        transform:translateY(100%);
+    }
+    100%
+    {
+        transform:translateY(-100%);
+    }
+}
+
+
+#slideSource {
+    opacity: 1;
+}
+
+#slideSource.fade {
+    opacity: 0;
+}
+#answers {
+    font-size: 14px;
+    font-weight: 600;
+    height: inherit;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+p { opacity: 1; transition: all 0.5s; }
+p.hide { opacity: 0; }
+
+
+.inner-left-wrapper::-webkit-scrollbar {
+    width: 1em;
+}
+
+.inner-left-wrapper::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+.inner-left-wrapper::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.none {
+    display: none;
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+    #answers {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .questionStyle {
+        font-size: 10px;
+        padding: 10px;
+    }
+    .wrapper {
+        padding: 10px;
+         margin: 0;
+    }
+}

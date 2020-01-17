@@ -1,0 +1,575 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /*overflow: hidden;
+    width: 100%;
+    height: 100%;*/
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation */
+.navigation {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    padding: 0 100px;
+    display: flex;  /*use flexbox to align elements within it*/
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.navigation-center {
+    display: block;
+    margin: 0 auto;
+}
+
+.navigation-center img{
+    width: 50px;
+}
+
+/*It will be a full-screen slider so we set it to position absolute.*/
+.css-slider-wrapper {
+    display: block;
+    background: #FFF;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/* Slider */
+.slider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    -webkit-transition: -webkit-transform 1600ms;
+    transition: -webkit-transform 1600ms, transform 1600ms;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+/* Slides Background Color */
+.slide-1 {
+    background: #fbad99;
+    left: 0;
+}
+.slide-2 {
+    background: #a9785c;
+    left: 100%
+}
+.slide-3 {
+    background: #9ea6b3;
+    left: 200%
+}
+.slide-4 {
+    background: #b1a494;
+    left: 300%;
+}
+.slider {
+    display: flex;
+    justify-content: flex-start;
+}
+.slider-content {
+    width: 90%; /*635px;*/
+    padding-left: 100px;
+}
+
+/*Now style elements within each slide. text, a button and an image.*/
+/* Slider Inner Slide Effect */
+.slider h2 {
+    color: #333333;
+    font-weight: 900;
+    text-transform: capitalize;
+    font-size: 55px;
+    font-weight: 600;
+    line-height: 1.2;
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    margin:0;
+    margin-top: 0;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+
+.slider h2 span{
+    height: 30px;
+    background: -webkit-linear-gradient(left, #772bf3 0%,#772bf3 26%,#2989d8 62%,#334cf4 100%);
+    background: linear-gradient(to right, #772bf3 0%,#772bf3 26%,#2989d8 62%,#334cf4 100%);
+    position: absolute;
+    bottom: 18px;
+    left: -2pc;
+    padding: 0;
+    Z-INDEX: -1;
+}
+
+.slider h4 {
+    width: 60%;
+    font-size: 22px;
+    font-family: "Oswald";
+    color: rgba(51, 51, 51, 0.349);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: justify;
+    line-height: 1.2;
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+}
+
+.slider > img {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    height: 50%;
+    opacity: 0;
+    margin-right: 35px;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+}
+.slider > img:nth-child(1) {
+    top: 125px;
+    height: 40%;
+    right: 45px;
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+}
+
+.slider.slide-1 > img:nth-child(2) {
+    margin-right: 75px;
+}
+
+.slider.slide-2 > img:nth-child(1) {
+    top: 20vh;
+    height: 20%;
+    margin-right: 70px;
+}
+
+.slider.slide-3 > img:nth-child(1) {
+    top: 5vh;
+}
+
+.slider.slide-3 > img:nth-child(2) {
+    margin-right: -100px;
+}
+
+.slider.slide-4 > img:nth-child(1) {
+    top: 170px !important;
+    right: 70px !important;
+}
+
+.slider.slide-4 > img:nth-child(2) {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    width: 22%;
+    height: 22%;
+    bottom: 50px;
+    right: 0;
+}
+
+.slide-1 > img {
+    right: 0;
+}
+
+.buy-now-btn {
+    background-color: #ea2e49;
+    width: 220px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 100;
+    color: #fff;
+    text-align: left;
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.buy-now-btn:hover {
+    box-shadow: 0px 0px 60px -17px rgba(51,51,51,1);
+}
+
+.buy-now-btn:after {
+    content: 'Buy Now';
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    right: 35px;
+    top: 18px;
+}
+
+.slider .buy-now-btn:focus,
+.navigation .login-btn:focus {
+    outline: none;
+}
+
+/*Let’s also make sure that when the slide changes, elements within it — such as text and images — animate.*/
+/* Animations */
+.slider h2 {
+    -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+    transition: transform 800ms, opacity 800ms;
+    -webkit-transition-delay: 1.4s; /* Safari */
+    transition-delay: 1.4s;
+}
+.slider h2 span{
+    -webkit-transition: opacity 800ms,padding 2s;
+    transition: padding 2s, opacity 800ms;
+    -webkit-transition-delay: 2s; /* Safari */
+    transition-delay: 2s;
+}
+.slider h4 {
+    -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+    transition: transform 800ms, opacity 800ms;
+    -webkit-transition-delay: 1.2s; /* Safari */
+    transition-delay: 1.2s;
+}
+.slider > img {
+    -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+    transition: transform 800ms, opacity 800ms;
+    -webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+}
+
+/*number pagination in the right corner of each slide. Let’s style that, too*/
+/* Number Pagination */
+.number-pagination, .date-pagination {
+    position: absolute;
+    bottom: 30px;
+    font-family: "Oswald";
+    font-weight: bold;
+    border-top-color: #fff;
+    border-top-width: 3px;
+    border-top-style: solid;
+    opacity: 0;
+    /*for animation*/
+    -ms-transform: translateX(-100px) rotate(-90deg);
+    -webkit-transform: translateX(-100px) rotate(-90deg);
+    transform: translateX(-100px) rotate(-90deg);
+    -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+    transition: transform 800ms, opacity 800ms;
+    -webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+}
+
+.number-pagination {
+    right: 40px;
+}
+
+.date-pagination {
+    bottom: 95px;
+    left: -20px;
+    width: 145px;
+}
+
+.number-pagination span, .date-pagination span{
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 4px;
+    position: relative;
+    left: 40px;
+    top: -15px;
+}
+
+.number-pagination span{
+    display:inline-block;transform: rotate(90deg);
+}
+
+.date-pagination span {
+    left: 155px;
+    text-align: left;
+    width: 300px !important;
+    display: block;
+}
+
+.number-pagination span:after {
+    content: "/4";
+    font-size: 16px;
+    color: #2c002c;
+}
+
+/*Awesome! Now, style the slider pagination.*/
+/* Slider Pagger */
+.slider-pagination {
+    position: absolute;
+    bottom: 30px;
+    width: 575px;
+    left: 100px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+.slider-pagination label {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+}
+/*magically style the radiobuttons to the label styles*/
+/* Slider Pagger Event */
+.slide-radio1:checked ~ .slider-pagination .page1,
+.slide-radio2:checked ~ .slider-pagination .page2,
+.slide-radio3:checked ~ .slider-pagination .page3,
+.slide-radio4:checked ~ .slider-pagination .page4 {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ea2e49;
+    background: transparent;
+}
+
+/* Slider Slide Effect */
+.slide-radio1:checked ~ .slide-1 .number-pagination, .slide-radio1:checked ~ .slide-1 .date-pagination, .slide-radio2:checked ~ .slide-2 .number-pagination, .slide-radio2:checked ~ .slide-2 .date-pagination, .slide-radio3:checked ~ .slide-3 .number-pagination, .slide-radio3:checked ~ .slide-3 .date-pagination, .slide-radio4:checked ~ .slide-4 .number-pagination, .slide-radio4:checked ~ .slide-4 .date-pagination {
+    opacity:1; transform:translateX(0px);
+    transform: rotate(-90deg);
+    color: #fff;
+}
+.slide-radio1:checked ~ .slider {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+.slide-radio2:checked ~ .slider {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.slide-radio3:checked ~ .slider {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+}
+.slide-radio4:checked ~ .slider {
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+}
+
+.slide-radio1:checked ~ .slide-1 h2,
+.slide-radio2:checked ~ .slide-2 h2,
+.slide-radio3:checked ~ .slide-3 h2,
+.slide-radio4:checked ~ .slide-4 h2,
+.slide-radio1:checked ~ .slide-1 h4,
+.slide-radio2:checked ~ .slide-2 h4,
+.slide-radio3:checked ~ .slide-3 h4,
+.slide-radio4:checked ~ .slide-4 h4,
+.slide-radio1:checked ~ .slide-1 > img,
+.slide-radio2:checked ~ .slide-2 > img,
+.slide-radio3:checked ~ .slide-3 > img,
+.slide-radio4:checked ~ .slide-4 > img {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1; color: #fff;
+}
+
+.slide-radio1:checked ~ .slide-1 h2 span,
+.slide-radio2:checked ~ .slide-2 h2 span,
+.slide-radio3:checked ~ .slide-3 h2 span,
+.slide-radio4:checked ~ .slide-4 h2 span{
+    padding: 0 55%;
+    opacity: 1;
+}
+
+
+.animate-1{
+    -webkit-transition: opacity 400ms, -webkit-transform 400ms;
+    transition: transform 400ms, opacity 400ms;
+    -webkit-transition-delay: 1.4s; /* Safari */
+    transition-delay: 1.4s;
+}
+
+.animate-2{
+    -webkit-transition: opacity 400ms,padding 2s;
+    transition: padding 2s, opacity 400ms;
+    -webkit-transition-delay: 2s; /* Safari */
+    transition-delay: 2s;
+}
+
+.animate-3{
+    -webkit-transition: opacity 400ms, -webkit-transform 400ms;
+    transition: transform 400ms, opacity 400ms;
+    -webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+}
+
+.animate-4{
+    -webkit-transition: opacity 400ms, -webkit-transform 400ms;
+    transition: transform 400ms, opacity 400ms;
+    -webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+}
+
+.slide-1 h2.animate-1, .slide-1 h4.animate-1{
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+.slide-1 h2 span.animate-2{
+    padding: 0 55% !important;
+    opacity: 1;
+}
+
+.slide-1 .number-pagination.animate-3, .slide-1 .date-pagination.animate-3 {
+    -ms-transform: translateX(0px) rotate(-90deg) !important;
+    -webkit-transform: translateX(0px) rotate(-90deg) !important;
+    transform: translateX(0px) !important;
+    transform: rotate(-90deg) !important;
+    opacity: 1 !important;
+}
+
+.slider > img.animate-4 {
+    -webkit-transform: translateY(0px) !important;
+    transform: translateY(0px) !important;
+    opacity: 1 !important;
+}
+.slider > img:nth-child(1).animate-4 {
+    -webkit-transform: translateY(-0px) !important;
+    transform: translateY(0px) !important;
+    opacity: 1 !important;
+}
+
+/* Responsive */
+@media only screen and (max-width: 886px) {
+    .slider h2 {
+        font-size: 45px;
+    }
+    .slider h2 span {
+        height: 20px;
+        bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .slider h2 {
+        font-size: 24px;
+    }
+    .slider h2 span {
+        height: 13px;
+        bottom: 6px;
+        left: -1pc;
+    }
+
+    .slider h4 {
+        font-size: 16px;
+    }
+
+    .slider-content {
+        width: 90%;
+        padding-left: 100px;
+    }
+
+    .navigation {
+        padding: 0 2%;
+    }
+
+    .navigation-left {
+        display: none;
+    }
+
+    .number-pagination {
+        right: 2%;
+    }
+    .slider-pagination {
+        left: 2%;
+    }
+
+    .slider .buy-now-btn {
+        padding: 0 15px;
+        width: 175px;
+        height: 42px;
+    }
+
+    .slider .buy-now-btn:after {
+        top: 15px;
+    }
+
+    .slider > img {
+        right: 2%;
+    }
+
+    .slide-1 > img {
+        right: -110px;
+    }
+}
+@media only screen and (max-width: 460px) {
+    .slider h2 {
+        font-size: 16px;
+    }
+    .slider h2 span {
+        height: 8px;
+        bottom: 4px;
+        left: -1pc;
+    }
+
+    .slider h4 {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 365px) {
+    .slider h2 {
+        font-size: 14px;
+    }
+    .slider h2 span {
+        height: 5px;
+        bottom: 4px;
+        left: -1pc;
+    }
+
+    .slider h4 {
+        font-size: 12px;
+    }
+}
+
+
+/* Chrome, Safari, Opera */
+/*@keyframes translateOpacity{
+  0%{
+    opacity:0; transform:translateX(0px);
+     transform: rotate(-90deg);
+  }
+    100%{
+      opacity:1; transform:translateX(0px);
+      transform: rotate(-90deg);
+  }
+}
+
+@-webkit-keyframes mymove {
+    0% {padding: 0 0%;}
+    70% {padding: 0 75%;}
+    100% {padding: 0 55%;}
+}
+@-webkit-keyframes mymove1 {
+    0% {padding: 0 0%;}
+    70% {padding: 0 75%;}
+    100% {padding: 0 55%;}
+}
+
+/* Standard syntax
+@keyframes mymove {
+    0% {padding: 0 0%;}
+    70% {padding: 0 75%;}
+    100% {padding: 0 55%;}
+}
+@keyframes mymove1 {
+    100% {padding: 0 55%;}
+    70% {padding: 0 75%;}
+    0% {padding: 0 0%;}
+}*/

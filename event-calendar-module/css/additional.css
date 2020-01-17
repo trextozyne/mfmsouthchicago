@@ -1,0 +1,264 @@
+body{
+  font-family: Calibri, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #333;
+}
+
+.cld-main {
+  width: auto !important;padding: 10px 20px;
+}
+.cld-datetime .today, .cld-number {
+  font-size: large !important;
+}
+
+.table-cld-number {
+  width: 100%;
+  border-bottom: none;
+  /*border-bottom: 3.5px solid #dc77cfd600;*/
+}
+
+.cid-rcUhzkEJA4 p {
+  text-align: right !important;
+}
+
+div.eventday {
+  display: table;
+  width: 100%;
+  border: none;
+  /*color: black;*/
+  height: inherit;
+}
+
+td.cld-day:hover{
+  transition: 0.7s;
+}
+
+td.cld-day:hover{
+  background-color: aliceblue;/*#2527252e;*/
+  color: red;
+}
+
+td.cld-day:hover div table p{
+  color: red;
+}
+
+td.cld-day:hover div table{
+  background: none !important;
+  color: red !important;
+}
+
+.cld-day.today .cld-number-span {
+  padding: 5px 10px;
+  background: #666;
+}
+
+.cld-day.today .cld-number {
+  height: auto !important;
+  width: 100% !important;
+  border-radius: 0;
+  border: none;
+  background: transparent !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+body{
+  overflow-x: hidden;
+}
+.cld-labels, .cld-days {
+  width: 100%;
+  border: 0.5px solid #dc77cfd6;
+}
+.cld-labels tr{
+  border-bottom: none;
+}
+.cld-label, .cld-day {
+  vertical-align: top; /* add vertical align top to fix this issue */
+  display: table-cell;
+  padding: 0px;
+  text-align: center;
+}
+
+.cld-day {
+  height: 90px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  padding: 0;
+  cursor: pointer;
+  background: white;
+  border-bottom: 0.5px solid #dc77cfd6;
+  border-right: 0.5px solid #dc77cfd6 !important;
+}
+
+.cld-title {
+  position: relative;
+  z-index: 5;
+  display: block;
+  top: 0px;
+  left: 0;
+  margin: 0 auto;
+  /*white-space: unset;*/
+  width: 95%;
+  text-overflow:ellipsis;white-space: nowrap;overflow: hidden;
+  padding: 1px;
+  background-color: #005EFF;
+  color: #ffffff;
+}
+
+.cld-main a {
+  color: #ffffff;
+}
+.cld-number{
+  padding: 0 !important;
+  text-align: right;
+  margin: 0 !important;
+}
+/*==================================for modalcalendar===============================*/
+.close {
+  z-index: 10;
+  position: absolute;
+  top: -30px;
+  right: 0px;
+  width: 35px;
+  height: 30px;
+  /* background: #000; */
+  color: #fff !important;
+  opacity: 1;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 73, 94, 0.8);
+  z-index: 50;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.7s;
+}
+.modalcalendar {
+  overflow-y: auto;
+  position: fixed;
+  top: 27%;
+  left: 30%;
+  width: 900px;
+  padding: 20px;
+  height: 586px;
+  margin-left: -200px;
+  margin-top: -150px;
+  background: #fff;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-out;
+  transform: translateY(45px);
+}
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+.active + .modalcalendar {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+svg polyline {
+  stroke: #fff;
+  fill: white;
+  stroke-dasharray: 10,10;
+  stroke-width: 5;
+}
+.left{
+  position: absolute;
+  top: -3px;
+  right: -82px;
+}
+.right{
+  position: absolute;
+  top: -3px;
+  left: -85px;
+}
+.right, .left {
+  text-align: center;
+  width: 90px;
+}
+/*<!--================for modalcalendar==============================-->*/
+/*<!--=================for recurring scheduling============================-->*/
+.content:not(.media-container-row) {
+  width: 100%;
+  margin: 20px auto;
+  border: 1px solid #0082c8;
+  /*   padding: 10px; */
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 1s;
+  -webkit-transition: max-height 1s;
+}
+
+.open {
+  max-height: 1000px !important;
+  transition: max-height 1s;
+  -webkit-transition: max-height 1s;
+}
+
+/* ================ */
+.labels {
+  display: inline-block;
+  text-align: right;
+  width:20%;
+  padding:5px;
+  margin-top:10px;
+  vertical-align: top;
+}
+
+.rightTab {
+  display: inline-block;
+  text-align: left;
+  width:75%;
+  vertical-align: middle;
+}
+
+.rowTab{
+  /*   margin: 10px; */
+}
+
+.rightTab ul {
+  list-style: none;
+  margin: 0 auto;
+  display: block;
+}
+
+.rightTab ul li:not(.radio){
+  list-style: none;
+  float: left;
+}
+
+.radio, .checkbox{
+  display: block;
+  position: relative;
+  left:-40px;
+  margin-top:17px;
+}
+
+.radio input[type=number]:not(#scheduleendson){
+  width:50px;
+}
+
+input[type=date], input[type=number], #scheduleType {
+  width:180px;
+  padding: 12px ;
+  margin: 3px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #0082c8;
+  background: inherit;
+}
+/* ----for checkbox---------- */
+
+/*<!--=================for recurring scheduling============================-->*/

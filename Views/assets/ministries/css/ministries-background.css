@@ -1,0 +1,232 @@
+
+body {overflow-x: hidden;}
+.grid {
+    position: absolute;
+    /*top: 100px; left: 0;*/
+    /*Width = (225 + 20 + 20) * 4 = 1060*/
+    top: -465px;
+    left: -1300px;
+    width: 1900px;
+    height: 100%;
+    /*overflow:scroll;*/
+    /*overflow-y: hidden;*/
+    white-space:nowrap;
+    /*3D Transform*/
+    transform: rotateX(60deg) rotateZ(-50deg);
+    /*Preserve 3D style for children*/
+    transform-style: preserve-3d;
+}
+.grid li {
+    height: 400px; width: 225px;
+    float: left; margin: 20px;
+    list-style-type: none;
+
+    /*Preserve 3D style for children(pseudo elements)*/
+    transform-style: preserve-3d;
+    background-size: cover;
+    /*animation: move 4s ease-in infinite alternate;*/
+
+    animation: animatedBackground 5s linear;
+}
+/*Left and Bottom Sides*/
+.grid li:before, .grid li:after {
+    content: '';
+    position: absolute;
+    /*100% height and width*/
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: inherit;
+// box-shadow:5px 5px 15px 15px #333;
+}
+/*Left Side*/
+.grid li:before {
+    transform-origin: left center;
+    transform: rotateY(90deg);
+    /*Reducing the width of the left side for a flat feel*/
+    width: 8px;
+//height: 50px;
+}
+/*Bottom Side*/
+.grid li:after {
+    transform-origin:bottom;
+//transform:rotateY(40deg);
+    transform:rotateX(90deg);
+    background-position:bottom;
+    height:8px;
+    top:auto;
+
+}
+@keyframes animatedBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*temporary*/
+/*li {background: #999;}*/
+.one {
+    background: url(https://images.unsplash.com/photo-1541233349642-6e425fe6190e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+}
+.two {
+    background: url(https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg);
+}
+.three {
+    background: url(https://static.toiimg.com/photo/msid-67868104/67868104.jpg?1368689);
+}
+.four {
+    background: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg);
+}
+.five {
+    background: url(https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+}
+.six {
+    background: url(https://i.pinimg.com/originals/0e/40/b4/0e40b4458e8a84ce469a5fec1a696ef1.jpg);
+}
+.seven {
+    background: url(https://salaficentre.com/wp-content/uploads/2019/01/hd_picture_of_the_beautiful_natural_scenery_03_166249.jpg);
+}
+
+@keyframes move {
+    50% {transform:rotateX(-60deg) rotateZ(50deg)}
+    100% {
+        transform:rotateX(60deg) rotateZ(-50deg)
+    }
+}
+
+/*======================Additions==============================*/
+.ministry-p {
+    color: #fff !important;
+    padding: 0;
+    text-align: justify;
+}
+
+.ministry-div {
+    margin: 0 40px;
+}
+
+.ministry-div-underline {
+    margin: 0 40px 1rem;
+    padding: 3px;
+    width: 140px;
+    border: solid yellow;
+    border-right-color: transparent;
+    border-left-color: transparent;
+}
+
+.ministry-h3 {
+    margin: 0;
+    padding: 0 40px;
+    font-size: 2.8rem !important;
+}
+@media screen and (min-width:320px) and (max-width:830px) and (orientation:landscape) {
+    .ministry-h3 {
+        font-size: 2.2rem !important;
+        padding: 0 20px;
+    }
+    .ministry-div-underline {
+        margin: 0 20px 1rem;
+    }
+    .ministry-div {
+        margin: 0 20px;
+    }
+    .ministry-div .pt-5, .ministry-div .py-5 {
+         padding-top: 0!important;
+    }
+    .ministry-div .pb-5, .ministry-div .py-5 {
+        padding-bottom: 0!important;
+    }
+}
+
+.ministry-outer-div {
+    background-color: #800080;
+    height: 100%;
+    color: #fff;
+    padding:20px 0;
+}
+
+.ministry-image-div {
+    height: 100%;
+    padding-bottom: 0 !important;
+}
+
+.ministry-image-div img {
+    height: 100%;
+}
+
+.ministry-overlay-lower {
+    opacity: 0.6;
+    z-index: 1;
+    background: linear-gradient(180deg, #9c9da2bf 5%, rgb(253, 253, 253) 100%);
+}
+
+.ministry-overlay-upper {
+    opacity: 0.6;
+    z-index: 10;
+    background: linear-gradient(180deg, #0f1838 25%, rgb(228, 235, 237) 100%);
+}
+.cid-rcTF5eFYYb .navbar {
+    background: #200109 !important;
+}
+/*=================media queries==========================*/
+@media (max-width:320px){
+    .ministry-h3 {
+        text-align: left;
+    }
+    .ministry-p {
+        text-align: justify;
+    }
+    .ministry-outer-div .pb-3 {
+        padding-top: 1rem!important;
+    }
+    .ministry-div .pt-5, .ministry-div .py-5 {
+        padding-top: 0!important;
+    }
+    .ministry-div .pb-5, .ministry-div .py-5 {
+        padding-bottom: 0!important;
+    }
+    .col-md-4 {
+        margin: 5px 0!important;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .ministry-h3 {
+        text-align: left !important;
+    }
+    .ministry-p {
+        text-align: justify;
+    }
+    .ministry-outer-div .pb-3 {
+        padding-top: 1rem!important;
+    }
+    .ministry-div .pt-5, .ministry-div .py-5 {
+        padding-top: 0!important;
+    }
+    .ministry-div .pb-5, .ministry-div .py-5 {
+        padding-bottom: 0!important;
+    }
+    .col-md-4 {
+        margin: 5px 0!important;
+    }
+    .ministry-div .mbr-text {
+        text-align: left !important;
+    }
+}
+
+section.header1{
+    overflow: hidden;
+}
+
+
+/*@media (min-width: 768px){*/
+    /*.col-md-4, .col-md-8 {*/
+        /*-webkit-box-flex: 0;*/
+        /*-ms-flex: 0 0 33.333333%;*/
+        /*flex: 0 0 100%;*/
+        /*!* max-width: 33.333333%; *!*/
+    /*}*/
+/*}*/

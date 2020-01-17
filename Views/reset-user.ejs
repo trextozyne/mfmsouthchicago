@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../assets/forgot-reset/forgot-reset.css">
+</head>
+<body>
+<div class="background">
+    <div class="container" id="container">
+        <% if (information.length > 0 ) { %>
+        <span class="message"><%= information %></span>
+        <% } %>
+        <div class="card">
+            <div class="forgot">
+                <div class="form">
+                    <header>Please provide new password</header>
+                    <main>
+                        <form id="reset_password_form" method="POST">
+                            <div class="input">
+                                <label for="password" id="password_label">Password</label>
+                                <input class="label_pop" type="password" name="password" id="password">
+                                <span class="alert-user">Enter a password longer than 8 characters</span>
+                            </div>
+                            <div class="input">
+                                <label for="confirm_password" id="confirm_password_label">Confirm Password</label>
+                                <input class="label_pop" type="password" name="confirm_password" id="confirm_password">
+                                <span class="alert-user">Please confirm your password</span>
+                            </div>
+                            <button id="submit" type="submit">Confirm Password</button>
+                        </form>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+    var $password = $("#password");
+    var $confirmPass = $("#confirm_password");
+
+    //Check the length of the Password
+    function checkLength() {
+        return $password.val().length > 8;
+    }
+
+    //Check to see if the value for pass and confirmPass are the same
+    function samePass() {
+        return $password.val() === $confirmPass.val();
+    }
+
+    //If checkLength() is > 8 then we'll hide the hint
+    function PassLength() {
+        if (checkLength()) {
+            $password.next().hide();
+        } else {
+            $password.next().show();
+        }
+    }
+
+    //If samePass returns true, we'll hide the hint
+    function PassMatch() {
+        if (samePass()) {
+            $confirmPass.next().hide();
+        } else {
+            $confirmPass.next().show();
+        }
+    }
+
+    function canSubmit() {
+        return samePass() && checkLength();
+    }
+
+    function enableSubmitButton() {debugger;
+        $("#submit").prop("disabled", !canSubmit());
+    }
+
+    //Calls the enableSubmitButton() function to disable the button
+    enableSubmitButton();
+
+    $password.keyup(PassLength).keyup(PassMatch).keyup(enableSubmitButton);
+    $confirmPass.focus(PassMatch).keyup(PassMatch).keyup(enableSubmitButton);
+
+    window.onload = function() {
+        var frm = document.forms[0];
+        frm.action = frm.action + location.search;
+
+
+        let messgae = document.getElementsByClassName('message')[0];
+
+        setTimeout(() => {
+            $(messgae).hide();
+        }, 4000)
+    }
+</script>
+</body>
+</html>

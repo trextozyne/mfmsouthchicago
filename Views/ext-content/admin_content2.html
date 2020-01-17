@@ -1,0 +1,318 @@
+﻿
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="../assets/admin/css/admin.css">
+<link rel="stylesheet" href="../gijgo/css/gijgo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../event-calendar-module/css/theme1.css"/>
+<link rel="stylesheet" href="../event-calendar-module/css/additional.css"/>
+
+<style type="text/css">
+    .container {
+        padding: 0;
+        margin: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 100%;
+        /*remove with jquery css, height: auto*/
+        margin: 0;
+    }
+
+    .input-wrapper {
+        padding: 20px;
+        position: relative;
+        animation: bounceUpDown .3s ease-in-out both;
+    }
+
+    .input-wrapper.up {
+        animation: bounceDownUp .3s ease-in-out both;
+    }
+
+    .searchTerm {
+        position: relative;
+        width: 38px;
+        border-radius: 50%;
+        color: #000 !important;
+        background-color: transparent;
+        border: 2px solid #981077;
+        z-index: 999;
+        -moz-transition: 1s ease 1s, border-radius 1s ease 2s;
+        -o-transition: 1s ease 1s, border-radius 1s ease 2s;
+        -webkit-transition: 1s ease 1s, border-radius 1s ease 2s;
+        transition: 1s ease 1s, border-radius 1s ease 2s;
+    }
+
+    .searchTerm:hover {
+        border-radius: 40px;
+        -moz-transition: all 1s ease, border-radius .1s ease;
+        -o-transition: all 1s ease, border-radius .1s ease;
+        -webkit-transition: all 1s ease, border-radius .1s ease;
+        transition: all 1s ease, border-radius .1s ease;
+    }
+
+    .searchTerm.grow {
+        width: 400px;
+        padding-right: 30px;
+        border-radius: 40px;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+
+    .searchTerm:focus {
+        background-color: transparent;
+        border-radius: 40px;
+        border: 2px solid #0b004f;
+    }
+
+    hr {
+        border: 1px solid #981077;
+        transform: rotate(48deg) translate(6px, -27px);
+        width: 20px;
+        position: absolute;
+        z-index: 999;
+        opacity: 1;
+        -moz-transition: 2s ease 1s;
+        -o-transition: 2s ease 1s;
+        -webkit-transition: 2s ease 1s;
+        transition: 2s ease 1s;
+    }
+
+    .searchTerm.grow + hr {
+        width: 0px;
+        opacity: 0;
+        -moz-transition: .5s ease;
+        -o-transition: .5s ease;
+        -webkit-transition: .5s ease;
+        transition: .5s ease;
+    }
+
+    .searchTerm:focus + hr {
+        border: 2px solid #0b004f;
+    }
+
+    .outerUl {
+        position: absolute;
+        list-style: none;
+        display: none;
+        margin: 0;
+        padding: 0;
+        width: 368px;
+        height: 40px;
+        background: transparent;
+        bottom: 10px;
+        left: 35px;
+        perspective: 10000px;
+        z-index: 1;
+    }
+
+    .outerUl ul {
+        list-style: none;
+        left: 0px;
+    }
+
+    .outerUl ul li {
+        display: flex;
+        position: relative;
+        left: -40px;
+        width: 368px;
+        float: none;
+        padding: 0px;
+        opacity: 0;
+        transform: rotateX(-90deg);
+        transition: 1s cubic-bezier(.36, -0.64, .34, 1.76);
+    }
+
+    .outerUl ul a {
+        width: 100%;
+        padding: 8px 16px;
+        white-space: nowrap;
+        font-size: 20px;
+        opacity: 0;
+        transform: rotateX(-90deg);
+        transition: 1s cubic-bezier(.36, -0.64, .34, 1.76);
+    }
+
+    .outerUl.auto ul {
+        left: 0;
+    }
+
+    .outerUl.auto li {
+        opacity: 1;
+        transform: rotateX(0deg);
+        transition: all 1s cubic-bezier(.36, -0.64, .34, 1.76);
+    }
+
+    .outerUl.auto a {
+        background-color: #fff;
+        border: 1px solid;
+        text-decoration: underline;
+        opacity: 1;
+        transform: rotateX(0deg);
+        transition: all 1s cubic-bezier(.36, -0.64, .34, 1.76);
+    }
+
+    .outerUl.auto ul a {
+        text-decoration: none;
+    }
+
+    .outerUl.auto ul li a:hover {
+        background-color: rgba(51, 51, 51, 0.37);
+    }
+
+    .outerUl.auto ul li a.hover {
+        background-color: rgba(51, 51, 51, 0.37);
+    }
+
+    .Klose {
+        position: relative;
+        z-index: 999;
+        bottom: 36px;
+        left: 35px;
+        float: right;
+        width: 30px;
+        height: 30px;
+    }
+
+    .Klose .right-klose,
+    .Klose .left-klose {
+        opacity: 0;
+        width: 0;
+        bottom: 14px;
+        left: 0;
+        border: 1px solid #12077b;
+        display: block;
+        position: absolute;
+    }
+
+    .Klose .right-klose {
+        transform: rotate(45deg);
+    }
+
+    .Klose .left-klose {
+        transform: rotate(-45deg);
+    }
+    /*===================================================*/
+</style>
+
+<div class="header">
+    <a href="#" id="menu-action">
+        <i class="fa fa-bars"></i>
+        <span>Klose</span>
+    </a>
+    <div class="logo">
+        Admin Panel
+    </div>
+    <div class="left-side">
+        <a href="javascript:void(0)" onclick="logOut('logout')" style="color: inherit;">
+            Logout
+        </a>
+    </div>
+</div>
+<div class="sidebar">
+    <ul>
+        <li><a rel='tab' href="../ext-content/admin_content1.html" class="active"><i class="fa fa-desktop"></i><span>Dashboard</span></a></li>
+        <li><a rel='tab' href="../ext-content/admin_content2.html"><i class="fa fa-server"></i><span>Users</span></a></li>
+        <li><a rel='tab' href="../ext-content/admin_content2.html" data-content="admin_content3"><i class="fa fa-calendar"></i><span>Calendar</span></a></li>
+        <li><a rel='tab' href="#" data-content="admin_content4"><i class="fa fa-envelope-o"></i><span>Messages</span></a></li>
+        <li><a rel='tab' href="#" data-content="admin_content5"><i class="fa fa-table"></i><span>Data Table</span></a></li>
+    </ul>
+</div>
+
+<div class="container wrapper"><div class="input-wrapper">
+        <input type="text" class="searchTerm form-control " />
+        <hr/>
+        <ul class="outerUl">
+        </ul>
+        <div class="Klose">
+      <span class="right-klose">
+      </span>
+            <span class="left-klose">
+      </span>
+        </div>
+    </div>
+    <br>
+    <div id="user-roles" class="dropdown" hidden="hidden">
+        <button id="selected" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            All database
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <span class="dropdown-item" href="javascript:void(0)" onselect="getSelectEntries('userAdminAnyDatabase')">All database</span>
+            <span class="dropdown-item" href="javascript:void(0)" onselect="getSelectEntries('superUsers')">Photo, Content, File & Track database</span>
+            <span class="dropdown-item" href="javascript:void(0)" onclick="getSelectEntries('userPhotoDb')">Photo Database</span>
+            <span class="dropdown-item" href="javascript:void(0)" onclick="getSelectEntries('UserContentDb')">Content Database</span>
+            <span class="dropdown-item" href="javascript:void(0)" onclick="getSelectEntries('UserFileDb')">File Database</span>
+            <span class="dropdown-item" href="javascript:void(0)" onclick="getSelectEntries('UserTrackDb')">Tracks Database</span>
+            <span class="dropdown-item" href="javascript:void(0)" onclick="getSelectEntries('userOnly')">Members Only</span>
+        </div>
+    </div>
+
+    <div class="contained" style="margin-top: 20px;">
+        <div class="row">
+            <div class="col-md-12">
+                <button id="add-user-role" hidden="hidden" type="button" class="btn btn-outline-primary">Add Role to User</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../assets/web/assets/jquery/jquery.min.js"></script>
+<!--<script src="../assets/bootstrap/js/bootstrap.min.js"></script>-->
+<script type="text/javascript" src="../assets/admin/js/admin-dynamic-page.js"></script>
+<script type="text/javascript" src="../assets/admin/js/add-user-role.js"></script>
+<script type="text/javascript">
+
+(function () {
+        let r = document.getElementsByTagName('script');
+        var interval = null;
+        interval = setInterval(()=>{
+            for (let i = (r.length-1); i >= 0; i--) {
+
+                if(r[i].getAttribute('id') === 'events-calendar' || r[i].getAttribute('id') === 'events-calendar-demo'){
+                    r[i].parentNode.removeChild(r[i]);
+                }
+            }
+        }, 100);
+
+        setTimeout(()=> {
+            console.clear();
+            clearInterval(interval); // stop the interval
+        }, 4000)
+
+    $('#user-roles span').click(function(){
+        $('#selected').text($(this).text());
+    });
+
+    $('#add-user-role').on("click", ()=>{
+        let roles = {
+            "role": role,
+            "db": "photoalbumdb"
+        };
+
+        let settings = {
+            url: "/user/"+ userID +"/update-roles",
+            method: "put",
+            data: roles
+        };
+
+        $.ajax(settings).done((response)=>{
+            alert(response);
+        });
+
+        document.getElementById("user-roles").setAttribute("hidden", true);
+        document.getElementById("add-user-role").setAttribute("hidden", true);
+        $('.Klose').click();
+    })
+    })()
+</script>
