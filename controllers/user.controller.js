@@ -75,6 +75,7 @@ exports.user_get_forgot = function(req, res) {
     let errorMessage = req.flash('error');
     let successMessage = req.flash('success');
     let message = errorMessage.length > 0 ? errorMessage : successMessage;
+    console.log('b4 render');
     res.render('forgot', {information: message}, function(err, html) {
         if (err) {
             console.log(err);
