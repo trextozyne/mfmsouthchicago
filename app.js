@@ -29,16 +29,25 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true, use
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
-
 module.exports = db;
 module.exports = mongoose;
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
+app.use(cors());
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    next();
+});
 
 app.use(bodyParser.json({limit: '10mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
-app.use(cors());
+
 app.use(session({secret: "S@lv@t10n_G0d", resave: false, saveUninitialized:true, cookie: { maxAge: 60000 } }));//shouldnt be storing secret in a public repository, should be in an environment variable
 app.use(flash());
 
@@ -47,7 +56,6 @@ app.use(flash());
 // app.use(express.static(path.join(__dirname, 'routes')));
 // app.use(express.static(path.join(__dirname, 'controllers')));
 // app.use(express.static(path.join(__dirname, 'models')));
-app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'Views')));
 // app.use(express.static(path.join(__dirname, 'user')));
 // app.use(express.static(path.join(__dirname, 'admin')));
@@ -77,6 +85,7 @@ app.use((error, req, res, next)=> {
     res.sendFile(path.resolve('./Views', 'error-not-found.html'));
 });
 
+app.set('view engine', 'ejs');
 
 // let port = process.env.PORT;
 // // if (port == null || port === "") {
