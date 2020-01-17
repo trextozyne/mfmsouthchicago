@@ -98,7 +98,12 @@ exports.user_get_reset = function(req, res) {
         let message = errorMessage.length > 0 ? errorMessage : successMessage;
         console.log(message);
 
-        res.render('reset-user', {information: message});//, {User: req.user}
+        res.render('reset-user', {information: message}, function(err, html) {
+            if (err) {
+                console.log(err);
+                res.redirect('./not-found'); // File doesn't exist
+            }
+        });//, {User: req.user}
     });
 };
 
