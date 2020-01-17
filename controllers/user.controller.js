@@ -72,11 +72,12 @@ exports.user_forgot = function(req, res, next) {
 };
 
 exports.user_get_forgot = function(req, res) {
-    let errorMessage = req.flash('error');
-    let successMessage = req.flash('success');
-    let message = errorMessage.length > 0 ? errorMessage : successMessage;
-    console.log('b4 render');
-    res.render('forgot');//, {User: req.user}
+    // let errorMessage = req.flash('error');
+    // let successMessage = req.flash('success');
+    // let message = errorMessage.length > 0 ? errorMessage : successMessage;
+    // console.log('b4 render');
+    // res.render('forgot', {information: message});//, {User: req.user}
+    res.redirect('../login.html');//, {User: req.user}
 };
 
 exports.user_get_reset = function(req, res) {
@@ -93,7 +94,7 @@ exports.user_get_reset = function(req, res) {
         let message = errorMessage.length > 0 ? errorMessage : successMessage;
         console.log(message);
 
-        res.render('reset-user');//, {User: req.user}
+        res.render('reset-user', {information: message});//, {User: req.user}
     });
 };
 
