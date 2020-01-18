@@ -62,7 +62,7 @@ app.use(express.static(path.join(__dirname, 'Views')));
 // app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/event-calendar-module', express.static(path.join(__dirname, 'event-calendar-module')));
 
-app.set('Views', './Views');
+app.set('Views', path.join(__dirname, 'Views'));
 
 app.use('/photoalbums', photoalbum);
 app.use('/events', events);
