@@ -76,7 +76,7 @@ exports.user_get_forgot = function(req, res) {
     let successMessage = req.flash('success');
     let message = errorMessage.length > 0 ? errorMessage : successMessage;
     console.log(message);
-    res.render('forgot', {information: message}, function(err, html) {
+    res.render('forgot', function(err, html) {
         if (err) {
             console.log(err);
             res.redirect('./not-found'); // File doesn't exist
