@@ -52,19 +52,20 @@ app.use(session({secret: "S@lv@t10n_G0d", resave: false, saveUninitialized:true,
 app.use(flash());
 
 
-app.engine('ejs', require('ejs').renderFile);
-app.set('view engine', 'ejs');
 // app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, 'assets/bootstrap/js/bootstrap.min.js')));
 // app.use(express.static(path.join(__dirname, 'routes')));
 // app.use(express.static(path.join(__dirname, 'controllers')));
 // app.use(express.static(path.join(__dirname, 'models')));
-// app.use(express.static(path.join(__dirname, 'Views')));
+app.use(express.static(path.join(__dirname, 'Views')));
 // app.use(express.static(path.join(__dirname, 'user')));
 // app.use(express.static(path.join(__dirname, 'admin')));
 // app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/event-calendar-module', express.static(path.join(__dirname, 'event-calendar-module')));
 
 app.set('Views', __dirname + 'Views');
+
+app.engine('ejs', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 
 app.use('/photoalbums', photoalbum);
 app.use('/events', events);
