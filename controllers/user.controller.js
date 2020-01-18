@@ -103,7 +103,7 @@ exports.user_get_reset = function(req, res) {
                 console.log(err);
                 res.redirect('./not-found'); // File doesn't exist
             }
-        }););//, {User: req.user}
+        });//, {User: req.user}
     });
 };
 
