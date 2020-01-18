@@ -58,13 +58,13 @@ app.set('view engine', 'ejs');
 // app.use(express.static(path.join(__dirname, 'routes')));
 // app.use(express.static(path.join(__dirname, 'controllers')));
 // app.use(express.static(path.join(__dirname, 'models')));
-app.use(express.static(path.join(__dirname, 'Views')));
+// app.use(express.static(path.join(__dirname, 'Views')));
 // app.use(express.static(path.join(__dirname, 'user')));
 // app.use(express.static(path.join(__dirname, 'admin')));
 // app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/event-calendar-module', express.static(path.join(__dirname, 'event-calendar-module')));
 
-app.set('Views', path.join(__dirname, 'Views'));
+app.set('Views', __dirname + 'Views');
 
 app.use('/photoalbums', photoalbum);
 app.use('/events', events);
