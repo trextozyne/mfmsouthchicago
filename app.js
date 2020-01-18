@@ -86,6 +86,7 @@ app.use((error, req, res, next)=> {
     res.sendFile(path.resolve('./Views', 'error-not-found.html'));
 });
 
+app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 // let port = process.env.PORT;
