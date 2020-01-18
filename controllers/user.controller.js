@@ -76,7 +76,12 @@ exports.user_get_forgot = function(req, res) {
     let successMessage = req.flash('success');
     let message = errorMessage.length > 0 ? errorMessage : successMessage;
     console.log('b4 render');
-    res.render('./forgot', {information: message});//, {User: req.user}
+    res.render('./forgot', {information: message}, function(err, html) {
+        if (err) {
+            console.log(err);
+            res.redirect('./not-found'); // File doesn't exist
+        }
+    });//, {User: req.user}
 };
 
 exports.user_get_reset = function(req, res) {
