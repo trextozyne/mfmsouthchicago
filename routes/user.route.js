@@ -10,7 +10,7 @@ router.post('/login', user_controller.user_login);
 router.get('/login', user_controller.user_get_login);
 
 router.post('/forgot', user_controller.user_forgot);
-router.get('/forgot', user_controller.user_get_forgot);
+router.get('/lost', user_controller.user_get_forgot);
 
 router.post('/reset/:token', user_controller.user_reset);
 router.get('/reset/:token', user_controller.user_get_reset);
