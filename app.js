@@ -52,6 +52,8 @@ app.use(session({secret: "S@lv@t10n_G0d", resave: false, saveUninitialized:true,
 app.use(flash());
 
 
+app.engine('ejs', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 // app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, 'assets/bootstrap/js/bootstrap.min.js')));
 // app.use(express.static(path.join(__dirname, 'routes')));
 // app.use(express.static(path.join(__dirname, 'controllers')));
@@ -86,8 +88,6 @@ app.use((error, req, res, next)=> {
     res.sendFile(path.resolve('./Views', 'error-not-found.html'));
 });
 
-app.engine('ejs', require('ejs').renderFile);
-app.set('view engine', 'ejs');
 
 // let port = process.env.PORT;
 // // if (port == null || port === "") {
