@@ -9,6 +9,9 @@
 <body>
 <div class="background">
     <div class="container" id="container">
+        <% if (information.length > 0 ) { %>
+           <span class="message"><%= information %></span>
+        <% } %>
         <div class="card">
             <div class="forgot">
                 <div class="form">
