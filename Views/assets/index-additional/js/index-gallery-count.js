@@ -36,7 +36,7 @@ let imageDiv = "";
         debugger;
         getPhoto( function AjaxSucceeded(result) {
             if(result.length === 0){
-                document.getElementById("churchEvent").innerHTML = `<h1>No Preview</h1>`;
+                document.getElementById("churchEvent").innerHTML = `<h1 style="text-align: center">No Preview</h1>`;
             }else {
                 $.each(result, function (k, dbData) {
                     if (data[0].quantity > k)

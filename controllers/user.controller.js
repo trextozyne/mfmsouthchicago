@@ -7,7 +7,7 @@ const async = require('async');
 const nodemailer = require('nodemailer');
 
 exports.user_forgot = function(req, res, next) {
-    console.log(req.body)
+    //done must be used to go to next function
     async.waterfall([
         function(done) {
             crypto.randomBytes(20, function(err, buf) {
@@ -23,7 +23,6 @@ exports.user_forgot = function(req, res, next) {
                     let message = 'No account with that email address exists.';
                     req.flash('error', message);
                     return res.redirect('./forgot');
-                    // res.send({redirect: '/user/forgot'});
                 }
                 console.log('step 1')
                 user.resetPasswordToken = token;
@@ -61,13 +60,11 @@ exports.user_forgot = function(req, res, next) {
                 req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
                 console.log('sent');
                 res.redirect('./forgot');
-                // res.send({redirect: '/user/forgot'});
             });
         }
     ], function(err) {
         console.log('this err' + ' ' + err)
         res.redirect('/user/login');
-        // res.send({redirect: '/login.html'});
     });
 };
 
@@ -75,7 +72,7 @@ exports.user_get_forgot = function(req, res) {
     let errorMessage = req.flash('error');
     let successMessage = req.flash('success');
     let message = errorMessage.length > 0 ? errorMessage : successMessage;
-    console.log(message);
+
     res.render('forgot', {information: message});//, {User: req.user}
 };
 
@@ -93,7 +90,11 @@ exports.user_get_reset = function(req, res) {
         let message = errorMessage.length > 0 ? errorMessage : successMessage;
         console.log(message);
 
-        res.render('reset-user', {information: message});//, {User: req.user}
+        res.render('reset-user', {information: message});//, {User: req.user}, function(err, html) {
+        // if (err) {
+        //     console.log(err);
+        //     res.redirect('./not-found'); // File doesn't exist
+        // }}
     });
 };
 
@@ -104,7 +105,6 @@ exports.user_reset = function(req, res) {
                 if (!user) {
                     req.flash('error', 'Password reset token is invalid or has expired.');
                     return res.redirect('./forgot');
-                    // res.send({redirect: '/forgot'});
                 }
 
                 user.password = req.body.password;
@@ -113,19 +113,17 @@ exports.user_reset = function(req, res) {
                 console.log('password ' + user.password  + ' and the user is' + user)
 
                 user.save(function(err) {
+                    done(err, user);
                     if (err) {
                         console.log('here');
                         res.redirect('./not-found');
-                        // res.send({redirect: '/user/not-found'});
                     }
 
                     console.log('here2');
-                    res.redirect('/user/login');
-                    // res.send({redirect: '/login.html'});
                 });
             });
         }, function(user, done) {
-            // console.log('got this far 4')
+            console.log('got this far 4');
             var smtpTrans = nodemailer.createTransport({
                 service: 'Gmail',
                 auth: {
@@ -141,13 +139,12 @@ exports.user_reset = function(req, res) {
                 ' - This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
             };
             smtpTrans.sendMail(mailOptions, function(err) {
-                // req.flash('success', 'Success! Your password has been changed.');
                 done(err);
+                res.redirect('/user/login');
             });
         }
     ], function(err) {
         res.redirect('/');
-        // res.send({redirect: '/'});
     });
 };
 

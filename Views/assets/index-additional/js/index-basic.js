@@ -153,60 +153,6 @@ function goto_Event(_id, _date) {
     window.open(url);
 };
 //=======================pull saved datas==========================
-//pull google testimonials
-// jQuery(($) => {
-//     var html = '<section id="churchTestimonials" class="carousel slide testimonials-slider cid-rgyVI6xnIk" id="testimonials-slider1-r">' +
-//         '<div class="container text-center"> <h2 class="pb-5 mbr-fonts-style display-2">WHAT OUR FANTASTIC MEMBERS SAY</h2>' +
-//         '<div class="carousel slide" data-ride="carousel" role="listbox"><div class="carousel-inner">'
-//     let query = 'placeid=ChIJ88hDxaYoDogRCOp9ajOoifo&fields=reviews,rating';
-//     let apiKey = 'AIzaSyAlJ9qfFX839Gpig7BYoVPjvFR7qoJA7XE';
-//     let uri = 'https://maps.googleapis.com/maps/api/place/details/json?' + query + '&key=' + apiKey;
-//
-//
-//     $.ajax({
-//         url: uri,
-//         type: "GET",
-//         contentType: 'application/json; charset=utf-8',
-//         dataType: 'jsonp',
-//         cache: false,
-//         success: function(data) {
-//             $.each(data, function(key, data_content) {//result.rating, content.text
-//                 if(data_content == null || data_content.length === 0 || data_content === "OK")
-//                     return;
-//                 $.each(data_content, function(key, inner_content) {
-//                     if(key === "rating"){
-//
-//                     }else {
-//                         $.each(inner_content, function(key, content) {
-//                             let userRating = parseInt(content.rating) * 20;debugger;
-//                             if (content.author_name.trim() !== 'Olo Ilo') {
-//                                 html += '<div class="carousel-item"><div class="user col-md-8"><div class="user_image"><img src="' + content.profile_photo_url + '"></div>\n';
-//                                 html += '<div class="user_text pb-3"><p class="mbr-fonts-style display-7">' + content.text + '</p>\n';
-//                                 html += '</div><div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">';
-//                                 html += '<a target="_blank" href="' + content.author_url + '" class="user_name mbr-bold pb-2 mbr-fonts-style display-7">' + content.author_name + '</a> - ' + content.relative_time_description + '</div>';
-//                                 html += '<div class="user_star mbr-light mbr-fonts-style display-7">';
-//                                 html += '<div class="star-ratings-sprite"><span style="width:' + userRating + '%" class="star-ratings-sprite-rating"></span></div></div></div></div>';
-//                             }
-//                         })
-//                     }
-//                 })
-//             });
-//
-//             html+= "<div class=\"carousel-controls\"><a class=\"carousel-control-prev\" role=\"button\" data-slide=\"prev\">\n" +
-//                 "<span aria-hidden=\"true\" class=\"mbri-arrow-prev mbr-iconfont\"></span><span class=\"sr-only\">Previous</span></a>\n" +
-//                 "<a class=\"carousel-control-next\" role=\"button\" data-slide=\"next\"><span aria-hidden=\"true\" class=\"mbri-arrow-next mbr-iconfont\"></span>\n" +
-//                 "<span class=\"sr-only\">Next</span></a></div></div></div></section>";
-//
-//             $(html).insertAfter("#churchEvents");
-// debugger;
-//             dynamicallyLoadScript("assets/mbr-testimonials-slider/mbr-testimonials-slider.js")
-//         },
-//         error: function (jqXHR, exception) {
-//
-//         }
-//
-//     })
-// });
 
 function dynamicallyLoadScript(url) {
     var script = document.createElement("script");  // create a script DOM node

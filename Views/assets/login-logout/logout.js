@@ -5,7 +5,7 @@ function logOut(logout){
     let url = loc.protocol + '//' + loc.hostname;
     url = (loc.port ? url + ":" + loc.port : url) + '/';
 
-    if (url+"user/admin" === loc.href) {
+    if (url+"user/admin" === loc.href || url+"dashboard/dashboard.html" === loc.href || url+"dashboard/users.html" === loc.href) {
         let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 

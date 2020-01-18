@@ -4,8 +4,6 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const flash = require('express-flash');
-// const Loki = require('lokijs');
-// const multer = require('multer');
 let path = require('path');
 
 // Imports routes for the products
@@ -31,10 +29,8 @@ let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 module.exports = db;
 module.exports = mongoose;
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
-app.use(cors());
 
+app.use(cors());
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
@@ -51,17 +47,8 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use(session({secret: "S@lv@t10n_G0d", resave: false, saveUninitialized:true, cookie: { maxAge: 60000 } }));//shouldnt be storing secret in a public repository, should be in an environment variable
 app.use(flash());
 
-
-// app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, 'assets/bootstrap/js/bootstrap.min.js')));
-// app.use(express.static(path.join(__dirname, 'routes')));
-// app.use(express.static(path.join(__dirname, 'controllers')));
-// app.use(express.static(path.join(__dirname, 'models')));
 app.use(express.static(path.join(__dirname, 'Views')));
-
-console.log(path.join(__dirname, '../Views'))
-// app.use(express.static(path.join(__dirname, 'user')));
-// app.use(express.static(path.join(__dirname, 'admin')));
-// app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/event-calendar-module', express.static(path.join(__dirname, 'event-calendar-module')));
 
 app.set('views', path.join(__dirname, './Views'));
@@ -69,7 +56,6 @@ app.set('views', path.join(__dirname, './Views'));
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
-console.log(app)
 app.use('/photoalbums', photoalbum);
 app.use('/events', events);
 app.use('/verse', verse);
@@ -78,8 +64,6 @@ app.use('/files', fileRoute);
 app.use('/slides', slideRoute);
 app.use('/gallerycount', galleryCountCountRoute);
 app.use('/user', userRoute);
-
-// app.use('/', userRoute);
 
 //handle 400
 app.use((req, res)=> {
@@ -92,11 +76,6 @@ app.use((error, req, res, next)=> {
     res.sendFile(path.resolve('./Views', 'error-not-found.html'));
 });
 
-
-// let port = process.env.PORT;
-// // if (port == null || port === "") {
-// //     port = 8000;
-// // }
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log('Server is up and running on port number ' + port);
