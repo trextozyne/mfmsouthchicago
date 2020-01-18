@@ -64,7 +64,7 @@ console.log(path.join(__dirname, '../Views'))
 // app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/event-calendar-module', express.static(path.join(__dirname, 'event-calendar-module')));
 
-app.set('views', path.join(__dirname, '../../Views'));
+app.set('views', path.join(__dirname, './Views'));
 
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
