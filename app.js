@@ -62,6 +62,7 @@ app.use(express.static(path.join(__dirname, 'Views')));
 // app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/event-calendar-module', express.static(path.join(__dirname, 'event-calendar-module')));
 
+app.set('Views', './Views');
 
 app.use('/photoalbums', photoalbum);
 app.use('/events', events);
@@ -85,7 +86,6 @@ app.use((error, req, res, next)=> {
     res.sendFile(path.resolve('./Views', 'error-not-found.html'));
 });
 
-app.set('Views', './Views');
 app.set('view engine', 'ejs');
 
 // let port = process.env.PORT;
