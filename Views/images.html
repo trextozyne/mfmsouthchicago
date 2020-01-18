@@ -19,35 +19,11 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/gallery/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  <style type="text/css">
-      .mbr-gallery-item img{
-          width: 363.75px;
-          height: 227.34px;
-      }
 
-      a {
-          border-radius: 11px !important;
-      }
-
-      .btn {
-          font-weight: 500!important;
-          border-width: 1.4px!important;
-          font-style: normal!important;
-          font-size: small!important;
-          letter-spacing: 0.5px!important;
-          margin: 0px!important;
-          margin-right: .4rem!important;
-          padding: 5px!important;
-
-      }
-  </style>
   
 </head>
 <body>
   <section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-g">
-
-    
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -184,7 +160,7 @@
               <div class="col-12 col-md-3">
                   <div class="media-wrap">
                       <a href="index.html">
-                          <img src="assets/images/mfm-logo-png-192x192.png" alt="Mobirise" title="">
+                          <img src="assets/images/mfm-logo-png-122x122.png" alt="Mobirise" title="">
                       </a>
                   </div>
               </div>
@@ -264,73 +240,7 @@
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
-
-  <script>
-      $(document).ready(function(){
-          let gallerySlideCounter = 0;
-          let galleryDiv ='';
-          let modalDiv ='';
-          var photoAdd = '/photoalbums/find';
-
-          function getPhoto() {
-
-              // debugger;
-              $.ajax({
-                  // header: 'Access-Control-Allow-Origin: *',
-                  dataType: "json",
-                  url: photoAdd,
-                  contentType: 'application/json; charset=utf-8',
-                  async: false,
-                  // crossDomain: true,
-                  success: AjaxSucceeded,//callback,
-                  error: AjaxFailed
-              });
-          }
-          function AjaxSucceeded(result) {
-              if(result.length === 0){
-                  galleryDiv += '<div style="text-align: center"><h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">\n' +
-                      '                    No images in Database</h1></div>';
-
-                  document.querySelector("div.mbr-gallery-filter.container.gallery-filter-active").innerHTML = galleryDiv
-                  var divGalleryTarget = document.querySelector("div.mbr-gallery-layout-default").childNodes;//;
-                  var divModalTarget = document.querySelector("div.carousel-inner");
-                  divGalleryTarget[1].innerHTML = "";
-                  divModalTarget.innerHTML = "";
-              }else {
-                  $.each(result, function (k, dbData) {
-                      debugger;
-                      //for gallery image
-                      galleryDiv += '<div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false" data-tags="' + dbData.albums[0].u_name + '">';
-                      galleryDiv += '<div href="#lb-gallery2-2y" data-slide-to="' + gallerySlideCounter + '" data-toggle="modal">';
-                      // galleryDiv += '<img src="assets/images/gallery' +gallerySlideCounter + '.png" alt="mfm_gallery" title="'+ dbData.title +'"/>';
-                      galleryDiv += '<img src="assets/images/gallery/' + dbData.imgName + '" alt="mfm_gallery" title="' + dbData.title + '"/>';
-                      galleryDiv += '<span class="icon-focus"></span></div></div>';
-                      //for modal images
-                      if (gallerySlideCounter === 0)
-                          modalDiv += '<div class="carousel-item active">';
-                      else
-                          modalDiv += '<div class="carousel-item">';
-                      modalDiv += '<img src="assets/images/gallery/' + dbData.imgName + '" alt="mfm_gallery" title="' + dbData.title + '"/>';
-                      modalDiv += '</div>';
-
-                      /// do stuff
-                      // var h = '<li><img class="imageClass" src="' + url + arr[i] + '" /></li>';
-                      gallerySlideCounter++;
-                  });
-
-                   divGalleryTarget = document.querySelector("div.mbr-gallery-layout-default").childNodes;//;
-                   divModalTarget = document.querySelector("div.carousel-inner");
-                  divGalleryTarget[1].innerHTML = galleryDiv;
-                  divModalTarget.innerHTML = modalDiv;
-              }
-          }
-          function AjaxFailed(result) {
-              alert(result.statusText);
-          }
-          getPhoto();
-      });
-  </script>
-
+  <script src="assets/technical/image/js/images.js"></script>
 
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>

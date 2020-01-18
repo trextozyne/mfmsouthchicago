@@ -53,7 +53,7 @@ function bs_input_file() {
                             } else if(file.type.match('audio.*') && name === "track"){
                                 let div = document.createElement("div");
                                 div.setAttribute("style", "display: -webkit-inline-box;");
-                                div.innerHTML = '<img class="thumbnail" src="assets/images/audio-thumbnail.jpg" title="audio-mfm-thumbnail"/>';
+                                div.innerHTML = '<img class="thumbnail" src="assets/images/css-thumbnail.jpg" title="css-mfm-thumbnail"/>';
                                 output.insertBefore(div, null);
                                 element.next(element).find('input').val(files.length + " files");
                             }

@@ -228,14 +228,14 @@ $.ajax({
         html+=
             '  </tbody>\n' +
             '</table>\n' +
-            '<div id="audio" hidden="hidden">\n' +
-            '                                <audio id="myAudio" controls>\n' +
-            '                                    <source src="" type="audio/mp3">\n' +
-            '                                    Your browser does not support the audio element.\n' +
-            '                                </audio>\n' +
+            '<div id="css" hidden="hidden">\n' +
+            '                                <css id="myAudio" controls>\n' +
+            '                                    <source src="" type="css/mp3">\n' +
+            '                                    Your browser does not support the css element.\n' +
+            '                                </css>\n' +
             '                            </div>'
 
-        if (boolDataExist === true) document.getElementById("nav-audio-list").innerHTML = html;
+        if (boolDataExist === true) document.getElementById("nav-css-list").innerHTML = html;
 
         boolDataExist = false;
     }
@@ -243,10 +243,10 @@ $.ajax({
 
 function _onClickItem(trackId){
     debugger;
-    let audioContainer = document.getElementById("audio");
+    let audioContainer = document.getElementById("css");
     audioContainer.removeAttribute("hidden");
-    // document.getElementById("audio").innerHTML =
-    // '<video controls="" autoplay="" name="media"><source src="/tracks/' + trackId + '" type="audio/mp3"></video>';
+    // document.getElementById("css").innerHTML =
+    // '<video controls="" autoplay="" name="media"><source src="/tracks/' + trackId + '" type="css/mp3"></video>';
     let url = "/tracks/" + trackId;
     // let video = document.getElementById("myVideo");
     let audio = document.getElementById("myAudio");

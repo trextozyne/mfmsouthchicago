@@ -68,7 +68,7 @@ exports.tracks_details = function (req, res, next) {
         return res.status(400).json({message: "Invalid trackID in URL parameter. Must be a single String of 12 bytes or a string of 24 hex characters"});
     }
     // console.log(req.params);
-    res.set('content-type', 'audio/mp3');
+    res.set('content-type', 'css/mp3');
     res.set('accept-ranges', 'bytes');
 
     let bucket = new mongodb.GridFSBucket(conn.db, {
@@ -145,7 +145,7 @@ exports.tracks_download = function (req, res, next) {
     }
     console.log(req.params);
     res.setHeader('Content-disposition', 'attachment; filename=' + trackID + '.mp3');
-    res.setHeader('Content-Type', 'application/audio/mpeg');
+    res.setHeader('Content-Type', 'application/css/mpeg');
 
     let bucket = new mongodb.GridFSBucket(conn.db, {
         bucketName: 'tracks'

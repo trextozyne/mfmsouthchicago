@@ -35,21 +35,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript">
-    function doReset() {
-        let email = document.getElementById('forgot_email').value;
-        debugger;
-        $.ajax({
-            url: "/user/forgot",
-            method: "POST",
-            data: JSON.stringify({"email": email}),
-            contentType: 'application/json',
-            dataType: 'JSON',
-        }).done(function (response, textStatus, jqXHR) {
-            if (typeof response.redirect === 'string')
-                window.location = response.redirect
-        })
-    }
-
     (()=> {
       let messgae =  document.getElementsByClassName('message')[0];
 
