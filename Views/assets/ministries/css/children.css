@@ -1193,7 +1193,6 @@ section:not(.menu) {
 }
 .title-child {
     width: 100%;
-    width: 100%;
     left: -30px;
     height: 125px;
     background-color: #4f4943;
@@ -1224,6 +1223,10 @@ section:not(.menu) {
     text-align: center;
     background: #80808014;
     font-size: 1.1rem;
+}
+
+.cid-rCIjDnEvKo .title-child {
+    top: -100px;
 }
 
 .cid-rCLSNaM4R4 .title-child {

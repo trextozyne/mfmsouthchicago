@@ -31,11 +31,11 @@
         xhr.addEventListener("readystatechange", function () {debugger;
             if (this.readyState === 4) {
                 if (this.status === 200)
-                    window.location = "/user/admin";
+                    window.location = "../../../admin";
                 else if (this.status === 404)
                     window.location = "/user/not-found";
                 else if (this.status === 500)
-                    window.location = "login.html";
+                    window.location = "/user/login";
             }
         });
 
@@ -126,9 +126,13 @@
         let method ="";
 
         let $form = $("#register_form");
-
-        if ($form[0]["username"].value === null || $form[0]["username"].value === "",$form[0]["password"].value === null || $form[0]["password"].value === "",
-        $form[0]["re-password"].value === null || $form[0]["re-password"].value === "") {
+debugger;
+        if ($form[0]["username"].value === null || $form[0]["username"].value === "",
+            $form[0]["firstname"].value === null || $form[0]["firstname"].value === "",
+            $form[0]["lastname"].value === null || $form[0]["lastname"].value === "",
+        $form[0]["email"].value === null || $form[0]["email"].value === "",
+            $form[0]["password"].value === null || $form[0]["password"].value === "",
+            $form[0]["re-password"].value === null || $form[0]["re-password"].value === "") {
             alert("Please Fill All Required Field");
             return false;
         }else {

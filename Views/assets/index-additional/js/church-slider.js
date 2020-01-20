@@ -37,24 +37,13 @@ function handleNext() {
     currentIndex = $activeRadio.index();
     radiosLength = $radios.length;
 
-    $radios
-        .attr('checked', false);
-
+    $radios.attr('checked', false);
 
     if (currentIndex >= radiosLength - 1) {
-
-        $radios
-            .first()
-            .click();
-
+        $radios.first().click();
     } else {
-
-        $activeRadio
-            .next('input[class*="slide-radio"]')
-            .click();
-
+        $activeRadio.next('input[class*="slide-radio"]').click();
     }
-
 }
 
 function myStopFunction() {

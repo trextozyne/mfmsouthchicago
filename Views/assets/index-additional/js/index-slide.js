@@ -69,27 +69,14 @@ debugger;
 
     //==========target the dates in the slide change based on their specific days every week==========
 
-    // let dateArray = document.getElementsByClassName('date-pagination');
-    // dateArray.forEach((date)=>{
-    //     parseDateString(date)
-    // });
-
-    // function parseDateString(dateString) {debugger;
-    //     let months = {january:0,february:1,march:2,april:3,may:4,june:5,
-    //         july:6,august:7,september:8,october:9,november:10,december:11};
-    //     dateString = dateString.split(/[\s:]/);
-    //
-    //     let date = new Date(dateString[2], months[dateString[1].toLowerCase()], dateString[0]);
-    //
-    //     return date;
-    // }
-
     let days =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     function getInterval(today, actualDay, sType) {
         let interval = 0;
         let newMonthCount = 0;
         let checkNewMonth = true;
+        let firstSpecificDay = false; //if day of month starts after specified date i.e friday
+        let firstSpecificDayWkCount = 0; //if day of month starts after specified date i.e friday
         let startPeriod = new Date(today.getFullYear(), today.getMonth(), 1);//get the start period
         let endPeriod = new Date(today.getFullYear(), today.getMonth() + 2, 0); //get the end period after 1 month, there'll only be a month interval here
         while (startPeriod < endPeriod) {
@@ -106,30 +93,53 @@ debugger;
             //initialize first week
             let weekNumber = 1;
             while (first - 1 < numberOfDaysInMonth) {
+                if(firstOfNextMonth.getDate() === 1)
+                    if(firstOfNextMonth.getDay() > days.indexOf(actualDay)) {
+                        firstSpecificDay = true; //day of month starts after specified date i.e friday
+                        //decrement if day of month starts after specified date i.e friday
+                        firstSpecificDayWkCount--;
+                    }
                 if (days[firstOfNextMonth.getDay()] === "Sunday" && firstOfNextMonth.getDate() !== 1) {
                     //get new week every new sunday according the local date format
                     weekNumber++;
+                    if (firstSpecificDay === true && weekNumber === sType) {
+                        firstSpecificDayWkCount += weekNumber;
+                    }
                 }
                 if(firstOfNextMonth > today) {
-
                     if (days[firstOfNextMonth.getDay()] === actualDay) {
 
                         if (sType === 1) {
                             checkNewMonth = false;
                             return firstOfNextMonth
                         }
-                        if (weekNumber === 2 && sType === 3) {
+                        if (weekNumber === 2 && sType === 3 && firstSpecificDay === false) {
                             checkNewMonth = false;
-                        }
-                        if (weekNumber === 3 && sType === 4) {
+                            return firstOfNextMonth
+                        } else if (firstSpecificDayWkCount === sType-1 && sType === 3 && firstSpecificDay === true){
+                            firstSpecificDay = false;
+                            firstSpecificDayWkCount = 0;
                             checkNewMonth = false;
                             return firstOfNextMonth
                         }
-                        if (weekNumber === 4 && sType === 5) {
+                        if (weekNumber === 3 && sType === 4 && firstSpecificDay === false) {debugger;
+                            checkNewMonth = false;
+                            return firstOfNextMonth
+                        } else if (firstSpecificDayWkCount === sType-1 && sType === 4 && firstSpecificDay === true){
+                            firstSpecificDay = false;
+                            firstSpecificDayWkCount = 0;
                             checkNewMonth = false;
                             return firstOfNextMonth
                         }
-
+                        if (weekNumber === 4 && sType === 5 && firstSpecificDay === false) {
+                            checkNewMonth = false;
+                            return firstOfNextMonth
+                        } else if (firstSpecificDayWkCount === sType-1 && sType === 5 && firstSpecificDay === true){
+                            firstSpecificDay = false;
+                            firstSpecificDayWkCount = 0;
+                            checkNewMonth = false;
+                            return firstOfNextMonth
+                        }
                     }
 
                     if (days[firstOfNextMonth.getDay()] === actualDay && (first > 0 && first < 8) && sType === 2) {
@@ -150,6 +160,7 @@ debugger;
             }
             if(checkNewMonth) {
                 newMonthCount = 1;
+                firstSpecificDay = false;
                 startPeriod.setMonth(startPeriod.getMonth() + 1);
             }
         }
@@ -177,5 +188,4 @@ debugger;
 
         return mm + '/' + dd + '/' + y;
     }
-
 });

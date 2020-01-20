@@ -9,11 +9,9 @@ function logPlaceDetails() {
         fields: ['reviews'],
     }, function (place, status) {
         // console.log('Place details:', place);
-        debugger;
         $.each(place, function(key, data_content) {
-            debugger;
             if(key === "reviews"){
-                $.each(data_content, function(key, content) {debugger;
+                $.each(data_content, function(key, content) {
                     let userRating = parseInt(content.rating) * 20;
                     if (content.author_name.trim() !== 'Olo Ilo') {
                         reviewHtml += '<div class="carousel-item"><div class="user col-md-8"><div class="user_image"><img src="' + content.profile_photo_url + '"></div>\n';

@@ -19,7 +19,6 @@ exports.user_forgot = function(req, res, next) {
             console.log(req.body.email);
             User.findOne({ email: req.body.email }, function(err, user) {
                 if (!user) {
-                    //   console.log('error', 'No account with that email address exists.');
                     let message = 'No account with that email address exists.';
                     req.flash('error', message);
                     return res.redirect('./forgot');
@@ -34,8 +33,6 @@ exports.user_forgot = function(req, res, next) {
             });
         },
         function(token, user, done) {
-            console.log('step 2');
-
             let smtpTrans = nodemailer.createTransport({
                 service: 'Gmail',
                 auth: {
@@ -54,17 +51,20 @@ exports.user_forgot = function(req, res, next) {
                 'If you did not request this, please ignore this email and your password will remain unchanged.\n'
 
             };
-            console.log('step 3');
 
             smtpTrans.sendMail(mailOptions, function(err) {
                 req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
-                console.log('sent');
                 res.redirect('./forgot');
             });
         }
-    ], function(err) {
-        console.log('this err' + ' ' + err)
-        res.redirect('/user/login');
+    ], function(err, user) {
+        console.log('this err' + ' ' + err);
+        res.redirect(
+            url.format({
+                pathname: '/user/login',
+                query: user
+            })
+        );
     });
 };
 
@@ -78,7 +78,6 @@ exports.user_get_forgot = function(req, res) {
 
 exports.user_get_reset = function(req, res) {
     User.findOne({ resetPasswordToken: req.params["token"], resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-        console.log(user);
         if (!user) {
             req.flash('error', 'Password reset token is invalid or has expired.');
             return res.redirect('../forgot');
@@ -115,15 +114,11 @@ exports.user_reset = function(req, res) {
                 user.save(function(err) {
                     done(err, user);
                     if (err) {
-                        console.log('here');
                         res.redirect('./not-found');
                     }
-
-                    console.log('here2');
                 });
             });
         }, function(user, done) {
-            console.log('got this far 4');
             var smtpTrans = nodemailer.createTransport({
                 service: 'Gmail',
                 auth: {
@@ -140,7 +135,12 @@ exports.user_reset = function(req, res) {
             };
             smtpTrans.sendMail(mailOptions, function(err) {
                 done(err);
-                res.redirect('/user/login');
+                res.redirect(
+                    url.format({
+                        pathname: '/user/login',
+                        query: user
+                    })
+                );
             });
         }
     ], function(err) {
@@ -151,7 +151,7 @@ exports.user_reset = function(req, res) {
 
 exports.user_create = async (req, res, next) => {
 
-    let userdetails = new User(
+    let user = new User(
         {
             username: req.body.username,
             password: req.body.password,
@@ -161,25 +161,27 @@ exports.user_create = async (req, res, next) => {
         }
     );
 
-    User.find({},function (err, user) {
+    console.log(user);
+    User.find({},function (err, users) {
         if (err) {
             console.log(err);
             return res.status(500).send();
         }
-        if (user.length === 0) {
-            userdetails.roles[0] = {"role": "userAdminAnyDatabase", "db": "photoalbumdb"}
+        if (users.length === 0) {
+            user.roles[0] = {"role": "userAdminAnyDatabase", "db": "photoalbumdb"}
         }
-        if(user.length > 0) {
-            userdetails.roles[0] = {"role": "userOnly", "db": "photoalbumdb"}
+        if(users.length > 0) {
+            user.roles[0] = {"role": "userOnly", "db": "photoalbumdb"}
         }
 
-        userdetails.save(function (err) {
+        user.save(function (err) {
             if (err) {
                 return next(err);
                 // return res.status(500).send();
             }
-        })
-        res.send(userdetails._id);
+        });
+        console.log(user);
+        res.send(user._id);
         // return res.status(200).send();
     });
 };
@@ -187,6 +189,7 @@ exports.user_create = async (req, res, next) => {
 exports.user_login = function (req, res, next) {
     let username = req.body.username;
     let password = req.body.password;
+
     User.findOne({username: username, password: password}, function (err, user) {
         if (err) {
             console.log(err);
@@ -196,13 +199,20 @@ exports.user_login = function (req, res, next) {
             return res.status(404).redirect('../../Views/not-found');
         }
 
+        // user.roles.forEach((role, i)=>{
+        //     if(role.role === "userOnly") {
+        //         return res.status(404).redirect('../../Views/not-found');
+        //     }else{
+        //     }
+        // });
         req.session.user = user;
         return res.status(200).send(req.session);
     });
 };
 
 exports.user_get_login = function (req, res, next) {
-    res.redirect('../login.html');//, {User: req.user}
+    // res.redirect('/user/login');//, {User: req.user}
+    res.render('login', {User: req.user});//
 };
 
 exports.user_logout = function (req, res, next) {
@@ -273,7 +283,7 @@ exports.user_update = function (req, res, next) {
             //     req.body.roles
             // ]
         }
-    },{multi: true}, function (err, userdetails) {
+    },{multi: true}, function (err, user) {
         if (err) return next(err);
         res.send('User udpated.');
     });
