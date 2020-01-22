@@ -186,7 +186,7 @@ exports.user_create = async (req, res, next) => {
     });
 };
 
-exports.user_login = function (req, res, next) {
+exports.user_login = function (req, res) {
     let username = req.body.username;
     let password = req.body.password;
 
@@ -198,21 +198,16 @@ exports.user_login = function (req, res, next) {
         if (!user) {
             return res.status(404).redirect('../../Views/not-found');
         }
-
-        // user.roles.forEach((role, i)=>{
-        //     if(role.role === "userOnly") {
-        //         return res.status(404).redirect('../../Views/not-found');
-        //     }else{
-        //     }
-        // });
         req.session.user = user;
         return res.status(200).send(req.session);
     });
 };
 
-exports.user_get_login = function (req, res, next) {
-    // res.redirect('/user/login');//, {User: req.user}
-    res.render('login', {User: req.user});//
+exports.user_get_login = function (req, res) {
+    User.find({}, function (err, users) {
+        if (err) return next(err);
+        res.render('login', {Users: users});//
+    });
 };
 
 exports.user_logout = function (req, res, next) {

@@ -406,7 +406,34 @@
                  from {opacity:0}
                  to {opacity:1}
              }
-
+             .alert-user {
+                 font-family: "Courier", Monospace;
+                 font-size: 0.8em;
+                 border-radius: 5px;
+                 display: block;
+                 /*font-size: 0.7em;*/
+                 text-align: center;
+                 position: absolute;
+                 background: #2F558E;
+                 left: 63%;
+                 top: -10px;
+                 width: 160px;
+                 padding: 7px 10px;
+                 color: #fff;
+                 display: none;
+             }
+             .alert-user:after {
+                 right: 100%;
+                 top: 50%;
+                 content: " ";
+                 height: 0;
+                 width: 0;
+                 position: absolute;
+                 pointer-events: none;
+                 border: 8px solid rgba(136, 183, 213, 0);
+                 border-right-color: #2F558E;
+                 margin-top: -8px;
+             }
              .spinner-wrapper {
                  min-width:100%;
                  min-height:100%;
@@ -489,31 +516,42 @@
             <form method="post" id="register_form">
                 <div class="input-container">
                     <input type="text" id="username" name="username" required="required"/>
+                    <span class="alert-user" style="z-index: 1;">Cant be empty</span>
+                    <span class="alert-user">Username must be greater than 4 characters.</span>
                     <label for="username">Username</label>
                     <div class="bar"></div>
                 </div>
                 <div class="input-container">
                     <input type="text" id="firstname" name="firstname" required="required"/>
+                    <span class="alert-user" style="z-index: 1;">Cant be empty</span>
+                    <span class="alert-user">First
+                        name must be greater than 4 characters.</span>
                     <label for="firstname">First Name</label>
                     <div class="bar"></div>
                 </div>
                 <div class="input-container">
                     <input type="text" id="lastname" name="lastname" required="required"/>
+                    <span class="alert-user" style="z-index: 1;">Cant be empty</span>
+                    <span class="alert-user">Lastname must be greater than 4 characters.</span>
                     <label for="lastname">Last Name</label>
                     <div class="bar"></div>
                 </div>
                 <div class="input-container">
                     <input type="text" id="email" name="email" required="required"/>
+                    <span class="alert-user">Can't be empty.</span>
+                    <span class="alert-user">Does match an E-mail</span>
                     <label for="email">E-Mail</label>
                     <div class="bar"></div>
                 </div>
                 <div class="input-container">
                     <input type="password" id="password" name="password" required="required"/>
+                    <span class="alert-user">Enter a password longer than 8 characters</span>
                     <label for="password">Password</label>
                     <div class="bar"></div>
                 </div>
                 <div class="input-container">
                     <input type="password" id="re-password" name="re-password" required="required"/>
+                    <span class="alert-user">Please confirm your password</span>
                     <label for="re-password">Repeat Password</label>
                     <div class="bar"></div>
                 </div>
@@ -525,10 +563,126 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function htmlDecode(input){
+            var e = document.createElement('div');
+            e.innerHTML = input;
+            return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+        }
+
+        var users = JSON.parse(htmlDecode("<%= JSON.stringify(Users) %>"));
+
+
+        var $username = $("#username");
+        var $firstname = $("#firstname");
+        var $lastname = $("#lastname");
+        var $email = $("#email");
+        var $password = $("#password");
+        var $confirmPass = $("#re-password");
+
+        //does not match email
+        function checkEmail($input) {
+            return validateEmail($('#' +$input.target.name).val());
+        }
+
+        //cant be left empty
+        function checkEmpty($input) {
+            return $('#' +$input.target.name).val() !== "";
+        }
+
+        //Check the length of the Password
+        function checkLength() {
+            return $password.val().length > 8;
+        }
+
+        //Check the length of the username, firstnam, lastname
+        function checkILength($input) {
+            return $('#' +$input.target.name).val().length > 4;
+        }
+
+        //Check to see if the value for pass and confirmPass are the same
+        function samePass() {
+            return $password.val() === $confirmPass.val();
+        }
+
+        //check if empty
+        function PassEmpty($input) {
+            if (checkEmpty($input)) {
+                $(`#${$input.target.name}`).next().hide();
+                $('#' +$input.target.name).next().next().show();
+            } else {
+                $(`#${$input.target.name}`).next().show();
+                $('#' +$input.target.name).next().next().hide();
+            }
+        }
+
+        //check if empty
+        function PassEmail($input) {
+            if (checkEmail($input)) {
+                $('#' +$input.target.name).next().next().hide();
+            } else {
+                $('#' +$input.target.name).next().next().show();
+            }
+        }
+
+        //If checkLength() is > 8 then we'll hide the hint
+        function PassLength() {
+            if (checkLength()) {
+                $password.next().hide();
+            } else {
+                $password.next().show();
+            }
+        }
+
+        //If checkLength() is > 4 then we'll hide the hint
+        function PassILength($input) {
+             if (checkILength($input)) {
+                    $('#' +$input.target.name).next().next().hide();
+                } else {
+                 $('#' + $input.target.name).next().next().show();
+             }
+        }
+
+        //If samePass returns true, we'll hide the hint
+        function PassMatch() {
+            if (samePass()) {
+                $confirmPass.next().hide();
+            } else {
+                $confirmPass.next().show();
+            }
+        }
+
+        function canSubmit($input) {
+            return samePass() && checkLength() && checkEmpty($input) && checkILength($input) && checkEmail($input);
+        }
+
+        // function canISubmit() {
+        //     return ;
+        // }
+
+        function enableSubmitButton() {debugger;
+            $("#register").prop("disabled", !canSubmit());
+        }
+
+        // function enableISubmitButton($input) {
+        //     $("#register").prop("disabled", !canISubmit($input));
+        // }
+
+        //Calls the enableSubmitButton() function to disable the button
+        enableSubmitButton();
+
+
+        $username.keyup(PassEmpty).keyup(PassILength).keyup(enableSubmitButton);
+        $firstname.keyup(PassEmpty).keyup(PassILength).keyup(enableSubmitButton);
+        $lastname.keyup(PassEmpty).keyup(PassILength).keyup(enableSubmitButton);
+        $email.keyup(PassEmpty).keyup(PassEmail).keyup(enableSubmitButton);
+        $password.keyup(PassLength).keyup(PassMatch).keyup(enableSubmitButton);
+        $confirmPass.focus(PassMatch).keyup(PassMatch).keyup(enableSubmitButton);
+    </script>
     <script src="../assets/login-logout/login.js"> </script>
-<script type="text/javascript">
-    <% if (User.length > 0 ) { %>
-          alert(User);
-    <% } %>
-</script>
 </html>
