@@ -24,13 +24,14 @@
 
 
     function loadAdmin(){
-        var data = null;
+        let data = null;
 
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange", function () {debugger;
             if (this.readyState === 4) {
+                alert(this.status)
                 if (this.status === 200)
                     window.location = "admin";
                 else if (this.status === 404)

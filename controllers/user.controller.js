@@ -220,8 +220,10 @@ exports.admin_dashboard = function (req, res, next) {
         return res.status(401).redirect('../../Views/not-found');//user not found
     }
 
-    res.sendFile(path.resolve('./admin', 'admin.html'));
-// return res.status(200).send("Welcome");
+    let loggedUser = req.session.user;
+    console.log(loggedUser);
+
+    res.render(path.join(__dirname, '../admin/admin'), {Users: loggedUser})
 };
 
 exports.user_not_found = function (req, res, next) {
