@@ -89,7 +89,7 @@
                     </nav>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "userPhotoDb"){%>
                                 <!--Start Add Image Tab-->
                                 <div class="tab-pane fade show active" id="nav-add-image" role="tabpanel" aria-labelledby="nav-add-image-tab">
 
@@ -145,7 +145,7 @@
                         <% } %>
 
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "userPhotoDb"){%>
                                 <!--Start Image List Tab-->
                                 <div class="tab-pane fade" id="nav-image-list" role="tabpanel" aria-labelledby="nav-image-list-tab">
 
@@ -200,7 +200,7 @@
                         <% } %>
 
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
                                 <!--Start Add Event Tab-->
                                 <div class="tab-pane fade" id="nav-add-event" role="tabpanel" aria-labelledby="nav-add-event-tab">
 
@@ -397,7 +397,7 @@
                         <% } %>
 
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
                                 <!--Start Event List Tab-->
                                 <div class="tab-pane fade" id="nav-event-list" role="tabpanel" aria-labelledby="nav-event-list-tab">
 
@@ -450,7 +450,7 @@
                     </nav>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent2">
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
                                 <!--Start Add Bible Tab-->
                                 <div class="tab-pane fade show active" id="nav-add-bible_verse" role="tabpanel" aria-labelledby="nav-add-bible_verse-tab">
                                     <!--Grid row-->
@@ -479,7 +479,7 @@
                         <% } %>
 
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
                                 <!--Start Add Slider Tab-->
                                 <div class="tab-pane fade" id="nav-add-text_on_slider" role="tabpanel" aria-labelledby="nav-add-text_on_slider-tab">
                                     <h2 style="text-align: center; text-transform: capitalize">use '"|", ","' for sepreation and new line techniques with your text for the slide text display formates</h2>
@@ -883,7 +883,7 @@
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent3">
 
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserFileDb"){%>
                                 <!--Start Add sermon Tab-->
                                 <div class="tab-pane fade show active" id="nav-add-sermon" role="tabpanel" aria-labelledby="nav-add-sermon-tab">
                                     <form method="post" id="sermonFile_form" enctype="multipart/form-data">
@@ -933,7 +933,7 @@
                         <% } %>
 
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserFileDb"){%>
                                 <!--Start sermon List Tab-->
                                 <div class="tab-pane fade" id="nav-sermon-list" role="tabpanel" aria-labelledby="nav-sermon-list-tab">
                                     <!--Grid row-->
@@ -951,7 +951,7 @@
                         <% } %>
 
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserTrackDb"){%>
                                 <!--Start Add Audio Tab-->
                                 <div class="tab-pane fade" id="nav-add-audio" role="tabpanel" aria-labelledby="nav-add-audio-tab">
                                           <form method="post" id="audio_form" enctype="multipart/form-data">
@@ -1019,7 +1019,7 @@
                         <% } %>
 
                         <% for (var role in Users.roles) { %>
-                            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+                            <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserTrackDb"){%>
                                 <!--Start Audio List Tab-->
                                 <div class="tab-pane fade" id="nav-audio-list" role="tabpanel" aria-labelledby="nav-audio-list-tab">
                                     Show Audio List
