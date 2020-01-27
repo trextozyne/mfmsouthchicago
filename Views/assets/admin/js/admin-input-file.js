@@ -4,7 +4,7 @@
 function bs_input_file() {
     $(".input-file").before(
         function() {
-            $this = $(this);
+            let $this = $(this);
             if ( ! $(this).prev().hasClass('input-ghost') ) {
                 if(window.File && window.FileList && window.FileReader) {
                     let element = $this.find('.input-ghost');

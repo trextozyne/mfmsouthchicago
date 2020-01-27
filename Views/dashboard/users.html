@@ -271,48 +271,4 @@
 <!--<script src="../assets/bootstrap/js/bootstrap.min.js"></script>-->
 <script type="text/javascript" src="../assets/admin/js/admin-dynamic-page.js"></script>
 <script type="text/javascript" src="../assets/admin/js/add-user-role.js"></script>
-<script type="text/javascript">
-
-(function () {
-        let r = document.getElementsByTagName('script');
-        var interval = null;
-        interval = setInterval(()=>{
-            for (let i = (r.length-1); i >= 0; i--) {
-
-                if(r[i].getAttribute('id') === 'events-calendar' || r[i].getAttribute('id') === 'events-calendar-demo'){
-                    r[i].parentNode.removeChild(r[i]);
-                }
-            }
-        }, 100);
-
-        setTimeout(()=> {
-            console.clear();
-            clearInterval(interval); // stop the interval
-        }, 4000)
-
-    $('#user-roles span').click(function(){
-        $('#selected').text($(this).text());
-    });
-
-    $('#add-user-role').on("click", ()=>{
-        let roles = {
-            "role": role,
-            "db": "photoalbumdb"
-        };
-
-        let settings = {
-            url: "/user/"+ userID +"/update-roles",
-            method: "put",
-            data: roles
-        };
-
-        $.ajax(settings).done((response)=>{
-            alert(response);
-        });
-
-        document.getElementById("user-roles").setAttribute("hidden", true);
-        document.getElementById("add-user-role").setAttribute("hidden", true);
-        $('.Klose').click();
-    })
-    })()
-</script>
+<script type="text/javascript" src="../assets/admin/js/refresh-user-script.js"></script>

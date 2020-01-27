@@ -258,10 +258,14 @@ exports.user_details = function (req, res, next) {
 };
 
 exports.user_updateRoles = function (req, res, next) {
-    var user = {};
     User.findOne({"_id": req.params.id},(err, user)=>{
-        user.roles.push(req.body);
         console.log(user);
+        console.log(req.body);
+        let userRoleRemove = user.roles.filter(e => e.role === "userAdminAnyDatabase" || e.role === "superUsers" || e.role === "userOnly");
+
+        userRoleRemove.forEach(userRole => user.roles.splice(user.roles.findIndex(e => e.role === userRole.role),1));
+
+        user.roles.push(req.body);
         user.save((err)=> {
             if (err) {
                 return next(err);

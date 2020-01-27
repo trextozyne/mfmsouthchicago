@@ -11,12 +11,6 @@ $(document).ready(function () {
        if(response[0])
         _bibleVerseId = response[0]._id;
     });
-
-    //===========for slide date pickers========
-    $('#slider-1-date').datepicker();
-    $('#slider-2-date').datepicker();
-    $('#slider-3-date').datepicker();
-    $('#slider-4-date').datepicker();
 });
 
 
@@ -37,22 +31,6 @@ $(document).on("click","button",function(evt) {//#sermon_submit
     }
     if(this.id === "verse_submit") {
         $("#verse_form").submit(); //Trigger the Submit Here
-    }
-    if(this.id === "slider-1-submit") {
-        sliderType = "slider1";
-        $("#slider_1_text_form").submit(); //Trigger the Submit Here
-    }
-    if(this.id === "slider-2-submit") {
-        sliderType = "slider2";
-        $("#slider_2_text_form").submit(); //Trigger the Submit Here
-    }
-    if(this.id === "slider-3-submit") {
-        sliderType = "slider3";
-        $("#slider_3_text_form").submit(); //Trigger the Submit Here
-    }
-    if(this.id === "slider-4-submit") {
-        sliderType = "slider4";
-        $("#slider_4_text_form").submit(); //Trigger the Submit Here
     }
 });
 
@@ -276,136 +254,3 @@ function onDelete(url ) {
     xhr.send(data);
 }
 
-//=====================The Slides on the Index==============================
-function findAllSlides(callback) {
-    let url= "/slides/find";
-    $(this).ajaxSubmit({
-        url: url,
-        method: "GET",
-        contentType: 'application/json',
-        dataType: "json",
-        success: callback
-    });
-}
-
-function saveSlides($this) {
-    let url= "/slides/create";
-    let formData = $this.serializeArray();
-    debugger;
-    $this.ajaxSubmit({
-        url: url,
-        method: "POST",
-        data: JSON.stringify(formData),
-        contentType: 'application/json',
-        dataType: "json",
-        success: function (response) {
-            alert("Saved: " + response);
-        }
-    });
-}
-
-var slides = {};
-
-function checkExistence($this, evt, button){
-    let bool_exist = false;
-    findAllSlides(function (response) {
-        "use strict";
-        const dataList = Object.values(response);
-        for (const data in dataList) {
-            if (sliderType.trim() === response[data].sliderType) {
-                bool_exist = true;
-                if (confirm('This data already exist in database, would you like to proceed to updating it?') && button.text() !== "Update") {
-                    let formInput = $(`form#${evt.target.id} :input[id^='slider-'][id*='-content'], 
-                                form#${evt.target.id} :input[id^='slider-'][id$='-date']`);//
-                    Object.keys(response[data]).forEach(function (key) {
-                        formInput.each(function (index, inputEle) {
-                            if (key.trim() === $(inputEle).attr("name").trim()) {
-                                $(inputEle).val("");
-                                $(inputEle).val(response[data][key]);
-                            }
-                            slides[key] = response[data][key];
-                        });
-                    });
-
-                    button.html('Update');
-                }
-                break;
-            }
-        }
-
-        if((response.length === 0 || button.text() === "Submit") && bool_exist === false)
-            saveSlides($this);
-    });
-}
-
-function doSliderUpdate($this){
-    "use strict";
-    debugger;
-    var data = new FormData();
-    const entries = Object.entries(slides);
-    for (const [key, slideData] of entries) {
-        switch (key) {
-            case 'sliderScheduleType':
-                data.append("sliderScheduleType", $(`form#${$this.attr("id")} :input[name ="sliderScheduleType"]`)[0].value);
-                break
-            case 'sliderType':
-                data.append("sliderType", $(`form#${$this.attr("id")} :input[name ="sliderType"]`)[0].value);
-                break
-            case 'slider_content1':
-                if($(`form#${$this.attr("id")} :input[id^='slider-'][id*='-content']`)[0].value)
-                    data.append("slider_content1", $(`form#${$this.attr("id")} :input[id^='slider-'][id*='-content']`)[0].value);
-                else
-                    data.append("slider_content1", slideData);
-                break
-            case 'slider_content2':
-                if($(`form#${$this.attr("id")} :input[id^='slider-'][id*='-content']`)[0].value)
-                    data.append("slider_content2", $(`form#${$this.attr("id")} :input[id^='slider-'][id*='-content']`)[1].value);
-                else
-                    data.append("slider_content1", slideData);
-                break;
-            case 'slider_event_date':
-                if($(`form#${$this.attr("id")} :input[id^='slider-'][id*='-content']`)[0].value)
-                    data.append("slider_event_date", $(`form#${$this.attr("id")} :input[id^='slider-'][id$='-date']`)[0].value);
-                else
-                    data.append("slider_content1", slideData);
-                break;
-            default:
-                data.append(key, slideData);
-        }
-    }
-    data.append("bg-img", $(`form#${$this.attr("id")} :input[name='bg-img']`)[0].files[0]);
-    data.append("img-1", $(`form#${$this.attr("id")} :input[name='img-1']`)[0].files[0]);
-    if(typeof $(`form#${$this.attr("id")} :input[name='img-2']`)[0] !== "undefined")
-        data.append("img-2", $(`form#${$this.attr("id")} :input[name='img-2']`)[0].files[0]);
-
-    let url = "/slides/" + slides._id + "/update";
-    let xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            console.log(this.responseText);
-        }
-    });
-
-    xhr.open("PUT", url);
-    xhr.setRequestHeader("cache-control", "no-cache");
-    xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
-
-    let rdata = JSON.stringify(data);
-    xhr.send(data);
-}
-
-$(`#slider_1_text_form, #slider_2_text_form, #slider_3_text_form, #slider_4_text_form`).submit(function(evt) {
-    evt.preventDefault();
-    debugger;
-    let button = $('#'+evt.target.id).find($(`button[id^='slider-'][id$='-submit']`));
-    sliderType = $(`form#${evt.target.id} :input[name ="sliderType"]`).val();
-
-    if(button.text() === "Update"){
-        doSliderUpdate($(this))
-        button.html("Submit")
-    }else {
-        checkExistence($(this), evt, button);
-    }
-});

@@ -1,6 +1,8 @@
 var role = null;
 var userID = null;
 function getSelectEntries($role) {
+    if($role.trim() !== "superUsers" || $role.trim() !== "userAdminAnyDatabase")
+        alert("Note if user has a higher admin instance, would be reduced to a lover one!!!");
     role = $role;
 }
 
@@ -158,4 +160,29 @@ function getSelectEntries($role) {
         $(this).val($current.addClass("selected").text());
     });
 
+
+    $('#user-roles span').click(function(){
+        $('#selected').text($(this).text());
+    });
+
+    $('#add-user-role').on("click", ()=>{
+        let roles = {
+            "role": role,
+            "db": "photoalbumdb"
+        };
+
+        let settings = {
+            url: "/user/"+ userID +"/update-roles",
+            method: "put",
+            data: roles
+        };
+
+        $.ajax(settings).done((response)=>{
+            alert(response);
+        });
+
+        document.getElementById("user-roles").setAttribute("hidden", true);
+        document.getElementById("add-user-role").setAttribute("hidden", true);
+        $('.Klose').click();
+    })
 })($);

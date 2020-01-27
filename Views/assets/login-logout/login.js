@@ -31,7 +31,6 @@
 
         xhr.addEventListener("readystatechange", function () {debugger;
             if (this.readyState === 4) {
-                alert(this.status)
                 if (this.status === 200)
                     window.location = "admin";
                 else if (this.status === 404)
