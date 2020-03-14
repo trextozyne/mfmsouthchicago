@@ -58,12 +58,13 @@
 <div class="sidebar">
     <ul>
         <li><a rel='tab' href="/dashboard/dashboard.html" class="active"><i class="fa fa-desktop"></i><span>Dashboard</span></a></li>
-        <li><a rel='tab' href="/dashboard/users.html"><i class="fa fa-server"></i><span>Users</span></a></li>
+        <li><a rel='tab' href="/dashboard/users.html"><i class="fa fa-server"></i><span>Server</span></a></li>
         <li><a rel='tab' href="#" data-content="admin_content3"><i class="fa fa-calendar"></i><span>Calendar</span></a></li>
         <li><a rel='tab' href="#" data-content="admin_content4"><i class="fa fa-envelope-o"></i><span>Messages</span></a></li>
         <li><a rel='tab' href="#" data-content="admin_content5"><i class="fa fa-table"></i><span>Data Table</span></a></li>
     </ul>
 </div>
+
 <!--============================Tabs for Image Save, Update, Edit, Delete===============================================-->
 <!-- Tabs -->
 <section id="tabs">
@@ -80,6 +81,7 @@
                     </div>
                 </nav>
                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                    <!--Start Add Image Tab-->
                     <div class="tab-pane fade show active" id="nav-add-image" role="tabpanel" aria-labelledby="nav-add-image-tab">
 
                         <form method="post" id="img_gallery_form" enctype="multipart/form-data">
@@ -101,12 +103,12 @@
                                 <div class="input-group input-file">
                                     <input type='file' name='file' id='fileInput' class='input-ghost' multiple  style='visibility:hidden; height:0'  enctype="multipart/form-data">
                                     <span class="input-group-btn">
-                    <button class="btn btn-default btn-choose" type="button">Choose</button>
-                </span>
+                            <button class="btn btn-default btn-choose" type="button">Choose</button>
+                        </span>
                                     <input type="text" class="form-control" id="img" name="img" placeholder='Choose a file...' />
                                     <span class="input-group-btn">
-                     <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                </span>
+                             <button class="btn btn-warning btn-reset" type="button">Reset</button>
+                        </span>
                                 </div>
                             </div>
                             <hr>
@@ -129,6 +131,8 @@
                         </form>
 
                     </div>
+                    <!--End Add Image Tab-->
+                    <!--Start Image List Tab-->
                     <div class="tab-pane fade" id="nav-image-list" role="tabpanel" aria-labelledby="nav-image-list-tab">
 
                         <div class="form-row">
@@ -177,6 +181,8 @@
                         </ul>
 
                     </div>
+                    <!--End Image List Tab-->
+                    <!--Start Add Event Tab-->
                     <div class="tab-pane fade" id="nav-add-event" role="tabpanel" aria-labelledby="nav-add-event-tab">
 
                         <div class="row">
@@ -228,12 +234,12 @@
                                                         <div class="input-group input-file">
                                                             <input type='file' name='eventFileInput' id='eventFileInput' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
                                                             <span class="input-group-btn">
-                                                                <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                            </span>
+                                                                        <button class="btn btn-default btn-choose" type="button">Choose</button>
+                                                                    </span>
                                                             <input type="text" class="form-control" id="eventImg" name="eventImg" placeholder='Choose a file...' />
                                                             <span class="input-group-btn">
-                                                                <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                            </span>
+                                                                        <button class="btn btn-warning btn-reset" type="button">Reset</button>
+                                                                    </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -312,9 +318,9 @@
                                                         <option value>Select how</option>
                                                         <option value="0">Weekly</option>
                                                         <option value="1">First (specific) day</option>
-                                                        <option value="2">2nd Week</option>
-                                                        <option value="3">3rd Week</option>
-                                                        <option value="4">4th week</option>
+                                                        <option value="2">2 Weeks</option>
+                                                        <option value="3">3 Weeks</option>
+                                                        <option value="4">4 weeks</option>
                                                         <option value="5">Last day(specific)</option>
                                                     </select>
                                                 </div>
@@ -367,6 +373,7 @@
                         </div>
 
                     </div>
+                    <!--End Add Event Tab--><!--Start Event List Tab-->
                     <div class="tab-pane fade" id="nav-event-list" role="tabpanel" aria-labelledby="nav-event-list-tab">
 
                         <div id="event-search_area" class="form-row">
@@ -394,6 +401,7 @@
                         </ul>
 
                     </div>
+                    <!--End Event List Tab-->
                 </div>
 
             </div>
@@ -414,6 +422,7 @@
                     </div>
                 </nav>
                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent2">
+                    <!--Start Add Bible Tab-->
                     <div class="tab-pane fade show active" id="nav-add-bible_verse" role="tabpanel" aria-labelledby="nav-add-bible_verse-tab">
                         <!--Grid row-->
                         <div class="row">
@@ -436,321 +445,31 @@
                             <!--Grid row-->
                         </div>
                     </div>
+                    <!--End Add Bible Tab-->
+                    <!--Start Add Slider Tab-->
 
-                    <div class="tab-pane fade" id="nav-add-text_on_slider" role="tabpanel" aria-labelledby="nav-add-text_on_slider-tab">
-
-                        <!--Grid row-->
-                        <!--For Slide 1 & 2-->
-                        <div class="row">
-                            <!--Grid column-->
-                            <div class="col-md-6 borderpad">
-                                <form method="post" id="slider_1_text_form" enctype="multipart/form-data">
-                                    <input type="text" name="sliderType" value="slider1" hidden>
-                                    <!--BG-Image-->
-                                    <div class="input-group">
-                                        <label for="bg-img-1">Add background image</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='bg-img' id='bg-img-1' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="bg-img-1-name" name="bg-img-1-name" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--Internal Image 1-->
-                                    <div class="input-group">
-                                        <label for="img-1">Add Slider 1 image 1</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='img-1' id='img-1' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="img-name-1" name="img-name-1" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--Internal Image 2-->
-                                    <div class="input-group">
-                                        <label for="img-2">Add Slider 1 image 2</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='img-2' id='img-2' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="img-name-2" name="img-name-1" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--date-->
-                                    <div class="input-group">
-                                        <label for="slider-1-date">Add Date Slider 1</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="slider_event_date" id="slider-1-date" placeholder="Slider 1 date">
-                                        </div>
-                                    </div>
-                                    <!--content 1-->
-                                    <div class="input-group">
-                                        <label for="slider-1-content-1">Add Slider 1 content 1</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control col-lg-8" name="slider_content1" id="slider-1-content-1" placeholder="Slider 1 Content 1">
-                                        </div>
-                                    </div>
-                                    <!--content 2-->
-                                    <div class="input-group">
-                                        <label for="slider-1-content-2">Add Slider 2 content 1</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control col-lg-8" name="slider_content2" id="slider-1-content-2" placeholder="Slider 1 Content 2">
-                                            <span class="input-group-btn">
-                                                              <button class="btn btn-default" id="slider-1-submit" type="button">Submit</button>
-                                                          </span>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-6 borderpad">
-                                <form method="post" id="slider_2_text_form" enctype="multipart/form-data">
-                                    <input type="text" name="sliderType" value="slider2" hidden>
-                                    <!--BG-Image-->
-                                    <div class="input-group">
-                                        <label for="bg-img-2">Add background image</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='bg-img' id='bg-img-2' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="bg-img-2-name" name="bg-img-2-name" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--Internal Image 1-->
-                                    <div class="input-group">
-                                        <label for="img-1">Add Slider 1 image 1</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='img-1' id='img-3' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="img-name-3" name="img-name-1" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--Internal Image 2-->
-                                    <div class="input-group">
-                                        <label for="img-8">Add Slider 1 image 1</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='img-2' id='img-8' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="img-name-8" name="img-name-1" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--date-->
-                                    <div class="input-group">
-                                        <label for="slider-2-date">Add Date Slider 2</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="slider_event_date" id="slider-2-date" placeholder="Slider 2 date">
-                                        </div>
-                                    </div>
-                                    <!--content 1-->
-                                    <div class="input-group">
-                                        <label for="slider-2-content-1">Add Slider 2 content 1</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control col-lg-8" name="slider_content1" id="slider-2-content-1" placeholder="Slider 2 Content 1">
-                                        </div>
-                                    </div>
-                                    <!--content 2-->
-                                    <div class="input-group">
-                                        <label for="slider-2-content-2">Add Slider 2 content 2</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control col-lg-8" name="slider_content2" id="slider-2-content-2" placeholder="Slider 2 Content 2">
-                                            <span class="input-group-btn">
-                                                              <button class="btn btn-default" id="slider-2-submit" type="button">Submit</button>
-                                                          </span>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!--Grid column-->
-                            <!--Grid row-->
-                        </div>
-
-                        <!--Grid row-->
-                        <!--For Slide 3 & 4-->
-                        <div class="row">
-                            <!--Grid column-->
-                            <div class="col-md-6 borderpad">
-                                <form method="post" id="slider_3_text_form" enctype="multipart/form-data">
-                                    <input type="text" name="sliderType" value="slider3" hidden>
-                                    <!--BG-Image-->
-                                    <div class="input-group">
-                                        <label for="bg-img-3">Add background image</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='bg-img' id='bg-img-3' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="bg-img-3-name" name="bg-img-name" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--Internal Image 1-->
-                                    <div class="input-group">
-                                        <label for="img-4">Add Slider 3 image 1</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='img-1' id='img-4' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="img-name-4" name="img-name-1" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--Internal Image 2-->
-                                    <div class="input-group">
-                                        <label for="img-7">Add Slider 3 image 2</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='img-2' id='img-7' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="img-name-7" name="img-name-1" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--date-->
-                                    <div class="input-group">
-                                        <label for="slider-3-date">Add Date Slider 3</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="slider_event_date" id="slider-3-date" placeholder="Slider 3 date">
-                                        </div>
-                                    </div>
-                                    <!--content 1-->
-                                    <div class="input-group">
-                                        <label for="slider-3-content-1">Add Slider 3 content 1</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control col-lg-8" name="slider_content1" id="slider-3-content-1" placeholder="Slider 3 Content 1">
-                                        </div>
-                                    </div>
-                                    <!--content 2-->
-                                    <div class="input-group">
-                                        <label for="slider-3-content-2">Add Slider 3 content 2</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control col-lg-8" name="slider_content2" id="slider-3-content-2" placeholder="Slider 3 Content 2">
-                                            <span class="input-group-btn">
-                                                              <button class="btn btn-default" id="slider-3-submit" type="button">Submit</button>
-                                                          </span>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-6 borderpad">
-                                <form method="post" id="slider_4_text_form" enctype="multipart/form-data">
-                                    <input type="text" name="sliderType" value="slider4" hidden>
-                                    <!--BG-Image-->
-                                    <div class="input-group">
-                                        <label for="bg-img-4">Add background image</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='bg-img' id='bg-img-4' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="bg-img-4-name" name="bg-img-2-name" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--Internal Image 1-->
-                                    <div class="input-group">
-                                        <label for="img-5">Add Slider 4 image 1</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='img-1' id='img-5' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="img-name-5" name="img-name-1" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--Internal Image 2-->
-                                    <div class="input-group">
-                                        <label for="img-6">Add Slider 4 image 2</label>
-                                        <div class="input-group input-file">
-                                            <input type='file' name='img-2' id='img-6' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                        </span>
-                                            <input type="text" class="form-control col-lg-6" id="img-name-6" name="img-name-2" placeholder='Choose a file...' />
-                                            <span class="input-group-btn">
-                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                        </span>
-                                            <img src="" alt="">
-                                        </div>
-                                    </div>
-                                    <!--date-->
-                                    <div class="input-group">
-                                        <label for="slider-4-date">Add Date Slider 4</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="slider_event_date" id="slider-4-date" placeholder="Slider 4 date">
-                                        </div>
-                                    </div>
-                                    <!--content 1-->
-                                    <div class="input-group">
-                                        <label for="slider-4-content-1">Add Slider 4 content 1</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control col-lg-8" name="slider_content1" id="slider-4-content-1" placeholder="Slider 4 Content 1">
-                                        </div>
-                                    </div>
-                                    <!--content 2-->
-                                    <div class="input-group">
-                                        <label for="slider-4-content-2">Add Slider 4 content 2</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control col-lg-8" name="slider_content2" id="slider-4-content-2" placeholder="Slider 4 Content 2">
-                                            <span class="input-group-btn">
-                                                              <button class="btn btn-default" id="slider-4-submit" type="button">Submit</button>
-                                                          </span>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!--Grid column-->
-                            <!--Grid row-->
+                    <div class="input-group" hidden="hidden" id="slideSelector" style="margin-bottom: 5px">
+                        <label for="slideAmount">Select How Many Slides?</label>
+                        <div class="input-group">
+                            <select id="slideAmount"  onchange="createSlidesMulti(this)" name="slideAmount">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="nav-add-text_on_slider" role="tabpanel" aria-labelledby="nav-add-text_on_slider-tab">
+                        <h2 style="text-align: center; text-transform: capitalize">use '"|", ","' for sepreation and new line techniques with your text for the slide text display formates</h2>
+
+                    </div>
+                    <!--End Add Slider Tab-->
                 </div>
             </div>
         </div>
@@ -758,7 +477,6 @@
 </section>
 
 <section id="tabs3">
-
     <div class="container">
         <h6 class="section-name h1">Tabs</h6>
         <div class="row">
@@ -773,7 +491,7 @@
                     </div>
                 </nav>
                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent3">
-
+                    <!--Start Add sermon Tab-->
                     <div class="tab-pane fade show active" id="nav-add-sermon" role="tabpanel" aria-labelledby="nav-add-sermon-tab">
                         <form method="post" id="sermonFile_form" enctype="multipart/form-data">
                             <!--Grid row-->
@@ -797,12 +515,12 @@
                                             <div class="input-group input-file">
                                                 <input type='file' name='pdfFile' id='pdfFile' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
                                                 <span class="input-group-btn">
-                                                                    <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                                </span>
+                                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
+                                                                        </span>
                                                 <input type="text" class="form-control col-lg-3" id="sermonFile" name="sermonFile" placeholder='Choose a file...' />
                                                 <span class="input-group-btn">
-                                                                    <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                                </span>
+                                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
+                                                                        </span>
                                                 <img src="" alt="">
                                             </div>
                                         </div>
@@ -817,7 +535,8 @@
                             <output id="sermonFileResult" ></output>
                         </form>
                     </div>
-
+                    <!--End Add sermon Tab-->
+                    <!--Start sermon List Tab-->
                     <div class="tab-pane fade" id="nav-sermon-list" role="tabpanel" aria-labelledby="nav-sermon-list-tab">
                         <!--Grid row-->
                         <div class="row">
@@ -829,7 +548,8 @@
                             <!--Grid row-->
                         </div>
                     </div>
-
+                    <!--End sermon List Tab-->
+                    <!--Start Add Audio Tab-->
                     <div class="tab-pane fade" id="nav-add-audio" role="tabpanel" aria-labelledby="nav-add-audio-tab">
                         <form method="post" id="audio_form" enctype="multipart/form-data">
                             <!--Grid row-->
@@ -871,12 +591,12 @@
                                             <div class="input-group input-file">
                                                 <input type='file' name='track' id='track' class='input-ghost'  style='visibility:hidden; height:0'  enctype="multipart/form-data">
                                                 <span class="input-group-btn">
-                                                                    <button class="btn btn-default btn-choose" type="button">Choose</button>
-                                                                </span>
+                                                                            <button class="btn btn-default btn-choose" type="button">Choose</button>
+                                                                        </span>
                                                 <input type="text" class="form-control" id="sermonAudio" name="sermonAudio" placeholder='Choose a file...' />
                                                 <span class="input-group-btn">
-                                                                    <button class="btn btn-warning btn-reset" type="button">Reset</button>
-                                                                </span>
+                                                                            <button class="btn btn-warning btn-reset" type="button">Reset</button>
+                                                                        </span>
                                                 <img src="" alt="">
                                             </div>
                                         </div>
@@ -891,9 +611,12 @@
                             <output id="sermonResult" ></output>
                         </form>
                     </div>
+                    <!--End Add Audio Tab-->
+                    <!--Start Audio List Tab-->
                     <div class="tab-pane fade" id="nav-audio-list" role="tabpanel" aria-labelledby="nav-audio-list-tab">
                         Show Audio List
                     </div>
+                    <!--End Audio List Tab-->
                 </div>
             </div>
         </div>

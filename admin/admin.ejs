@@ -58,7 +58,7 @@
 <% if (JSON.stringify(Users).length > 0 ) { %>
 <div class="sidebar">
     <ul>
-        <li><a rel='tab' href="/dashboard/dashboard.html" class="active"><i class="fa fa-desktop"></i><span>Dashboard</span></a></li>
+        <li><a rel='tab' href="/dashboard/dashboard.ejs" class="active"><i class="fa fa-desktop"></i><span>Dashboard</span></a></li>
 
         <% for (var role in Users.roles) { %>
             <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
