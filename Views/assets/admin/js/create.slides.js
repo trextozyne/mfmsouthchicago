@@ -179,10 +179,10 @@ $(`body`).on("submit", forms).submit(function(evt) {
     sliderType = $(`form#${evt.target.id} :input[name ="sliderType"]`).val();
 
     if(button.text() === "Update"){
-        doSliderUpdate($(evt.target));
+        doSliderUpdate($(this));
         button.html("Submit")
     }else {
-        checkExistence($(evt.target), evt, button);
+        checkExistence($(this), evt, button);
     }
 });
 
