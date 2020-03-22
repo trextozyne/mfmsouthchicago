@@ -47,13 +47,14 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use(session({secret: "S@lv@t10n_G0d", resave: false, saveUninitialized:true, cookie: { maxAge: Date.now() + (30 * 86400 * 1000)  } }));//shouldnt be storing secret in a public repository, should be in an environment variable
 app.use(flash());
 
-app.use(express.static(path.join(__dirname, '.well-known')));
 app.use(express.static(path.join(__dirname, 'Views')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/event-calendar-module', express.static(path.join(__dirname, 'event-calendar-module')));
 
-app.set('views', path.join(__dirname, './.well-known'));
 app.set('views', path.join(__dirname, './Views'));
+app.get('/.well-known/acme-challenge/:content', function(req, res) {
+    res.send('d_eKQ-hHmpBFdFRNJyssKNi4n4RYdkLQIhzyMLi1-EI.Fdf1QYQc20L-eH7l9XV-rIdRtS8ae3XHetX0zvMUY6U')
+})
 
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
