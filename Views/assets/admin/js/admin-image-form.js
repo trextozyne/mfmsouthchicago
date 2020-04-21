@@ -103,7 +103,7 @@ function myFunction() {
 
 //pull saved datas
 jQuery(($) => {
-    let uri = 'http://localhost:5000/photoalbums/find';
+    let uri = '/photoalbums/find';
     $.ajax({
         url: uri,
         dataType: "json",
@@ -175,19 +175,33 @@ $("#formId").submit(function (event) {
     let albums = { u_name : document.getElementById('album_name').value, u_title : document.getElementById('album_title').value};
     event.preventDefault();
 
-    if (_id === null)
-        $(this).ajaxSubmit({
-            url: "http://localhost:5000/photoalbums/create",
+    let url = "/photoalbums/create";
+    if (_id === null) {
+        // $(this).ajaxSubmit({
+        //     url: url,
+        //     data: {
+        //         title: title,
+        //         albums: albums
+        //     },
+        //     contentType: 'application/json',
+        //     success: function (response) {
+        //         console.log('image uploaded and form submitted');
+        //     }
+        // });
+
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": url,
+            "method": "POST",
             data: {
                 title: title,
                 albums: albums
             },
-            contentType: 'application/json',
-            success: function(response){
-                console.log('image uploaded and form submitted');
-            }
-        });
-    else {
+        };
+
+        $.ajax(settings).done(console.log('image uploaded and form submitted'));
+    }else {
 
         let title = document.getElementById('title').value;
         let albums_name = document.getElementById('album_name').value;
@@ -207,18 +221,12 @@ $("#formId").submit(function (event) {
         console.log(data);
 
         let settings = {
-            url: "http://localhost:5000/photoalbums/"+ _id +"/update",
+            url: "/photoalbums/"+ _id +"/update",
             method: "PUT",
             data: data,
-            contentType: 'application/json',
-            success: function(response){
-                console.log(response);
-            }
         };
 
-        $(this).ajaxSubmit(
-            settings
-        );
+        $.ajax(settings).done(console.log(response));
 
         _id = null;
         // document.getElementById('evalForm').innerText = "Submit Form"
@@ -234,7 +242,7 @@ function onEditItem(id){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://localhost:5000/photoalbums/" + id,
+        "url": "/photoalbums/" + id,
         "method": "GET",
         "headers": {
             "cache-control": "no-cache",
@@ -260,8 +268,8 @@ function onDeleteItem(id){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://localhost:5000/photoalbums/" + id,
-        "method": "GET",
+        "url": "/photoalbums/" + id,
+        "method": "DELETE",
         "headers": {
             "cache-control": "no-cache",
             "Postman-Token": "d8a72744-3f78-45eb-9967-05d281a007b9"

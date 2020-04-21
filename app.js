@@ -15,6 +15,7 @@ const fileRoute = require('./routes/files.route');
 const slideRoute = require('./routes/slides.route');
 const galleryCountCountRoute = require('./routes/gallery_count.route');
 const userRoute = require('./routes/user.route');
+const ytplayListRoute = require('./routes/ytplayList.route');
 /////////////////////
 const app = express();
 /////////////////////
@@ -67,6 +68,7 @@ app.use('/files', fileRoute);
 app.use('/slides', slideRoute);
 app.use('/gallerycount', galleryCountCountRoute);
 app.use('/user', userRoute);
+app.use('/ytplayList', ytplayListRoute);
 
 //handle 400
 app.use((req, res)=> {

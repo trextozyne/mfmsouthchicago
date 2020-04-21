@@ -560,3 +560,44 @@ table th {
   }
 }
 /*==================================================This Area for Table of dowloadable data=========================================*/
+
+/*==================================================This Area for Table of Youtube Playlist ID's=========================================*/
+.fixed_header{
+    width:100%;
+  max-width: 800px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: auto;
+  max-height: 150px;
+}
+
+.fixed_header thead tr {
+  display: block;
+}
+
+.fixed_header thead tr, .fixed_header tr  {
+  display: block;
+  background-color: transparent !important;
+}
+
+.fixed_header thead {
+  background: black !important;
+  color:#fff;
+}
+.fixed_header td {
+    /*text-align: left;*/
+    word-break:break-all;
+}
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+/*==================================================This Area for Table of Youtube Playlist ID's=========================================*/

@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
+      <change afterPath="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/assets/video/video.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/assets/web/assets/fancybox/fancybox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/assets/web/assets/fancybox/fancybox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/ytplayList.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/ytplayList.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/ytplayList.route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/give.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/give.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/admin/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/verse.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/verse.route.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,74 +51,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="audio.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/audio.html">
+      <file leaf-file-name="ytplayList.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/ytplayList.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="95" selection-start-line="53" selection-start-column="87" selection-end-line="53" selection-end-column="95" />
+            <state relative-caret-position="238">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="give.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/give.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2108">
-              <caret line="124" column="56" selection-start-line="124" selection-start-column="56" selection-end-line="135" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="video.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="video.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/video.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="119" column="89" selection-start-line="119" selection-start-column="89" selection-end-line="119" selection-end-column="89" />
+            <state relative-caret-position="116">
+              <caret line="265" column="34" lean-forward="true" selection-start-line="265" selection-start-column="34" selection-end-line="265" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#figure#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/index.html">
+      <file leaf-file-name="ytplayListAdd.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="10" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/login.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.slides.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/create.slides.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3179">
-              <caret line="187" selection-start-line="187" selection-end-line="187" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="55" column="101" selection-start-line="55" selection-start-column="101" selection-end-line="55" selection-end-column="101" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="images.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/images.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+            <state relative-caret-position="140">
+              <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+              <folding>
+                <element signature="e#1399#1405#0" expanded="true" />
+                <element signature="e#2688#2694#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,17 +88,25 @@
       <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
-              <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+            <state relative-caret-position="429">
+              <caret line="770" column="7" selection-start-line="770" selection-start-column="7" selection-end-line="770" selection-end-column="7" />
+              <folding>
+                <element signature="e#36715#36769#0#HTML" expanded="true" />
+                <element signature="e#36903#36937#0#HTML" expanded="true" />
+                <element signature="e#37068#37090#0#HTML" expanded="true" />
+                <element signature="e#37443#37465#0#HTML" expanded="true" />
+                <element signature="e#37945#37967#0#HTML" expanded="true" />
+                <element signature="e#38998#39038#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plan-a-visit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/plan-a-visit.html">
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/assets/admin/css/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5491">
-              <caret line="323" column="30" selection-start-line="322" selection-start-column="53" selection-end-line="323" selection-end-column="30" />
+            <state relative-caret-position="765">
+              <caret line="595" column="23" lean-forward="true" selection-start-line="595" selection-start-column="23" selection-end-line="595" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -142,26 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>active</find>
-      <find>login</find>
-      <find>login.ejs</find>
-      <find>login_admin</find>
-      <find>admin.html</find>
-      <find>/user/login</find>
-      <find>checkILength</find>
-      <find>admin</find>
-      <find>1</find>
-      <find>name</find>
-      <find>img1Filename</find>
-      <find>${i</find>
-      <find>input-file</find>
-      <find>bs_input_file</find>
-      <find>input-ghost</find>
-      <find>choose a</find>
-      <find>#slider-1-date</find>
-      <find>sliderType</find>
-      <find>role</find>
-      <find>session</find>
       <find>support@</find>
       <find>&lt;br&gt;Phone: +1 7733103610</find>
       <find>\n                      \&lt;br\&gt;Phone\: \+1 7733103610\&amp;nbsp\;</find>
@@ -171,7 +133,27 @@
       <find>doSliderUpdate</find>
       <find>$(this)</find>
       <find>createSlidesMulti</find>
+      <find>.ajax</find>
+      <find>insert</find>
+      <find>ajaxSubmit</find>
+      <find>id</find>
+      <find>chapter</find>
+      <find>text_on_slider</find>
+      <find>boot</find>
+      <find>fa</find>
+      <find>yt</find>
+      <find>fixed_header</find>
+      <find>editYTplaylist</find>
       <find>findAllSlides</find>
+      <find>local</find>
+      <find>http://localhost:5000</find>
+      <find>playlisttiltle</find>
+      <find>userRoute</find>
+      <find>addTableRow</find>
+      <find>ajax</find>
+      <find>save</find>
+      <find>update</find>
+      <find>find</find>
     </findStrings>
     <replaceStrings>
       <replace>header14</replace>
@@ -221,16 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Views/assets/mobirise/js/events-all.js" />
-        <option value="$PROJECT_DIR$/Views/events-all.html" />
-        <option value="$PROJECT_DIR$/Views/assets/mobirise/js/events-single.js" />
-        <option value="$PROJECT_DIR$/Views/forgot.ejs" />
-        <option value="$PROJECT_DIR$/Views/events-single.html" />
-        <option value="$PROJECT_DIR$/Views/assets/technical/image/js/images.js" />
-        <option value="$PROJECT_DIR$/Views/images.html" />
-        <option value="$PROJECT_DIR$/Views/men-of-valor.html" />
-        <option value="$PROJECT_DIR$/Views/mission-statements.html" />
-        <option value="$PROJECT_DIR$/Views/music.html" />
         <option value="$PROJECT_DIR$/Views/assets/technical/notes/css/notes.css" />
         <option value="$PROJECT_DIR$/Views/notes.html" />
         <option value="$PROJECT_DIR$/Views/assets/technical/notes/js/notes.js" />
@@ -256,22 +228,32 @@
         <option value="$PROJECT_DIR$/Views/assets/login-logout/js/logout.js" />
         <option value="$PROJECT_DIR$/Views/assets/index-additional/js/index-slide.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
         <option value="$PROJECT_DIR$/Views/assets/login-logout/login.js" />
         <option value="$PROJECT_DIR$/Views/dashboard/users.html" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/refresh-user-script.js" />
         <option value="$PROJECT_DIR$/controllers/user.controller.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/add-user-role.js" />
         <option value="$PROJECT_DIR$/Views/assets/ministries/js/ministries-background.js" />
-        <option value="$PROJECT_DIR$/admin/admin.ejs" />
         <option value="$PROJECT_DIR$/Views/dashboard/dashboard.ejs" />
         <option value="$PROJECT_DIR$/Views/dashboard/dashboard.html" />
         <option value="$PROJECT_DIR$/Views/index.html" />
         <option value="$PROJECT_DIR$/Views/login.ejs" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" />
         <option value="$PROJECT_DIR$/Views/give.html" />
-        <option value="$PROJECT_DIR$/Views/video.html" />
+        <option value="$PROJECT_DIR$/Views/assets/web/assets/fancybox/fancybox.js" />
+        <option value="$PROJECT_DIR$/Views/assets/web/assets/fancybox/fancybox.min.css" />
+        <option value="$PROJECT_DIR$/Views/assets/video/video.css" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
+        <option value="$PROJECT_DIR$/routes/verse.route.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/models/ytplayList.model.js" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/css/admin.css" />
+        <option value="$PROJECT_DIR$/admin/admin.ejs" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" />
+        <option value="$PROJECT_DIR$/routes/ytplayList.route.js" />
+        <option value="$PROJECT_DIR$/controllers/ytplayList.controller.js" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" />
+        <option value="$PROJECT_DIR$/Views/video.html" />
       </list>
     </option>
   </component>
@@ -292,10 +274,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1272" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="744" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -303,7 +284,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,23 +294,47 @@
             <path>
               <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
               <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
-              <item name=".well-known" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
-              <item name=".well-known" type="462c0819:PsiDirectoryNode" />
-              <item name="acme-challenge" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
               <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,19 +355,19 @@
     <property name="settings.editor.splitter.proportion" value="0.24975705" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\technical" />
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\mobirise\js" />
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\ministries\css" />
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\calendar\js" />
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\calendar" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\login-logout\js" />
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\login-logout" />
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\technical" />
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views" />
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\login" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\controllers" />
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\models" />
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\routes" />
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\technical" />
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\mobirise\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -506,14 +510,10 @@
       <workItem from="1583021327620" duration="597000" />
       <workItem from="1584204600068" duration="6503000" />
       <workItem from="1584816240237" duration="6675000" />
-      <workItem from="1584888717172" duration="904000" />
-    </task>
-    <task id="LOCAL-00105" summary="Default Changelist">
-      <created>1579302857608</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1579302857608</updated>
+      <workItem from="1584888717172" duration="2041000" />
+      <workItem from="1587166320556" duration="19518000" />
+      <workItem from="1587325518781" duration="1656000" />
+      <workItem from="1587420082112" duration="48634000" />
     </task>
     <task id="LOCAL-00106" summary="Default Changelist">
       <created>1579303110347</created>
@@ -851,11 +851,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584892764467</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="Default Changelist">
+      <created>1584893016154</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1584893016154</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1948865000" />
+    <option name="totallyTimeSpent" value="2019810000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -867,7 +874,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1272" y="-8" width="1296" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
@@ -876,9 +884,10 @@
       <window_info anchor="bottom" id="Run" order="6" weight="0.32991454" />
       <window_info id="npm" order="1" sideWeight="0.50282484" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32673267" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.4950495" visible="true" weight="0.17071198" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.4950495" visible="true" weight="0.21028744" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298217" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32343236" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" sideWeight="0.5049505" side_tool="true" weight="0.23139158" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.3919598" />
@@ -891,33 +900,7 @@
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32838285" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32343236" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
-      <window_info id="npm" order="1" sideWeight="0.50282484" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.32991454" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.4950495" visible="true" weight="0.24433658" />
-      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" order="4" weight="0.32998326" />
-      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3298292" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32343236" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="14" weight="0.32838285" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3298217" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32673267" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32838285" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.3919598" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32838285" />
-      <window_info id="Favorites" order="0" sideWeight="0.5049505" side_tool="true" weight="0.23139158" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -975,80 +958,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Views/what-we-believe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="131" column="74" selection-start-line="131" selection-start-column="74" selection-end-line="131" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/we-care.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2278">
-          <caret line="185" column="72" selection-start-line="185" selection-start-column="72" selection-end-line="185" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/virtuos-women.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="185" column="72" selection-start-line="185" selection-start-column="72" selection-end-line="185" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/church-slider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/index-place-ratings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="265" column="76" lean-forward="true" selection-start-line="265" selection-start-column="76" selection-end-line="265" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/ministries/css/children.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="1227" column="18" lean-forward="true" selection-start-line="1227" selection-start-column="18" selection-end-line="1227" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/children.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="58" lean-forward="true" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/login-logout/css/login.css" />
-    <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/photoalbum.route.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/not-found.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/error-not-found.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -1175,13 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/deliverance.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4046">
@@ -1258,24 +1160,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/images.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1286,13 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/create.slides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3179">
-          <caret line="187" selection-start-line="187" selection-end-line="187" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/give.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2108">
@@ -1300,17 +1181,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/video.html">
+    <entry file="file://$PROJECT_DIR$/Views/assets/web/assets/fancybox/fancybox.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="119" column="89" selection-start-line="119" selection-start-column="89" selection-end-line="119" selection-end-column="89" />
+        <state>
+          <caret column="13734" selection-start-column="13734" selection-end-column="13734" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/web/assets/fancybox/fancybox.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="10" column="20218" selection-start-line="10" selection-start-column="20218" selection-end-line="10" selection-end-column="20218" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/technical/notes/js/notes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2805">
+          <caret line="165" selection-start-line="165" selection-end-line="167" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/video/video.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backup form  admn.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="229" column="16" selection-start-line="229" selection-start-column="16" selection-end-line="229" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/verse.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/css/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="595" column="23" lean-forward="true" selection-start-line="595" selection-start-column="23" selection-end-line="595" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="176" column="23" selection-start-line="176" selection-start-column="19" selection-end-line="176" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="770" column="7" selection-start-line="770" selection-start-column="7" selection-end-line="770" selection-end-column="7" />
+          <folding>
+            <element signature="e#36715#36769#0#HTML" expanded="true" />
+            <element signature="e#36903#36937#0#HTML" expanded="true" />
+            <element signature="e#37068#37090#0#HTML" expanded="true" />
+            <element signature="e#37443#37465#0#HTML" expanded="true" />
+            <element signature="e#37945#37967#0#HTML" expanded="true" />
+            <element signature="e#38998#39038#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="209" column="8" selection-start-line="209" selection-start-column="8" selection-end-line="228" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#123#129#0" expanded="true" />
+            <element signature="e#102#108#1" expanded="true" />
+            <element signature="e#80#87#1" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#130#137#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/create.slides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="98" column="138" selection-start-line="98" selection-start-column="132" selection-end-line="98" selection-end-column="138" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+          <folding>
+            <element signature="e#1399#1405#0" expanded="true" />
+            <element signature="e#2688#2694#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/ytplayList.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ytplayList.route.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="55" column="101" selection-start-line="55" selection-start-column="101" selection-end-line="55" selection-end-column="101" />
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/ytplayList.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/video.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="265" column="34" lean-forward="true" selection-start-line="265" selection-start-column="34" selection-end-line="265" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#figure#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -41,40 +41,48 @@ debugger;
 
 function deleteSlidesDBData(id, callback){
     let url= `/slides/${id}/delete`;
-    $(this).ajaxSubmit({
-        url: url,
-        method: "DELETE",
-        contentType: 'application/json',
-        dataType: "json",
-        success: callback
-    });
+
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": url,
+        "method": "DELETE"
+    };
+
+    $.ajax(settings).done(callback);
 }
 
 function findAllSlides(callback) {
     let url= "/slides/find";
-    $(this).ajaxSubmit({
-        url: url,
-        method: "GET",
-        contentType: 'application/json',
-        dataType: "json",
-        success: callback
-    });
+
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": url,
+        "method": "GET"
+    };
+
+    $.ajax(settings).done(callback);
 }
 
 function saveSlides($this) {
     let url= "/slides/create";
     let formData = $this.serializeArray();
     debugger;
-    $this.ajaxSubmit({
-        url: url,
-        method: "POST",
-        data: JSON.stringify(formData),
-        contentType: 'application/json',
-        dataType: "json",
-        success: function (response) {
+
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": url,
+        "method": "POST",
+        data: JSON.stringify(formData)
+    };
+
+    $.ajax(settings).done(
+        function (response) {
             alert("Saved: " + response);
         }
-    });
+    );
 }
 
 var slides = {};

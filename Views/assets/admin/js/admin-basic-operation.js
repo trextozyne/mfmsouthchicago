@@ -96,14 +96,25 @@ $("#sermonFile_form").submit(function(evt) {
         let formData = JSON.parse(JSON.stringify(getFormData($form)));
         delete formData.sermonFile;
 
-        $(this).ajaxSubmit({
-            url: url,
-            method: "POST",
+        // $(this).ajaxSubmit({
+        //     url: url,
+        //     method: "POST",
+        //     data: formData,
+        //     contentType: 'application/json',
+        //     dataType: "json",
+        //     success: doSermonUpdate
+        // });
+
+
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": url,
+            "method": "POST",
             data: formData,
-            contentType: 'application/json',
-            dataType: "json",
-            success: doSermonUpdate
-        });
+        };
+
+        $.ajax(settings).done(doSermonUpdate);
     }
 });
 // ###########################find#########################################
@@ -163,14 +174,24 @@ $("#audio_form").submit(function(evt) {
         let formData = JSON.parse(JSON.stringify(getFormData($form)));
         delete formData.sermonAudio;
 
-        $(this).ajaxSubmit({
-            url: url,
-            method: "POST",
-            data: formData,
-            contentType: 'application/json',
-            dataType: "json",
-            success: doAudioUpdate
-        });
+        // $(this).ajaxSubmit({
+        //     url: url,
+        //     method: "POST",
+        //     data: formData,
+        //     contentType: 'application/json',
+        //     dataType: "json",
+        //     success: doAudioUpdate
+        // });
+
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": url,
+            "method": "POST",
+            data: formData
+        };
+
+        $.ajax(settings).done(doAudioUpdate);
     }
 });
 // ############################find########################################
