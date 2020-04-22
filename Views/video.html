@@ -114,7 +114,11 @@
 
 <section class="mbr-section content4 cid-rcVaEnF2Zs" id="content4-32">
 
-
+    <iframe id="livePlay"
+            style="display: block;margin: 0 auto;"
+            width="360" height="240" src="" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
     <header id="ytHeader" class="header" role="banner">
         <h1>Click on any Video on the list</h1>
     </header>
@@ -327,6 +331,7 @@
 
       getYoutubeLive (function(ytplayLink) {
           document.getElementById("livelink").setAttribute("href",ytplayLink[0].ytlivelink);
+          document.getElementById("livePlay").setAttribute("src",ytplayLink[0].ytlivelink);
       });
   </script>
   
