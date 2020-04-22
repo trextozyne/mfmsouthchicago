@@ -7,7 +7,7 @@
         login_admin.setAttribute("href", "/user/admin");
         login_admin.innerHTML = `<span class="mbri-user mbr-iconfont mbr-iconfont-btn"></span>Admin`;
     }else {
-        login_admin.setAttribute("href", "login.html");
+        login_admin.setAttribute("href", "/user/login");
         login_admin.innerHTML = `<span class="mbri-user mbr-iconfont mbr-iconfont-btn"></span>Login`;
     }
 })();
