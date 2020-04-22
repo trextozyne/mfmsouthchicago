@@ -98,8 +98,12 @@
         <div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
                 
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2"><strong>
-                    </strong><br><br><br><br><strong>Video Gallery</strong></h3>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">
+
+                    <br><br>
+                    <div>Click<a style="text-decoration: underline"  data-fancybox id="livelink" href="#"  class="featured-video"> Link for Live Service</a></div>
+                    <br><br>
+                    <strong>Video Gallery</strong></h3>
                 
                 
             </div>
@@ -114,19 +118,6 @@
     <header id="ytHeader" class="header" role="banner">
         <h1>Click on any Video on the list</h1>
     </header>
-
-    <!--<<div class="container">
-        <div class="media-container-row">
-            div class="title col-12 col-md-8">-->
-                <!--<h2 class="align-center pb-3 mbr-fonts-style display-2">-->
-                    <!--Video List</h2>-->
-                <!--<h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">-->
-                    <!--Click on any Video in our list</h3>-->
-
-                <!--&lt;!&ndash;<iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=PLUC9LzfWaYFcjsmPt4qf8Wa4A" width="560" height="400"></iframe>&ndash;&gt;-->
-            <!--</div>
-        </div>
-    </div>-->
 </section>
 
 <section class="mbr-gallery mbr-slider-carousel cid-rcV6mna1Dh" id="gallery3-31">
@@ -245,12 +236,13 @@
   <script src="assets/changes-cookie-detect/detect-login-logout.js"></script>
 
   <script type="text/javascript">
-      // for (const [fruit, count] of entries) {
-      //     console.log(`There are ${count} ${fruit}s`)
-      // }
+
+      function insertAfter(newNode, referenceNode) {
+          referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+      }
 
       function getYoutubePlaylist(callback) {
-          let url= "/ytplayList/find";
+          let url = "/ytplayList/find";
 
           let settings = {
               "async": true,
@@ -258,22 +250,19 @@
               "url": url,
               "method": "GET"
           };
-debugger;
+          debugger;
           $.ajax(settings).done(callback);
       }
 
-      getYoutubePlaylist (function(ytplayLists) {debugger;
-          ytplayLists.forEach((ytplayList)=> {
+      getYoutubePlaylist (function(ytplayLists) {
+          debugger;
+          ytplayLists.forEach((ytplayList) => {
               let settings = {
                   "async": true,
                   "crossDomain": true,
                   "url": "https://ytjson.herokuapp.com/" + ytplayList.playlistid,
                   "method": "GET"
               };
-
-              function insertAfter(newNode, referenceNode) {
-                  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-              }
 
               let ytvideoHtml = `<article>
                               <p>${ytplayList.playlisttiltle}</p>
@@ -321,7 +310,24 @@ debugger;
                   insertAfter(ythtmlObject, referenceNode);
               });
           });
-      })
+      });
+
+      function getYoutubeLive(callback) {
+          let url = "/ytplayLive/find";
+
+          let settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": url,
+              "method": "GET"
+          };
+          debugger;
+          $.ajax(settings).done(callback);
+      }
+
+      getYoutubeLive (function(ytplayLink) {
+          document.getElementById("livelink").setAttribute("href",ytplayLink[0].ytlivelink);
+      });
   </script>
   
   

@@ -1,17 +1,37 @@
 document.addEventListener('click',function(e) {
+    if (e.target && e.target.type === "checkbox" && e.target.getAttribute('name') === "live" && e.target.checked === true) {
+        let parentElement = e.target.parentElement.parentElement.parentElement.parentElement;
+        let inputs = parentElement.querySelectorAll("input");
+
+        inputs[0].value = "Live";
+        inputs[0].setAttribute("disabled","disabled");
+
+        inputs[1].value ="";
+        inputs[1].focus();
+    }else if (e.target && e.target.type === "checkbox"){
+        let parentElement = e.target.parentElement.parentElement.parentElement.parentElement;
+        let inputs = parentElement.querySelectorAll("input");
+
+        inputs[0].value = "";
+        inputs[0].removeAttribute("disabled");
+        inputs[0].focus();
+
+        inputs[1].value ="";
+    }
     if (e.target && e.target.classList.contains('fa')) {
         e.target.parentElement.click();
         e.stopPropagation();
         e.preventDefault();
     }
     if (e.target && e.target.classList.contains('saveYTPlaylistId')) {
-        addData(e.target);
+        !document.getElementsByName('live')[0].checked ? addData(e.target) : saveLive(e.target);
     }
     if (e.target && e.target.classList.contains('editYTplaylist') && e.target.innerText !== "done") {
         e.target.innerText = "done";
         edit(e);
     } else if (e.target.innerText === "done" && e.target.tagName === "BUTTON") {
         e.target.innerHTML = `<i class="fa fa-pencil-square-o" aria-hidden="true"></i> `;
+
         save(e.target);
     }
     if (e.target && e.target.classList.contains('deleteYTplaylist')) {
@@ -103,11 +123,18 @@ function addTableRow(inputData, ytPlaylistId) {
 
 (()=> {
     let url = '/ytplayList/find';
+    let uri = '/ytplayLive/find';
 
     let settings = {
         "async": true,
         "crossDomain": true,
         "url": url
+    };
+
+    let liveSettings = {
+        "async": true,
+        "crossDomain": true,
+        "url": uri
     };
 
     let inputs = [];
@@ -126,7 +153,11 @@ function addTableRow(inputData, ytPlaylistId) {
         });
     });
 
-
+    $.ajax(liveSettings).done(
+        (response) => {
+            debugger;
+            document.getElementsByName("live")[0].setAttribute("data-id", response[0]._id);
+        });
 })();
 
 function addData(btnElement) {
@@ -157,6 +188,52 @@ function addData(btnElement) {
         });
 }
 
+function saveLive(btnElement) {
+    let parentElement = btnElement.parentElement.parentElement;
+    let inputs = parentElement.querySelectorAll("input");
+
+    let ytData = {
+        ytlivelink: inputs[1].value
+    };
+debugger;
+    if(!document.getElementsByName("live")[0].hasAttribute("data-id")) {
+        let url = "/ytplayLive/create";
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": url,
+            "method": "POST",
+            data: ytData,
+        };
+
+        $.ajax(settings).done(
+            (ytplayLiveId) => {
+                console.log('Saved!!!');
+                document.getElementsByName("live")[0].setAttribute("data-id", ytplayLiveId);
+            });
+    }else{
+        let _id = document.getElementsByName("live")[0].getAttribute("data-id").trim();
+        let url = "/ytplayLive/" + _id + "/update";
+
+        let settings = {
+            url: url,
+            method: "PUT",
+            data: ytData,
+        };
+
+        $.ajax(settings).done((response)=>{console.log(response)});
+    }
+    alert("saved");
+
+    inputs[0].removeAttribute("disabled");
+    inputs[0].value = "";
+    inputs[0].focus();
+
+    inputs[1].value = "";
+
+    document.getElementsByName("live")[0].checked = false;
+}
+
 function save(btnElement) {
     let parentElement = btnElement.parentElement.parentElement;
     let inputs = parentElement.querySelectorAll("input");
@@ -177,7 +254,7 @@ function save(btnElement) {
     let spans = parentElement.querySelectorAll("span");
 
     let _id = btnElement.dataset.id;
-    let data = {
+    let ytData = {
         playlisttiltle: spans[0].textContent,
         playlistid: spans[1].textContent
     };
@@ -187,7 +264,7 @@ function save(btnElement) {
     let settings = {
         url: url,
         method: "PUT",
-        data: data,
+        data: ytData,
     };
 
     $.ajax(settings).done((response)=>{console.log(response)});
