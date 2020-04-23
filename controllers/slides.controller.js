@@ -24,7 +24,7 @@ exports.slides_create = async (req, res, next) => {
         }
     );
 
-
+console.log(req.files);
     if(typeof req.files['bg-img'] !== "undefined"){
         let bgImgFilename = req.files['bg-img'][0].filename;
         let bgImgPath = req.files['bg-img'][0].path;
@@ -94,32 +94,45 @@ exports.slides_update = function (req, res, next) {
         img2Filename = req.body.img2Filename;
         img2Path = req.body.img2Path;
     }
-    console.log(req.body);
-    console.log(req.files);
+    // console.log(req.body);
 
+    console.log(req.files);
+    console.log("here1");
     if (req.files) {
         if(typeof req.files['bg-img'] !== "undefined"){
+            console.log("here2");
             bgImgFilename = req.files['bg-img'][0].filename;
             bgImgPath = req.files['bg-img'][0].path;
+            console.log(bgImgFilename);
+            console.log("assets/images/slide/" + req.body.bgImgFilename);
 
             //unlink or delete image in folder gallery
-            fs.unlinkSync(path.join("assets/images/slide/", req.body.bgImgFilename));
+            fs.unlink("./Views/assets/images/slide/" + req.body.bgImgFilename, (err) => {
+                if (err) console.log(err);
+            });
         }
         if(typeof req.files['img-1'] !== "undefined"){
+            console.log("here2");
             img1Filename = req.files['img-1'][0].filename;
             img1Path = req.files['img-1'][0].path;
 
             //unlink or delete image in folder gallery
-            fs.unlinkSync(path.join("assets/images/slide/", req.body.img1Filename));
+            fs.unlink("./Views/assets/images/slide/" + req.body.img1Filename, (err) => {
+                if (err) console.log(err);
+            });
         }
         if(typeof req.files['img-2'] !== "undefined"){
+            console.log("here2");
             img2Filename = req.files['img-2'][0].filename;
             img2Path = req.files['img-2'][0].path;
 
             //unlink or delete image in folder gallery
-            fs.unlinkSync(path.join("assets/images/slide/", req.body.img2Filename));
+            fs.unlink("./Views/assets/images/slide/" + req.body.img2Filename, (err) => {
+                if (err) console.log(err);
+            });
         }
     }
+    console.log("here3");
 
     Slide.updateMany({"_id": req.params.id}, {
         $set: {

@@ -70,19 +70,48 @@ function saveSlides($this) {
     let formData = $this.serializeArray();
     debugger;
 
-    let settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": url,
-        "method": "POST",
-        data: JSON.stringify(formData)
-    };
+    let data = new FormData();
 
-    $.ajax(settings).done(
-        function (response) {
-            alert("Saved: " + response);
+    formData.forEach(function (fData, index) {
+        switch (fData.name) {
+            case 'sliderType':
+                data.append("sliderType", fData.value);
+                break;
+            case 'slider_event_date':
+                data.append("slider_event_date", fData.value);
+                break;
+            case 'slider_content1':
+                data.append("slider_content1", fData.value);
+                break;
+            case 'slider_content2':
+                data.append("slider_content2", fData.value);
+                break;
+            case 'sliderScheduleType':
+                data.append("sliderScheduleType", fData.value);
+                break;
         }
-    );
+    });
+
+    data.append("bg-img", $(`form#${$this.attr("id")} :input[name='bg-img']`)[0].files[0]);
+    data.append("img-1", $(`form#${$this.attr("id")} :input[name='img-1']`)[0].files[0]);
+    if(typeof $(`form#${$this.attr("id")} :input[name='img-2']`)[0] !== "undefined")
+        data.append("img-2", $(`form#${$this.attr("id")} :input[name='img-2']`)[0].files[0]);
+
+    let xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            console.log(this.responseText);
+        }
+    });
+
+    xhr.open("POST", url);
+    xhr.setRequestHeader("cache-control", "no-cache");
+    xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
+
+    // let rdata = JSON.stringify(data);
+    xhr.send(data);
 }
 
 var slides = {};
@@ -125,7 +154,7 @@ let forms = null;
 function doSliderUpdate($this){
     "use strict";
     debugger;
-    var data = new FormData();
+    let data = new FormData();
     const entries = Object.entries(slides);
     for (const [key, slideData] of entries) {
         switch (key) {
@@ -176,7 +205,7 @@ function doSliderUpdate($this){
     xhr.setRequestHeader("cache-control", "no-cache");
     xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
 
-    let rdata = JSON.stringify(data);
+    // let rdata = JSON.stringify(data);
     xhr.send(data);
 }
 
