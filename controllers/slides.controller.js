@@ -1,18 +1,15 @@
 const Slide = require('../models/slides.model');
-var fs = require('fs');
+let fs = require('fs');
 let mongodb = require('mongodb');
-var path = require('path');
+const cloudinary =  require('../config/cloudinaryConfig');
+
 let counter = 0;
 
-
 exports.slides_create = async (req, res, next) => {
-    // console.log(title);
-    console.log(req.body);
     let sliderType = req.body.sliderType;
     let slider_event_date = req.body['slider_event_date'];
     let slider_content1 = req.body['slider_content1'];
     let slider_content2 = req.body['slider_content2'];
-
 
     let slides = new Slide(
         {
@@ -24,35 +21,82 @@ exports.slides_create = async (req, res, next) => {
         }
     );
 
-console.log(req.files);
-    if(typeof req.files['bg-img'] !== "undefined"){
-        let bgImgFilename = req.files['bg-img'][0].filename;
-        let bgImgPath = req.files['bg-img'][0].path;
-        slides.bgImgFilename = bgImgFilename;
-        slides.bgImgPath = bgImgPath;
-    }
+    try {
+        let promises = [];
+        const uploader = async (path) => await cloudinary.uploads(path, 'Mfm-Images');
 
-    if(typeof req.files['img-1'] !== "undefined"){
-        let img1Filename = req.files['img-1'][0].filename;
-        let img1Path = req.files['img-1'][0].path;
-        slides.img1Filename = img1Filename;
-        slides.img1Path = img1Path;
-    }
-
-    if(typeof req.files['img-2'] !== "undefined"){
-        let img2Filename = req.files['img-2'][0].filename;
-        let img2Path = req.files['img-2'][0].path;
-        slides.img2Filename = img2Filename;
-        slides.img2Path = img2Path;
-    }
-    // console.log(req.files);
-
-    slides.save(function (err) {
-        if (err) {
-            return next(err);
+        let files = [];
+        for (let key in req.files) {
+            files.push(req.files[key][0])
         }
-    })
-    res.send('Slide Created successfully')
+        // console.log(req.files);
+        // console.log(files);
+
+        for (const file in files) {
+            console.log(files[file].fieldname );
+
+            if (files[file].fieldname === 'bg-img' && typeof files[file].fieldname !== "undefined") {
+                const {path} = files[file];
+
+                promises.push(await uploader(path));
+
+                fs.unlink('./' + path, (err) => {
+                    if (err) console.log(err);
+                });
+            }
+
+            if (files[file].fieldname === 'img-1' && typeof files[file].fieldname !== "undefined") {
+                const {path} = files[file];
+
+                promises.push(await uploader(path));
+
+                fs.unlink('./' + path, (err) => {
+                    if (err) console.log(err);
+                });
+            }
+
+            if (files[file].fieldname === 'img-2' && typeof files[file].fieldname !== "undefined") {
+                const {path} = files[file];
+
+                promises.push(await uploader(path));
+
+                fs.unlink('./' + path, (err) => {
+                    if (err) console.log(err);
+                });
+            }
+        }
+
+        Promise.all(promises).then(function() {
+            // returned data is in arguments[0], arguments[1], ... arguments[n]
+            if (arguments[0]) {
+                slides.bgImgFilename = arguments[0][0].public_id;
+                slides.bgImgPath = arguments[0][0].url;
+            }
+            if (arguments[1]) {
+                slides.img1Filename = arguments[1][0].public_id;
+                slides.img1Path = arguments[1][0].url;
+            }
+            if (arguments[2]) {
+                slides.img2Filename = arguments[2][0].public_id;
+                slides.img2Path = arguments[2][0].url;
+            }
+
+            //perform save operation on the last loop
+            slides.save(function (err) {
+                if (err) {
+                    return next(err);
+                }
+            });
+        });
+    } catch (err) {
+        next(err);
+    }
+
+
+    // res.status(200).json({
+    //     data: url
+    // });
+    res.send('Created successfully')
 };
 
 exports.slides_all = function (req, res, next) {
@@ -61,7 +105,7 @@ exports.slides_all = function (req, res, next) {
         slides.sort(function (a, b) {
             return a.sliderType.localeCompare(b.sliderType);
         });
-        console.log(slides);
+        // console.log(slides);
         res.send(slides);
     });
 };
@@ -73,7 +117,31 @@ exports.slides_details = function (req, res, next) {
     })
 };
 
-exports.slides_update = function (req, res, next) {
+
+function performUpdate(res, id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename,
+                       bgImgPath, img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType) {
+    Slide.updateMany({"_id": id}, {
+        $set: {
+            "sliderType" : sliderType,
+            "slider_event_date" : slider_event_date,
+            "slider_content1" : slider_content1,
+            "slider_content2" : slider_content2,
+            "bgImgFilename" : bgImgFilename,
+            "bgImgPath" : bgImgPath,
+            "img1Filename" : img1Filename,
+            "img1Path" : img1Path,//$
+            "img2Filename" : img2Filename,
+            "img2Path" : img2Path,
+            "sliderScheduleType": sliderScheduleType
+        }
+    },{multi: true}, function (err, slides) {
+        if (err) return next(err);
+        res.send('Slide udpated.');
+        console.log("success");
+    });
+}
+
+exports.slides_update = async (req, res, next) => {
     let sliderType = req.body.sliderType;
     let slider_event_date = req.body['slider_event_date'];
     let slider_content1 = req.body['slider_content1'];
@@ -94,64 +162,82 @@ exports.slides_update = function (req, res, next) {
         img2Filename = req.body.img2Filename;
         img2Path = req.body.img2Path;
     }
-    // console.log(req.body);
 
-    console.log(req.files);
-    console.log("here1");
-    if (req.files) {
-        if(typeof req.files['bg-img'] !== "undefined"){
-            console.log("here2");
-            bgImgFilename = req.files['bg-img'][0].filename;
-            bgImgPath = req.files['bg-img'][0].path;
-            console.log(bgImgFilename);
-            console.log("assets/images/slide/" + req.body.bgImgFilename);
-
-            //unlink or delete image in folder gallery
-            fs.unlink("./Views/assets/images/slide/" + req.body.bgImgFilename, (err) => {
-                if (err) console.log(err);
-            });
-        }
-        if(typeof req.files['img-1'] !== "undefined"){
-            console.log("here2");
-            img1Filename = req.files['img-1'][0].filename;
-            img1Path = req.files['img-1'][0].path;
-
-            //unlink or delete image in folder gallery
-            fs.unlink("./Views/assets/images/slide/" + req.body.img1Filename, (err) => {
-                if (err) console.log(err);
-            });
-        }
-        if(typeof req.files['img-2'] !== "undefined"){
-            console.log("here2");
-            img2Filename = req.files['img-2'][0].filename;
-            img2Path = req.files['img-2'][0].path;
-
-            //unlink or delete image in folder gallery
-            fs.unlink("./Views/assets/images/slide/" + req.body.img2Filename, (err) => {
-                if (err) console.log(err);
-            });
-        }
+    if (!req.files) {
+        //perform update operation on the last loop
+        performUpdate(res, req.params.id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename, bgImgPath,
+        img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType);
     }
-    console.log("here3");
 
-    Slide.updateMany({"_id": req.params.id}, {
-        $set: {
-            "sliderType" : sliderType,
-            "slider_event_date" : slider_event_date,
-            "slider_content1" : slider_content1,
-            "slider_content2" : slider_content2,
-            "bgImgFilename" : bgImgFilename,
-            "bgImgPath" : bgImgPath,
-            "img1Filename" : img1Filename,
-            "img1Path" : img1Path,//$
-            "img2Filename" : img2Filename,
-            "img2Path" : img2Path,
-            "sliderScheduleType": sliderScheduleType
+    try {
+        let promises = [];
+        const uploader = async (path, _id) => await cloudinary.updates(path, _id, 'Mfm-Images');
+
+        let files = [];
+        for (let key in req.files) {
+            files.push(req.files[key][0])
         }
-    },{multi: true}, function (err, slides) {
-        if (err) return next(err);
-        res.send('Slide udpated.');
-    });
+
+        for (const file in files) {
+
+            console.log(files[file].fieldname );
+
+            if (files[file].fieldname === 'bg-img' && typeof files[file].fieldname !== "undefined") {
+                const {path} = files[file];
+
+                promises.push(await uploader(path, req.body.bgImgFilename));
+
+                fs.unlink('./' + path, (err) => {
+                    if (err) console.log(err);
+                });
+            }
+
+            if (files[file].fieldname === 'img-1' && typeof files[file].fieldname !== "undefined") {
+                const {path} = files[file];
+
+                promises.push(await uploader(path, req.body.img1Filename));
+
+                fs.unlink('./' + path, (err) => {
+                    if (err) console.log(err);
+                });
+            }
+
+            if (files[file].fieldname === 'img-2' && typeof files[file].fieldname !== "undefined") {
+
+                const {path} = files[file];
+
+                promises.push(await uploader(path, req.body.img2Filename));
+
+                fs.unlink('./' + path, (err) => {
+                    if (err) console.log(err);
+                });
+            }
+        }
+
+        Promise.all(promises).then(function() {
+            // returned data is in arguments[0], arguments[1], ... arguments[n]
+            if(arguments[0]) {
+                bgImgFilename = arguments[0][0].public_id;
+                bgImgPath = arguments[0][0].url;
+            }
+            if(arguments[1]) {
+                img1Filename = arguments[1][0].public_id;
+                img1Path = arguments[1][0].url;
+            }
+            if(arguments[2]) {
+                img2Filename = arguments[2][0].public_id;
+                img2Path = arguments[2][0].url;
+            }
+
+            //perform update operation on the last loop
+            performUpdate(res, req.params.id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename, bgImgPath,
+                img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType);
+        }, function(err) {
+            // error occurred
+        });
+    } catch (err) {
+        next(err);
+    }
 };
 
 exports.slides_delete = function (req, res, next) {

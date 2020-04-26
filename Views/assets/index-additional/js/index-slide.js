@@ -48,9 +48,9 @@ $(document).ready(function() {
 debugger;
             slide += `
                  <!-- Slider #${parseInt(key) + 1} -->
-          <div class="slider slide-${parseInt(key) + 1}" style="background: url(assets/images/slide/${response[key].bgImgFilename}) no-repeat 0 0;background-size: cover; box-shadow: inset 0 0 0 2000px rgba(187, 89, 184, 0.37);">
-              <img src="assets/images/slide/${response[key].img1Filename}">
-              ${response[key].img2Filename !== null ? '<img src="assets/images/slide/' + response[key].img2Filename +'" >' : ''}
+          <div class="slider slide-${parseInt(key) + 1}" style="background: url(${response[key].bgImgPath}) no-repeat 0 0;background-size: cover; box-shadow: inset 0 0 0 2000px rgba(187, 89, 184, 0.37);">
+              <img src="${response[key].img1Path}">
+              ${response[key].img2Filename !== null ? '<img src="' + response[key].img2Path +'" >' : ''}
               <div class="slider-content">${h2s}${h4s}</div>`;
 
             slide += `

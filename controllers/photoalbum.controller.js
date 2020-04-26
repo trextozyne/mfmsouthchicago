@@ -7,7 +7,7 @@ let counter = 0;
 
 exports.photoalbum_create = async (req, res, next) => {
     let title = req.body.title.toString().split(",").pop();
-    // console.log(title);
+    console.log(req.files);
     req.files.forEach(function(value, index) {
 
         const imgName = value.filename;

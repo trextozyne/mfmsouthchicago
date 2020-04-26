@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+
 let path = require('path');
+
 
 let storage = multer.diskStorage({
     destination: function(req, file, callback){
@@ -29,6 +31,28 @@ function checkFileType(file, callback) {
     }
 }
 
+// import Datauri from 'datauri';
+//
+// const storage = multer.memoryStorage();
+
+// const multerUploads = multer({ storage }).single('image');
+
+// const dUri = new Datauri();
+//
+// /**
+//  * @description This function converts the buffer to data url
+//  * @param {Object} req containing the field object
+//  * @returns {String} The data url from the string buffer
+//  */
+// const dataUri1 = req => dUri.format(path.
+// extname(req.files['bg-img'].originalname).toString(), req.files['bg-img'].buffer);
+// const dataUri2 = req => dUri.format(path.
+// extname(req.files['bg-img'].originalname).toString(), req.files['bg-img'].buffer);
+// const dataUri3 = req => dUri.format(path.
+// extname(req.files['bg-img'].originalname).toString(), req.files['bg-img'].buffer);
+//
+// export { dataUri1, dataUri2, dataUri3 };
+//
 let upload = multer({storage: storage});
 
 const slides_controller = require('../controllers/slides.controller');

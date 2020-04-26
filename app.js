@@ -17,6 +17,7 @@ const galleryCountCountRoute = require('./routes/gallery_count.route');
 const userRoute = require('./routes/user.route');
 const ytplayListRoute = require('./routes/ytplayList.route');
 const ytplayLiveRoute = require('./routes/ytplayLive.route');
+// import { cloudinaryConfig } from './config/cloudinaryConfig';
 /////////////////////
 const app = express();
 /////////////////////
@@ -33,6 +34,8 @@ module.exports = db;
 module.exports = mongoose;
 
 app.use(cors());
+// app.use('*', cloudinaryConfig);
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
