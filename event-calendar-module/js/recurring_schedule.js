@@ -106,13 +106,14 @@ function toggle($this){
 
 // Get all options within <select id='scheduleType'>...</select>
 let selectOp;
-if(document.getElementById("scheduleType"))
+if(document.getElementById("scheduleType")) {
     selectOp = document.getElementById("scheduleType").getElementsByTagName("option");
 
-for (let i = 0; i < selectOp.length; i++) {
-    // lowercase comparison for case-insensitivity
-    if (selectOp[i].outerText.toLowerCase() === "select how") {
-        selectOp[i].disabled = true;
+    for (let i = 0; i < selectOp.length; i++) {
+        // lowercase comparison for case-insensitivity
+        if (selectOp[i].outerText.toLowerCase() === "select how") {
+            selectOp[i].disabled = true;
+        }
     }
 }
 // Get all options within <select id='scheduleType'>...</select>

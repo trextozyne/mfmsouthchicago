@@ -77,7 +77,7 @@ function loadEventData(__id, __date) {
             document.getElementsByTagName("title")[0].innerHTML = data.event_name;
             document.getElementsByClassName("event-title")[0].innerHTML = data.event_name;
             document.getElementsByClassName("event-description")[0].innerHTML = data.event_desc;
-            document.getElementsByClassName("event-image")[0].children[0].src = data.event_imgName;
+            document.getElementsByClassName("event-image")[0].children[0].src = data.event_imgPath;
             document.getElementsByClassName("event-day")[0].innerHTML = longDate(__date);
             document.getElementsByClassName("event-time-start")[0].innerHTML = getTimeAmorPm(data.start_time);
             document.getElementsByClassName("event-time-end")[0].innerHTML = getTimeAmorPm(data.end_time);
