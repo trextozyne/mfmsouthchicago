@@ -145,7 +145,14 @@ function checkExistence($this, evt, button){
         }
 
         if((response.length === 0 || button.text() === "Submit") && bool_exist === false)
-            saveSlides($this);
+
+            if($(`form#${$this.attr("id")} :input[name='bg-img']`)[0].files.length === 0 ||
+                $(`form#${$this.attr("id")} :input[name='img-1']`)[0].files.length === 0 ||
+                $(`form#${$this.attr("id")} :input[name='img-2']`)[0].files.length === 0){
+                    alert("All images have to be uploaded!!!")
+            }else {
+                saveSlides($this);
+            }
     });
 }
 
@@ -215,12 +222,13 @@ $(`body`).on("submit", forms).submit(function(evt) {
     let button = $('#'+evt.target.id).find($(`button[id^='slider-'][id$='-submit']`));
     sliderType = $(`form#${evt.target.id} :input[name ="sliderType"]`).val();
 
-    if(button.text() === "Update"){
-        doSliderUpdate($(evt.target));
-        button.html("Submit")
-    }else {
-        checkExistence($(evt.target), evt, button);
-    }
+    if (typeof sliderType !== "undefined")
+        if(button.text() === "Update"){
+            doSliderUpdate($(evt.target));
+            button.html("Submit")
+        }else {
+            checkExistence($(evt.target), evt, button);
+        }
 });
 
 (()=> {

@@ -3,8 +3,6 @@ let fs = require('fs');
 let mongodb = require('mongodb');
 const cloudinary =  require('../config/cloudinaryConfig');
 
-let counter = 0;
-
 exports.slides_create = async (req, res, next) => {
     let sliderType = req.body.sliderType;
     let slider_event_date = req.body['slider_event_date'];
@@ -33,7 +31,6 @@ exports.slides_create = async (req, res, next) => {
         // console.log(files);
 
         for (const file in files) {
-            console.log(files[file].fieldname );
 
             if (files[file].fieldname === 'bg-img' && typeof files[file].fieldname !== "undefined") {
                 const {path} = files[file];
@@ -167,76 +164,76 @@ exports.slides_update = async (req, res, next) => {
         //perform update operation on the last loop
         performUpdate(res, req.params.id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename, bgImgPath,
         img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType);
-    }
+    }else {
+        try {
+            let promises = [];
+            const uploader = async (path, _id) => await cloudinary.updates(path, _id, 'Mfm-Images');
 
-    try {
-        let promises = [];
-        const uploader = async (path, _id) => await cloudinary.updates(path, _id, 'Mfm-Images');
+            let files = [];
+            for (let key in req.files) {
+                files.push(req.files[key][0])
+            }
 
-        let files = [];
-        for (let key in req.files) {
-            files.push(req.files[key][0])
+            for (const file in files) {
+
+                console.log(files[file].fieldname);
+
+                if (files[file].fieldname === 'bg-img' && typeof files[file].fieldname !== "undefined") {
+                    const {path} = files[file];
+
+                    promises.push(await uploader(path, req.body.bgImgFilename));
+
+                    fs.unlink('./' + path, (err) => {
+                        if (err) console.log(err);
+                    });
+                }
+
+                if (files[file].fieldname === 'img-1' && typeof files[file].fieldname !== "undefined") {
+                    const {path} = files[file];
+
+                    promises.push(await uploader(path, req.body.img1Filename));
+
+                    fs.unlink('./' + path, (err) => {
+                        if (err) console.log(err);
+                    });
+                }
+
+                if (files[file].fieldname === 'img-2' && typeof files[file].fieldname !== "undefined") {
+
+                    const {path} = files[file];
+
+                    promises.push(await uploader(path, req.body.img2Filename));
+
+                    fs.unlink('./' + path, (err) => {
+                        if (err) console.log(err);
+                    });
+                }
+            }
+
+            Promise.all(promises).then(function () {
+                // returned data is in arguments[0], arguments[1], ... arguments[n]
+                if (arguments[0]) {
+                    bgImgFilename = arguments[0][0].public_id;
+                    bgImgPath = arguments[0][0].url;
+                }
+                if (arguments[1]) {
+                    img1Filename = arguments[1][0].public_id;
+                    img1Path = arguments[1][0].url;
+                }
+                if (arguments[2]) {
+                    img2Filename = arguments[2][0].public_id;
+                    img2Path = arguments[2][0].url;
+                }
+
+                //perform update operation on the last loop
+                performUpdate(res, req.params.id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename, bgImgPath,
+                    img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType);
+            }, function (err) {
+                // error occurred
+            });
+        } catch (err) {
+            next(err);
         }
-
-        for (const file in files) {
-
-            console.log(files[file].fieldname );
-
-            if (files[file].fieldname === 'bg-img' && typeof files[file].fieldname !== "undefined") {
-                const {path} = files[file];
-
-                promises.push(await uploader(path, req.body.bgImgFilename));
-
-                fs.unlink('./' + path, (err) => {
-                    if (err) console.log(err);
-                });
-            }
-
-            if (files[file].fieldname === 'img-1' && typeof files[file].fieldname !== "undefined") {
-                const {path} = files[file];
-
-                promises.push(await uploader(path, req.body.img1Filename));
-
-                fs.unlink('./' + path, (err) => {
-                    if (err) console.log(err);
-                });
-            }
-
-            if (files[file].fieldname === 'img-2' && typeof files[file].fieldname !== "undefined") {
-
-                const {path} = files[file];
-
-                promises.push(await uploader(path, req.body.img2Filename));
-
-                fs.unlink('./' + path, (err) => {
-                    if (err) console.log(err);
-                });
-            }
-        }
-
-        Promise.all(promises).then(function() {
-            // returned data is in arguments[0], arguments[1], ... arguments[n]
-            if(arguments[0]) {
-                bgImgFilename = arguments[0][0].public_id;
-                bgImgPath = arguments[0][0].url;
-            }
-            if(arguments[1]) {
-                img1Filename = arguments[1][0].public_id;
-                img1Path = arguments[1][0].url;
-            }
-            if(arguments[2]) {
-                img2Filename = arguments[2][0].public_id;
-                img2Path = arguments[2][0].url;
-            }
-
-            //perform update operation on the last loop
-            performUpdate(res, req.params.id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename, bgImgPath,
-                img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType);
-        }, function(err) {
-            // error occurred
-        });
-    } catch (err) {
-        next(err);
     }
 };
 

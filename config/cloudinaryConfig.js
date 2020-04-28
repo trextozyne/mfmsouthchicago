@@ -32,8 +32,7 @@ exports.uploads = (imagePath, folder) => {
 
 exports.updates = (imagePath, _id, folder) => {//.substring(_id.indexOf("/") + 1)
     _id = _id.substring(_id.indexOf("/") + 1);
-    // console.log(imagePath)
-    // console.log(_id)
+
     return cloudinary.uploader.upload(imagePath,
         {
             resource_type: "auto",
@@ -46,7 +45,6 @@ exports.updates = (imagePath, _id, folder) => {//.substring(_id.indexOf("/") + 1
             if (error) {
                 // handle error
             } else {
-                console.log(result);
                 return Promise.resolve({
                     url: result.url,
                     id: result.public_id

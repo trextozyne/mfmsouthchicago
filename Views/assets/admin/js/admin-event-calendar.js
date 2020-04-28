@@ -55,7 +55,6 @@ function loadScript() {
 
         document.body.appendChild(script2);
     }, 2000);
-    // console.log('loadScript');
 }
 //==================================pull saved event datas==========================================
 function loadData() {
@@ -69,12 +68,13 @@ function loadData() {
             let getModalDialog, getModalContent, getModalHeader;
             let getModalHeaderCounter = document.querySelectorAll('*[id^="largeModal"]').length;
             $.each(data, function(key, content) {
+                content.event_recur = JSON.parse(content.event_recur);
 
                 getEvents_recur = [...getEvents_recur, ...content.event_recur];
 
                 html += '<li data-event_name="'+ content.event_name +'" data-start_date="'+ content.start_date +'" data-end_date="'+ content.end_date +'" class="card" style="background-color: #d9edf7; border-color: #bce8f1;">\n';
                 html +='<div class="card-body panel-heading"><div class="row"><div class="col-lg-2"><a href="javascript:void(0)" data-toggle="modal" data-target="#largeModal'+ getModalHeaderCounter +'">\n';
-                html +='<img class="img-thumbnail img-fluid" style="cursor: pointer;" src="../../assets/images/gallery/'+ content.event_imgName +'" alt="mfmsouth-church-events"></a>\n';
+                html +='<img class="img-thumbnail img-fluid" style="cursor: pointer;" src="'+ content.event_imgPath +'" alt="mfmsouth-church-events"></a>\n';
                 html +='</div><div class="col-lg-10" style="padding-top: 10px;"><span>Event Name:<a  onclick="insertText(this, \'Name\')"> '+ content.event_name +'</a></span> &nbsp;\n';
                 html +='<span>Start Dtae:<a  href="javascript:void(0)" onclick="insertText(this, \'Start Date\')"> '+ content.start_date +'</a></span>&nbsp;';
                 html +='<span>End Date:<a  href="javascript:void(0)" onclick="insertText(this, \'End Date\')"> '+ content.end_date +'</a></span></div>\n';
@@ -83,7 +83,7 @@ function loadData() {
                 html +='<!--=======================================/modal=============================-->\n';
                 html +='<!-- large modal -->\n';
 
-                html2 += '<img src="../../assets/images/gallery/' + content.event_imgName + '" alt="mfmsouth-church-events" style="width:100%">\n';
+                html2 += '<img src="' + content.event_imgPath + '" alt="mfmsouth-church-events" style="width:100%">\n';
                 html2 += '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>\n';
                 html2 += '</button>';
 
@@ -126,6 +126,7 @@ function loadData() {
         prepare_isDeleteListCards();
     });
 }
+
 jQuery(($) => {
     loadData()
 });
@@ -223,6 +224,7 @@ $(document).on("click","#event_submit",function(evt){
 });
 
 function updateCalendar(_event_recur) {
+    // getEvents_recur = JSON.parse(getEvents_recur);
     let events = [...getEvents_recur, ..._event_recur];
     getEvents_recur.push(..._event_recur);
     let settings = {};
@@ -255,10 +257,10 @@ $("#event_form").submit(function(evt){
 
         let url = "/events/create";
         let $form = $("#event_form");
-        let formData = JSON.parse(JSON.stringify(getFormData($form)));
+        let formData = getFormData($form);
 debugger;
         if (formData.recur === "Recurring") {
-            formData.event_recur = getEvents;
+            formData.event_recur = JSON.stringify(getEvents);
             formData.recur = "";
             formData.start_date = document.getElementById("start_date").value;
             formData.end_date = document.getElementById("end_date").value;
@@ -270,23 +272,82 @@ debugger;
             createdEvents.Time = getTimeAmorPm(document.getElementById("start_time").value) + "-" + getTimeAmorPm(document.getElementById("end_time").value);
             getEvents.push(createdEvents);
             createdEvents = {};
-            formData.event_recur = getEvents;
+            formData.event_recur = JSON.stringify(getEvents);
         }
         getEvents = [];
 
         //the array of dates loop should switch in after the first formdata is stored and the neww data should replace the old formdata
         // let formData = $("#event_form").serialize();
         //i showuld you my brain here to stroer the rest of the occurences
-        $(this).ajaxSubmit({
-            url: url,
-            method: "POST",
-            data: formData,
-            "content-type": 'application/json',
-            dataType: "json",
-            success: doUpdate
+        debugger;
+
+        let data = new FormData();
+
+        for (let key in formData) {
+            switch (key) {
+                case 'dayofWeek':
+                    data.append("dayofWeek", formData[key]);
+                    break;
+                case 'end_date':
+                    data.append("end_date", formData[key]);
+                    break;
+                case 'end_time':
+                    data.append("end_time", formData[key]);
+                    break;
+                case 'event_desc':
+                    data.append("event_desc", formData[key]);
+                    break;
+                case 'event_name':
+                    data.append("event_name", formData[key]);
+                    break;
+                case 'event_recur':
+                    data.append("event_recur", formData[key]);
+                    break;
+                case 'recur':
+                    data.append("recur", formData[key]);
+                    break;
+                case 'scheduleStart':
+                    data.append("scheduleStart", formData[key]);
+                    break;
+                case 'scheduleType':
+                    data.append("scheduleType", formData[key]);
+                    break;
+                case 'scheduleends':
+                    data.append("scheduleends", formData[key]);
+                    break;
+                case 'scheduleendson':
+                    data.append("scheduleendson", formData[key]);
+                    break;
+                case 'start_date':
+                    data.append("start_date", formData[key]);
+                    break;
+                case 'start_time':
+                    data.append("start_time", formData[key]);
+                    break;
+            }
+        }
+
+        if(typeof $(`form#event_form :input[name='eventFileInput']`)[0] !== "undefined")
+            data.append("eventFileInput", $(`form#event_form :input[name='eventFileInput']`)[0].files[0]);
+
+        let xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                // console.log(this.responseText);
+                // event_recurClone.push(...getEvents);
+                doUpdate(this.response, []);
+                getEvents.length = 0;
+            }
         });
 
-        alert('events saved successfully!');
+        xhr.open("POST", url);
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
+
+        // let rdata = JSON.stringify(data);
+        xhr.send(data);
     }
     else {//update
         // check iff recurrence is checked
@@ -302,75 +363,121 @@ debugger;
 });
 
 function doUpdate (response, clone_eventRecur) {
+    debugger;
+    response = JSON.parse(response);
+    response.event_recur = JSON.parse(response.event_recur[0]);
+
     let isArray = (data) => {
         return (Object.prototype.toString.call(data) === "[object Array]");
     };
 
-    // let f = isArray(clone_eventRecur);
     let $form = $("#event_form");
-    let formData = JSON.parse(JSON.stringify(getFormData($form)));
+    let formData = getFormData($form);
 
-    let event_name = formData.event_name;
-    let event_desc = formData.event_desc;
-    let start_date = formData.start_date;
-    let end_date = formData.end_date;
-    let start_time = formData.start_time;
-    let end_time = formData.end_time;
     event_img = response.event_imgPath;
     event_imgName = response.event_imgName;
 
-    if (isArray(clone_eventRecur))
-        clone_eventRecur.forEach(function(value) {
+    if (isArray(clone_eventRecur) && clone_eventRecur.length > 0)
+        clone_eventRecur.forEach(function (value) {
             value._id = response._id;
         });
     else
-        response.event_recur.forEach(function(value) {
+        response.event_recur.forEach(function (value) {
             value._id = response._id;
         });
 
-    let event_recur = isArray(clone_eventRecur) ? clone_eventRecur : response.event_recur;
+    let event_recur = isArray(clone_eventRecur) && clone_eventRecur.length > 0 ? clone_eventRecur : response.event_recur;
 
     // let data = {
-        response.event_name = event_name;
-        response.event_desc = event_desc;
-        response.event_imgName = event_imgName;
-        response.event_imgPath = event_img;
-        response.start_date =  start_date;
-        response.end_date = end_date;
-        response.start_time = start_time;
-        response.end_time = end_time;
-        response.event_recur= event_recur;
-    // };
+    response.event_name = formData.event_name;
+    response.event_desc = formData.event_desc;
+    response.event_imgName = event_imgName;
+    response.event_imgPath = event_img;
+    response.start_date = formData.start_date;
+    response.end_date = formData.end_date;
+    response.start_time = formData.start_time;
+    response.end_time = formData.end_time;
+    response.event_recur = JSON.stringify(event_recur);
 
-    let settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "/events/"+ response._id +"/update",
-        "method": "PUT",
-        "headers": {
-            "Content-Type": "application/json",
-            "cache-control": "no-cache",
-            "Postman-Token": "43540433-8036-4e05-978f-f2804ca9877d"
-        },
-        "processData": false,
-        data: JSON.stringify(response)
+    let url = "/events/" + response._id + "/update";
+    let data = new FormData();
 
-        ,
-        contentType: 'application/json',
-        // dataType: "json",
-        success: function(response){
-            // alert(response);
+    for (let key in response) {
+        switch (key) {
+            case 'event_imgName':
+                data.append("event_imgName", response[key]);
+                break;
+            case 'event_imgPath':
+                data.append("event_imgPath", response[key]);
+                break;
+            case 'dayofWeek':
+                data.append("dayofWeek", response[key]);
+                break;
+            case 'end_date':
+                data.append("end_date", response[key]);
+                break;
+            case 'end_time':
+                data.append("end_time", response[key]);
+                break;
+            case 'event_desc':
+                data.append("event_desc", response[key]);
+                break;
+            case 'event_name':
+                data.append("event_name", response[key]);
+                break;
+            case 'event_recur':
+                data.append("event_recur", response[key]);
+                break;
+            case 'recur':
+                data.append("recur", response[key]);
+                break;
+            case 'scheduleStart':
+                data.append("scheduleStart", response[key]);
+                break;
+            case 'scheduleType':
+                data.append("scheduleType", response[key]);
+                break;
+            case 'scheduleends':
+                data.append("scheduleends", response[key]);
+                break;
+            case 'scheduleendson':
+                data.append("scheduleendson", response[key]);
+                break;
+            case 'start_date':
+                data.append("start_date", response[key]);
+                break;
+            case 'start_time':
+                data.append("start_time", response[key]);
+                break;
         }
-    };
+    }
 
-    $.ajax(settings).done(function (response) {
-        if(__id === null)
-            updateCalendar(response.event_recur);
-        else {
-            let edit_GetEvents_recur = event_recurClone;
-            updateCalendar(edit_GetEvents_recur);
+    if (typeof $(`form#event_form :input[name='eventFileInput']`)[0] !== "undefined") {
+        data.append("eventFileInput", $(`form#event_form :input[name='eventFileInput']`)[0].files[0]);
+    } else {
+        data.append("event_imgName", response.event_imgName);
+        data.append("event_imgPath", response.event_imgPath);
+    }
+
+    let xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            if (__id === null)
+                updateCalendar(event_recur);
+            else {
+                // let edit_GetEvents_recur = event_recurClone;
+                updateCalendar(event_recurClone);
+            }
         }
     });
+
+    xhr.open("PUT", url);
+    xhr.setRequestHeader("cache-control", "no-cache");
+    xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
+
+    xhr.send(data);
 }
 //end submit
 
@@ -381,15 +488,10 @@ function _onEditItem(id) {
         "async": true,
         "crossDomain": true,
         "url": "/events/" + id,
-        "method": "GET",
-        "headers": {
-            "cache-control": "no-cache",
-            "Postman-Token": "d8a72744-3f78-45eb-9967-05d281a007b9"
-        }
+        "method": "GET"
     };
 
     $.ajax(settings).done(function (response) {
-
         document.getElementsByClassName('currMonth')[0].click();
 
         document.forms["event_form"]["event_name"].value = response.event_name;

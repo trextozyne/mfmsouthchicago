@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 var path = require('path');
 
-var storage = multer.diskStorage({
+let storage = multer.diskStorage({
     destination: function(req, file, callback){
         callback(null, path.join('./Views', 'assets/images/gallery')); // set the destination
     },

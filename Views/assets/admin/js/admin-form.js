@@ -8,8 +8,10 @@ $(document).ready(function () {
         url: "/gallerycount/find",
         method: "GET"
     }).done(function (response) {
-        console.log(response[0]._id);
-        galleryCountId = response[0]._id;
+        if(response.length > 0) {
+            console.log(response[0]._id);
+            galleryCountId = response[0]._id;
+        }
     });
 });
 
@@ -277,7 +279,7 @@ jQuery(($) => {
                 let dateCreatedModified = dateCreated.substring(5,7)+'/'+ dateCreated.substring(8,10)+'/'+ dateCreated.substring(0,4);
                 html += '<li data-title="'+ content.title +'" data-album_name="'+ content.albums[0].u_name +'" data-date="'+ dateCreatedModified +'" class="card" style="background-color: #d9edf7; border-color: #bce8f1;">\n';
                 html +='<div class="card-body panel-heading"><div class="row"><div class="col-lg-2"><a href="javascript:void(0)" data-toggle="modal" data-target="#largeModal'+ getModalHeaderCounter +'">\n';
-                html +='<img class="img-thumbnail img-fluid" style="cursor: pointer;" src="../../assets/images/gallery/'+ content.imgName +'" alt="mfmsouth-image-gallery"></a>\n';
+                html +='<img class="img-thumbnail img-fluid" style="cursor: pointer;" src="'+ content.img +'" alt="mfmsouth-image-gallery"></a>\n';
                 html +='</div><div class="col-lg-10" style="padding-top: 10px;"><span>Title:<a  onclick="insertText(this, \'Title\')"> '+ content.title +'</a></span> &nbsp;\n';
                 html +='<span>Album name:<a  href="javascript:void(0)" onclick="insertText(this, \'Album name\')"> '+ content.albums[0].u_name +'</a></span>&nbsp;';
                 html +='<span>Date Created:<a  href="javascript:void(0)" onclick="insertText(this, \'Date Created\')"> '+ dateCreatedModified +'</a></span></div>\n';
@@ -286,7 +288,7 @@ jQuery(($) => {
                 html +='<!--=======================================/modal=============================-->\n';
                 html +='<!-- large modal -->\n';
                 debugger;
-                html2 += '<img src="../../assets/images/gallery/' + content.imgName + '" alt="mfmsouth-church-events" style="width:100%">\n';
+                html2 += '<img src="' + content.img + '" alt="mfmsouth-church-events" style="width:100%">\n';
                 html2 += '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>\n';
                 html2 += '</button>';
 

@@ -7,6 +7,7 @@ $(window).load(function(){
 });
 
 function doJoin(val){
+    debugger;
     val = val.split(',');
     val = val[1]+ '/' + val[2] + '/' + val[0];
     return val;
@@ -29,6 +30,7 @@ function loadScript() {
 }
 
 function loadData() {
+    debugger;
     let uri = '/events/find';
     $.ajax({
         url: uri,
@@ -36,6 +38,7 @@ function loadData() {
         success: function (data) {
             $.each(data, function (key, content) {
                 debugger;
+                content.event_recur = JSON.parse(content.event_recur);
                 getEvents_recur = [...getEvents_recur,...content.event_recur];
             });
         }
@@ -43,9 +46,9 @@ function loadData() {
 }
 
 $(document).ready(function () {
+    debugger;
     loadData();
     loadScript();
-    debugger;
     if(window.innerWidth > window.innerHeight) {
         document.getElementsByClassName("Calendar")[0].removeAttribute("hidden");
         document.getElementsByClassName("Information")[0].setAttribute("hidden", "hidden")

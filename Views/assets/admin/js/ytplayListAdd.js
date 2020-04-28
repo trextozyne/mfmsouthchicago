@@ -1,4 +1,4 @@
-document.addEventListener('click',function(e) {
+document.addEventListener('click',function(e) {debugger
     if (e.target && e.target.type === "checkbox" && e.target.getAttribute('name') === "live" && e.target.checked === true) {
         let parentElement = e.target.parentElement.parentElement.parentElement.parentElement;
         let inputs = parentElement.querySelectorAll("input");
@@ -8,7 +8,7 @@ document.addEventListener('click',function(e) {
 
         inputs[1].value ="";
         inputs[1].focus();
-    }else if (e.target && e.target.type === "checkbox"){
+    }else if (e.target && e.target.type === "checkbox" && e.target.getAttribute('name') === "live"){
         let parentElement = e.target.parentElement.parentElement.parentElement.parentElement;
         let inputs = parentElement.querySelectorAll("input");
 

@@ -105,7 +105,10 @@ function toggle($this){
 //--for the radio button inputs ---
 
 // Get all options within <select id='scheduleType'>...</select>
-let selectOp = document.getElementById("scheduleType").getElementsByTagName("option");
+let selectOp;
+if(document.getElementById("scheduleType"))
+    selectOp = document.getElementById("scheduleType").getElementsByTagName("option");
+
 for (let i = 0; i < selectOp.length; i++) {
     // lowercase comparison for case-insensitivity
     if (selectOp[i].outerText.toLowerCase() === "select how") {
@@ -124,6 +127,7 @@ function validateAllInputs(){
     let arrayOfDates = [];
 
     if(document.getElementById("recur").checked) {
+        debugger;
         for (let item of inputElements) {
             if (item.type === "date" && inputValid !== true && item.value !== "") {
                 startPeriod = item.value + " 00:00";

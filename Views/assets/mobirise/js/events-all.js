@@ -101,7 +101,7 @@ function loadEventData() {
                         '                                      <h2>'+ getShortMonth(doJoin(value.Date)) +'</h2>\n' +
                         '                                      <h1>'+new Date(start_date).getDate()+'</h1>\n' +
                         '                                      <h2 id="last-h2">'+ getDayOfWeek(start_date).slice(0, 3) +'</h2>\n' +
-                        ' </div></div><div class="col-12 col-md-2"><!--Image--><div class="mbr-figure"><img src="assets/images/gallery/' + foundData.event_imgName + '" alt="church_event">\n' +
+                        ' </div></div><div class="col-12 col-md-2"><!--Image--><div class="mbr-figure"><img src="' + foundData.event_imgName + '" alt="church_event">\n' +
                         '</div></div><div class="col-12 col-md-8"><div class="wrapper"><div class="top-line">' +
                         '                                     <h4 class="card-title mbr-fonts-style display-5">'+ foundData.event_name +'</h4>\n' +
                         ' </div><div class="top-line">\n' +
