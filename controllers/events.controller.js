@@ -61,8 +61,9 @@ exports.events_all = function (req, res, next) {
     // console.log(req.params.pageNum);
     Events.findById(req.params.id, function (err, events) {
         if (err) return next(err);
-        event = events;
-    });
+
+        res.send(events);
+    })
 
     try {
         Events.find(({}), function (err, events) {//query
