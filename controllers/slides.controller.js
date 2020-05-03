@@ -63,20 +63,16 @@ exports.slides_create = async (req, res, next) => {
             }
         }
 
-        Promise.all(promises).then(function() {
+        Promise.all(promises).then(function () {
             // returned data is in arguments[0], arguments[1], ... arguments[n]
-            if (arguments[0]) {
-                slides.bgImgFilename = arguments[0][0].public_id;
-                slides.bgImgPath = arguments[0][0].url;
-            }
-            if (arguments[1]) {
-                slides.img1Filename = arguments[1][0].public_id;
-                slides.img1Path = arguments[1][0].url;
-            }
-            if (arguments[2]) {
-                slides.img2Filename = arguments[2][0].public_id;
-                slides.img2Path = arguments[2][0].url;
-            }
+            slides.bgImgFilename = arguments[0][0].public_id;
+            slides.bgImgPath = arguments[0][0].url;
+
+            slides.img1Filename = arguments[0][1].public_id;
+            slides.img1Path = arguments[0][1].url;
+
+            slides.img2Filename = arguments[0][2].public_id;
+            slides.img2Path = arguments[0][2].url;
 
             //perform save operation on the last loop
             slides.save(function (err) {
@@ -116,7 +112,7 @@ exports.slides_details = function (req, res, next) {
 
 
 function performUpdate(res, id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename,
-                       bgImgPath, img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType) {
+                       bgImgPath, img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType, next) {
     Slide.updateMany({"_id": id}, {
         $set: {
             "sliderType" : sliderType,
@@ -160,10 +156,12 @@ exports.slides_update = async (req, res, next) => {
         img2Path = req.body.img2Path;
     }
 
+
+
     if (!req.files) {
         //perform update operation on the last loop
         performUpdate(res, req.params.id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename, bgImgPath,
-        img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType);
+        img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType, next);
     }else {
         try {
             let promises = [];
@@ -212,22 +210,19 @@ exports.slides_update = async (req, res, next) => {
 
             Promise.all(promises).then(function () {
                 // returned data is in arguments[0], arguments[1], ... arguments[n]
-                if (arguments[0]) {
-                    bgImgFilename = arguments[0][0].public_id;
-                    bgImgPath = arguments[0][0].url;
-                }
-                if (arguments[1]) {
-                    img1Filename = arguments[1][0].public_id;
-                    img1Path = arguments[1][0].url;
-                }
-                if (arguments[2]) {
-                    img2Filename = arguments[2][0].public_id;
-                    img2Path = arguments[2][0].url;
-                }
+
+                bgImgFilename = arguments[0][0].public_id;
+                bgImgPath = arguments[0][0].url;
+
+                img1Filename = arguments[0][1].public_id;
+                img1Path = arguments[0][1].url;
+
+                img2Filename = arguments[0][2].public_id;
+                img2Path = arguments[0][2].url;
 
                 //perform update operation on the last loop
                 performUpdate(res, req.params.id, sliderType, slider_event_date, slider_content1, slider_content2, bgImgFilename, bgImgPath,
-                    img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType);
+                    img1Filename, img1Path, img2Filename, img2Path, sliderScheduleType, next);
             }, function (err) {
                 // error occurred
             });
@@ -237,17 +232,48 @@ exports.slides_update = async (req, res, next) => {
     }
 };
 
-exports.slides_delete = function (req, res, next) {
-    // Slide.findOneAndDelete (req.params.id, function (err) {
-    Slide.deleteOne({_id: new mongodb.ObjectID(req.params.id)}, function(err, events){
+exports.slides_delete = async (req, res, next) => {
+    let slide = null;
+
+    Slide.findById(req.params.id, function (err, slides) {
         if (err) return next(err);
-        res.send('Deleted successfully!');
+        slide = slides;
+    });
+
+    Slide.deleteOne({_id: new mongodb.ObjectID(req.params.id)}, async function(err, events){
+        if (err) return next(err);
+
+        try {
+            let promises = [];
+            const uploader = async (_id) => await cloudinary.delete(_id);
+
+            let id;
+            id = slide.bgImgFilename;
+
+            promises.push(await uploader(id));
+
+            id = slide.img1Filename;
+
+            promises.push(await uploader(id));
+
+            id = slide.img2Filename;
+
+            promises.push(await uploader(id));
+
+            Promise.all(promises).then(function () {
+                res.send('Deleted successfully!');
+            });
+
+        } catch (err) {
+            next(err)
+        }
+
     })
 };
 //Simple version, without validation or sanitation
-exports.test = function (req, res) {
-    res.send('Greetings from the Test controller!');
-};
+// exports.test = function (req, res) {
+//     res.send('Greetings from the Test controller!');
+// };
 
 // empty the collection
 // Slide.remove(err => {

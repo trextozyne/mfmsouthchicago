@@ -1,3 +1,5 @@
+let query = require("mongoose");
+
 const Events = require('../models/events.model');
 var fs = require('fs');
 var path = require('path');
@@ -55,23 +57,30 @@ exports.events_create = async (req, res, next) => {
 };
 
 exports.events_all = function (req, res, next) {
-    Events.find(({}), function (err, events) {
-        if (err) return next(err);
-        res.send(events);
-    });
+    // let itemsPerPage = 10;
+    // console.log(req.params.pageNum);
+
+    try {
+        Events.find(({}), function (err, events) {//query
+            if (err) return next(err);
+            console.log(events)
+            res.send(events);
+        });
+    }catch (e) {
+        next(e)
+    }
 };
 
 exports.events_details = function (req, res, next) {
     Events.findById(req.params.id, function (err, events) {
         if (err) return next(err);
+
         res.send(events);
     })
 };
 
 function performUpdate(req, res, id, event_name, event_desc, imgName, img, start_date, end_date, start_time,
-                       end_time, scheduleType, event_recur) {
-
-    console.log(id);
+                       end_time, scheduleType, event_recur, next) {
     Events.updateMany({"_id": id}, {
         $set: {
             "event_name" : event_name,
@@ -105,11 +114,11 @@ exports.events_update = async (req, res, next) => {
 
     let img = req.body.event_imgPath;
     let imgName = req.body.event_imgName;
+
     if(!req.file) {
-        console.log("here1");
         //perform update operation on the last loop
-        performUpdate(res, req.params.id, event_name, event_desc, imgName, img, start_date, end_date,
-            start_time, end_time, scheduleType, event_recur);
+        performUpdate(req, res, req.params.id, event_name, event_desc, imgName, img, start_date, end_date,
+            start_time, end_time, scheduleType, event_recur, next);
     } else {
         try {
             let promises = [];
@@ -131,7 +140,7 @@ exports.events_update = async (req, res, next) => {
 
                 //perform update operation on the last loop
                 performUpdate(req, res, req.params.id, event_name, event_desc, imgName, img, start_date, end_date,
-                    start_time, end_time, scheduleType, event_recur);
+                    start_time, end_time, scheduleType, event_recur, next);
             });
 
         } catch (err) {
@@ -147,11 +156,31 @@ exports.events_update = async (req, res, next) => {
     // }
 };
 
-exports.events_delete = function (req, res, next) {
-    Events.findByIdAndRemove (req.params.id, function (err, events) {
-    // Events.deleteOne({_id: new mongodfindByIdAndRemoveb.ObjectID(req.params.id)}, function(err, events){
-        console.log(events);
+exports.events_delete = async (req, res, next) => {
+    let event = null;
+
+    Events.findById(req.params.id, function (err, events) {
         if (err) return next(err);
-        res.send(events);
+        event = events;
+    });
+
+    // Events.findByIdAndRemove (req.params.id, async function (err, data) {
+    Events.deleteOne({_id: new mongodb.ObjectID(req.params.id)}, async function(err, data){
+        if (err) return next(err);
+
+        try {
+            let promises = [];
+            const uploader = async (_id) => await cloudinary.delete(_id);
+
+            let id = event.event_imgName;
+            promises.push(await uploader(id));
+
+            Promise.all(promises).then(function () {
+                res.send("deleted");
+            });
+
+        } catch (err) {
+            next(err)
+        }
     })
 };

@@ -136,7 +136,7 @@ jQuery(($) => {
 function getTotalMinutes(time) {
     let hms = time;   // your input string
     let a = hms.split(':'); // split it at the colons
-
+debugger;
     // Hours are worth 60 minutes.
     let minutes = (+a[0]) * 60 + (+a[1]);
 }
@@ -207,26 +207,20 @@ function canSubmit() {
 let __id = null, event_img = null, event_imgName = null, editResponse = {}, event_recurClone = [];
 
 $(document).on("click","#event_submit",function(evt){
-    evt.preventDefault();debugger;
+    evt.preventDefault();//debugger;
     start_time  = document.getElementById("start_time").value;
     end_time = document.getElementById("end_time").value;
 
     if (canSubmit() && validateAllInputs()) {
         $("#event_form").submit(); //Trigger the Submit Here
-
-        setTimeout(()=> {
-            getEvents_recur =[];
-            loadData();
-        }, 2000)
     } else {
         alert("the forms info is not valid");
     }
 });
 
 function updateCalendar(_event_recur) {
-    // getEvents_recur = JSON.parse(getEvents_recur);
-    let events = [...getEvents_recur, ..._event_recur];
-    getEvents_recur.push(..._event_recur);
+    let events = [..._event_recur];
+    // getEvents_recur.push(..._event_recur);
     let settings = {};
     let element = document.getElementById('caleandar');
     caleandar(element, events, settings);
@@ -238,7 +232,7 @@ function doJoin(val){
     return val;
 }
 
-function getTimeAmorPm(time) {debugger;
+function getTimeAmorPm(time) {//debugger;
     let hms = time + ":00";
     let dt = new Date("1970-01-01 " + hms);
 
@@ -251,128 +245,98 @@ function getTimeAmorPm(time) {debugger;
 }
 
 // Handle the sumbit here.
-$("#event_form").submit(function(evt){
+$("#event_form").submit(function(evt) {
     evt.preventDefault();
-    if (__id === null) {//save
+    try {
+        if (__id === null) {//save
 
-        let url = "/events/create";
-        let $form = $("#event_form");
-        let formData = getFormData($form);
-debugger;
-        if (formData.recur === "Recurring") {
-            formData.event_recur = JSON.stringify(getEvents);
-            formData.recur = "";
-            formData.start_date = document.getElementById("start_date").value;
-            formData.end_date = document.getElementById("end_date").value;
-        }else {
-            let event_start_date  = document.getElementById("start_date").value.split("/");
-            createdEvents.Date = event_start_date[2] + ',' + event_start_date[0]+ ',' + event_start_date[1];
-            // createdEvents.Date = createdEvents.Date.join(',');
-            createdEvents.Title = formData.event_name;
-            createdEvents.Time = getTimeAmorPm(document.getElementById("start_time").value) + "-" + getTimeAmorPm(document.getElementById("end_time").value);
-            getEvents.push(createdEvents);
-            createdEvents = {};
-            formData.event_recur = JSON.stringify(getEvents);
-        }
-        getEvents = [];
+            let url = "/events/create";
+            let $form = $('form#event_form')[0];//$("#event_form")
+            let data = new FormData($form);
 
-        //the array of dates loop should switch in after the first formdata is stored and the neww data should replace the old formdata
-        // let formData = $("#event_form").serialize();
-        //i showuld you my brain here to stroer the rest of the occurences
-        debugger;
-
-        let data = new FormData();
-
-        for (let key in formData) {
-            switch (key) {
-                case 'dayofWeek':
-                    data.append("dayofWeek", formData[key]);
-                    break;
-                case 'end_date':
-                    data.append("end_date", formData[key]);
-                    break;
-                case 'end_time':
-                    data.append("end_time", formData[key]);
-                    break;
-                case 'event_desc':
-                    data.append("event_desc", formData[key]);
-                    break;
-                case 'event_name':
-                    data.append("event_name", formData[key]);
-                    break;
-                case 'event_recur':
-                    data.append("event_recur", formData[key]);
-                    break;
-                case 'recur':
-                    data.append("recur", formData[key]);
-                    break;
-                case 'scheduleStart':
-                    data.append("scheduleStart", formData[key]);
-                    break;
-                case 'scheduleType':
-                    data.append("scheduleType", formData[key]);
-                    break;
-                case 'scheduleends':
-                    data.append("scheduleends", formData[key]);
-                    break;
-                case 'scheduleendson':
-                    data.append("scheduleendson", formData[key]);
-                    break;
-                case 'start_date':
-                    data.append("start_date", formData[key]);
-                    break;
-                case 'start_time':
-                    data.append("start_time", formData[key]);
-                    break;
+            //debugger;
+            if (document.getElementById('recur').checked) {
+                data.append("event_recur", JSON.stringify(getEvents));
+                data.append("start_date", document.getElementById("start_date").value);
+                data.append("end_date", document.getElementById("end_date").value);
+                // data.event_recur = JSON.stringify(getEvents);
+            } else {
+                let event_start_date = document.getElementById("start_date").value.split("/");
+                createdEvents.Date = event_start_date[2] + ',' + event_start_date[0] + ',' + event_start_date[1];
+                // createdEvents.Date = createdEvents.Date.join(',');
+                createdEvents.Title = $form.event_name.value;
+                createdEvents.Time = getTimeAmorPm(document.getElementById("start_time").value) + "-" + getTimeAmorPm(document.getElementById("end_time").value);
+                getEvents.push(createdEvents);
+                createdEvents = {};
+                data.append("event_recur", JSON.stringify(getEvents));
             }
+
+            document.getElementById('recur').click();
+
+            getEvents = [];
+
+            //the array of dates loop should switch in after the first formdata is stored and the neww data should replace the old formdata
+            // let formData = $("#event_form").serialize();
+            //i showuld you my brain here to stroer the rest of the occurences
+            //debugger;
+
+            let xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    doUpdate(this.response, []);
+                    getEvents.length = 0;
+
+                    // document.getElementById("event_form").reset();
+                }
+            });
+
+            xhr.open("POST", url);
+            xhr.setRequestHeader("cache-control", "no-cache");
+            xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
+
+            xhr.send(data);
         }
+        else {//update
+            // check iff recurrence is checked
+            //debugger;
+            event_recurClone.push(...getEvents);
+            doUpdate(editResponse, event_recurClone);
+            getEvents = [];
 
-        if(typeof $(`form#event_form :input[name='eventFileInput']`)[0] !== "undefined")
-            data.append("eventFileInput", $(`form#event_form :input[name='eventFileInput']`)[0].files[0]);
+            alert('events updated successfully!');
+            _id = null;
+            // document.getElementById('ImgForm_submit').innerText = "Submit Form"
+            document.getElementById('recur').click();
+        }
+    } catch (err) {
+        console.log(err);
 
-        let xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
+        document.getElementById('recur').click();
 
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                // console.log(this.responseText);
-                // event_recurClone.push(...getEvents);
-                doUpdate(this.response, []);
-                getEvents.length = 0;
-            }
-        });
-
-        xhr.open("POST", url);
-        xhr.setRequestHeader("cache-control", "no-cache");
-        xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
-
-        // let rdata = JSON.stringify(data);
-        xhr.send(data);
-    }
-    else {//update
-        // check iff recurrence is checked
-        debugger;
-        event_recurClone.push(...getEvents);
-        doUpdate(editResponse, event_recurClone);
         getEvents = [];
-
-        alert('events updated successfully!');
-        _id = null;
-        // document.getElementById('ImgForm_submit').innerText = "Submit Form"
+        event_recurClone = [];
     }
 });
 
 function doUpdate (response, clone_eventRecur) {
-    debugger;
-    response = JSON.parse(response);
-    response.event_recur = JSON.parse(response.event_recur[0]);
+    //debugger
 
     let isArray = (data) => {
         return (Object.prototype.toString.call(data) === "[object Array]");
     };
 
-    let $form = $("#event_form");
-    let formData = getFormData($form);
+    if (typeof (response) === "string") {
+        response = JSON.parse(response);
+        response.event_recur = JSON.parse(response.event_recur[0]);
+    }
+    if (typeof (response) === "object" && typeof response.event_recur[0] === "string")
+        response.event_recur = JSON.parse(response.event_recur[0]);
+
+
+    let $form = $('form#event_form')[0];
+    let data = new FormData($form);
 
     event_img = response.event_imgPath;
     event_imgName = response.event_imgName;
@@ -388,88 +352,32 @@ function doUpdate (response, clone_eventRecur) {
 
     let event_recur = isArray(clone_eventRecur) && clone_eventRecur.length > 0 ? clone_eventRecur : response.event_recur;
 
-    // let data = {
-    response.event_name = formData.event_name;
-    response.event_desc = formData.event_desc;
-    response.event_imgName = event_imgName;
-    response.event_imgPath = event_img;
-    response.start_date = formData.start_date;
-    response.end_date = formData.end_date;
-    response.start_time = formData.start_time;
-    response.end_time = formData.end_time;
-    response.event_recur = JSON.stringify(event_recur);
-
     let url = "/events/" + response._id + "/update";
-    let data = new FormData();
 
-    for (let key in response) {
-        switch (key) {
-            case 'event_imgName':
-                data.append("event_imgName", response[key]);
-                break;
-            case 'event_imgPath':
-                data.append("event_imgPath", response[key]);
-                break;
-            case 'dayofWeek':
-                data.append("dayofWeek", response[key]);
-                break;
-            case 'end_date':
-                data.append("end_date", response[key]);
-                break;
-            case 'end_time':
-                data.append("end_time", response[key]);
-                break;
-            case 'event_desc':
-                data.append("event_desc", response[key]);
-                break;
-            case 'event_name':
-                data.append("event_name", response[key]);
-                break;
-            case 'event_recur':
-                data.append("event_recur", response[key]);
-                break;
-            case 'recur':
-                data.append("recur", response[key]);
-                break;
-            case 'scheduleStart':
-                data.append("scheduleStart", response[key]);
-                break;
-            case 'scheduleType':
-                data.append("scheduleType", response[key]);
-                break;
-            case 'scheduleends':
-                data.append("scheduleends", response[key]);
-                break;
-            case 'scheduleendson':
-                data.append("scheduleendson", response[key]);
-                break;
-            case 'start_date':
-                data.append("start_date", response[key]);
-                break;
-            case 'start_time':
-                data.append("start_time", response[key]);
-                break;
-        }
-    }
-
-    if (typeof $(`form#event_form :input[name='eventFileInput']`)[0] !== "undefined") {
-        data.append("eventFileInput", $(`form#event_form :input[name='eventFileInput']`)[0].files[0]);
-    } else {
-        data.append("event_imgName", response.event_imgName);
-        data.append("event_imgPath", response.event_imgPath);
-    }
+    data.append("event_imgName", response.event_imgName);
+    data.append("event_imgPath", response.event_imgPath);
+    data.append("event_recur", JSON.stringify(event_recur));
 
     let xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
-            if (__id === null)
-                updateCalendar(event_recur);
-            else {
-                // let edit_GetEvents_recur = event_recurClone;
-                updateCalendar(event_recurClone);
-            }
+            // if (__id === null)
+            //debugger;;
+            getEvents_recur =[];
+            loadData();
+
+            setTimeout(()=>{
+                updateCalendar(getEvents_recur);
+            }, 1500);
+
+            __id = null;
+            document.getElementById('event_submit').innerText = "Submit";
+
+            toggleClasses();
+            showModal();
+            showModalChildren();
         }
     });
 
@@ -503,15 +411,15 @@ function _onEditItem(id) {
         event_img = response.event_imgPath;
         event_imgName = response.event_imgName;
 
-        if (response.event_recur.length > 1 && !document.getElementById('recur').checked) {
+        if (JSON.parse(response.event_recur).length > 1 && !document.getElementById('recur').checked) {
             document.getElementById('recur').click();
         }
-debugger;
+//debugger;;
         editResponse = response;//edit response to pass id to event_recureclone
 
         event_recurClone = [];
         event_recurClone.push(...getEvents_recur);
-        let counterDel = 0
+        let counterDel = 0;
 
         getEvents_recur.forEach(function (eventVal, index) {
             if (eventVal._id === response._id){
@@ -519,6 +427,11 @@ debugger;
                 counterDel++;
             }
         });
+        // getEvents_recur = [];
+
+        toggleClasses();
+        showModal();
+        showModalChildren();
     });
     document.getElementById('event_submit').innerText = "Update Form";
     $("a#nav-add-event-tab").click();
@@ -540,8 +453,11 @@ function _onDeleteItem(id){
     };
 
     $.ajax(settings).done(function (response) {
+        if (response.event_recur.length > 1 && !document.getElementById('recur').checked) {
+            document.getElementById('recur').click();
+        }
 
-        document.getElementById('recur').click();debugger;
+        //debugger;;
         document.getElementById("event_form").reset();
         alert('Deleted successfully!');
 
@@ -549,7 +465,7 @@ function _onDeleteItem(id){
         event_recurClone.push(...getEvents_recur);
         let counterDel = 0;
 
-        debugger;
+        //debugger;;
         getEvents_recur.forEach(function (eventVal, index) {
             if (eventVal._id === response._id){
                 event_recurClone.splice(index - counterDel, 1);
@@ -557,17 +473,16 @@ function _onDeleteItem(id){
             }
         });
 
-        // for(let i = 0; i < getEvents_recur.length; i++) {
-        //     if(getEvents_recur[i]._id === response._id) {
-        //         getEvents_recur.splice(0, 1);
-        //     }
-        // }
         let del_GetEvents_recur = event_recurClone;
-        getEvents_recur = [];
+        // getEvents_recur = [];
 
         updateCalendar(del_GetEvents_recur);
         _id = null;
         __id = null;
+
+        toggleClasses();
+        showModal();
+        showModalChildren();
     });
 }
 

@@ -35,6 +35,7 @@ const events_controller = require('../controllers/events.controller');
 //
 // router.post('/create', upload.array('eventFileInput', 12), events_controller.events_create);
 router.post('/create', upload.single("eventFileInput"), events_controller.events_create);
+// router.get('/find/:pageNum', events_controller.events_all);
 router.get('/find', events_controller.events_all);
 router.get('/:id', events_controller.events_details);
 router.put('/:id/update', upload.single("eventFileInput"), events_controller.events_update);

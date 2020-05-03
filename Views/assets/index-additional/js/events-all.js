@@ -27,8 +27,8 @@ function sortDataByDateAsc(data) {
 //combine all events_recur into one
 function combineAllEvents(arrayData){
     let combineAllEvents = [];debugger;
-    arrayData[0].event_recur = JSON.parse(arrayData[0].event_recur);
     $.each(arrayData, function (i, value) {
+        value.event_recur = JSON.parse(value.event_recur);
         combineAllEvents = [...combineAllEvents, ...value.event_recur];
     })
     return combineAllEvents;
@@ -77,7 +77,7 @@ let eventHtmlBodyEnd =
 
 function loadEventData() {
     debugger;
-    let uri = '/events/find';
+    let uri = '/events/find/2';
     $.ajax({
         url: uri,
         dataType: "json",

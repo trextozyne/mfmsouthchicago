@@ -130,29 +130,26 @@ function toggleClasses() {
 }
 
 // Open nav when clicking sandwich button
-btnOpen.addEventListener("click", function(e) {
-    $("#img_gallery_form, #event_form").on("submit", function() {
-        var has_empty = false;
-
-        if($(this).find('#ImgForm_submit').text() !== "Update Form" || $(this).find('#event_submit').text() !== "Update Form") {
-            $(this).find('input').each(function () {
-                if (!$(this).val()) {
-                    has_empty = true;
-                    return false;
-                }
-            });
-
-            if (has_empty) {
-                return false;
-            }
-        }
-        $(this).find('#ImgForm_submit').text("Submit Form");
-        $(this).find('#event_submit').text("Submit Form");
-        toggleClasses();
-        showModal();
-        showModalChildren();
-    });
-});
+// btnOpen.addEventListener("click", function(e) {
+//     $("#img_gallery_form, #event_form").on("submit", function() {
+//         var has_empty = false;
+//
+//         if($(this).find('#ImgForm_submit').text() !== "Update Form" || $(this).find('#event_submit').text() !== "Update Form") {
+//             $(this).find('input').each(function () {
+//                 if (!$(this).val()) {
+//                     has_empty = true;
+//                     return false;
+//                 }
+//             });
+//
+//             if (has_empty) {
+//                 return false;
+//             }
+//         }
+//         $(this).find('#ImgForm_submit').text("Submit Form");
+//         $(this).find('#event_submit').text("Submit Form");
+//     });
+// });
 
 // Open nav when clicking sandwich button
 btnClose.addEventListener("click", function(e) {

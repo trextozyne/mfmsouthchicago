@@ -293,6 +293,7 @@ function createCalendar(calendar, element, adjuster){
                     title.className += "cld-title"
 
                     // -------------color operation-------------------
+                    debugger;
                     if(eventData.includes(calendar.Model[n].Title.trim())) {
                         title.style.backgroundColor = bgColor[eventData.indexOf(calendar.Model[n].Title.trim())];
                     }
@@ -335,7 +336,7 @@ function createCalendar(calendar, element, adjuster){
                         title.innerHTML += '<p ' +
                             'style="color: #fff;text-align: center !important; margin: 0;font-size: 12;">' + calendar.Model[n].Time + '</p>' +
                             // '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>';
-                        '<a target="_blank" href="./events-single.html?id=' + calendar.Model[n]._id + '&date=' + doJoin(calendar.Model[n].Date) +'">' + calendar.Model[n].Title + '</a>';
+                        '<a target="_blank" href="../../events-single.html?id=' + calendar.Model[n]._id + '&date=' + doJoin(calendar.Model[n].Date) +'">' + calendar.Model[n].Title + '</a>';
                     }
                     number.appendChild(title);
                 }

@@ -27,6 +27,7 @@ let dev_db_url = 'mongodb://Trex_son:Salvat1on1987@ds243254.mlab.com:43254/photo
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });//mongoose.set('useFindAndModify', false);
 
+mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

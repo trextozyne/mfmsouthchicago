@@ -11,23 +11,24 @@ cloudinary.config({
 });
 
 exports.uploads = (imagePath, folder) => {
-         return cloudinary.uploader.upload(imagePath,
-            {
-                resource_type: "auto",
-                folder: folder
-            },
-            function(error, result) {
-                if (error) {
-                    // handle error
-                } else {
-                    // console.log(result);
-                    // return result
-                    return Promise.resolve({
-                        url: result.url,
-                        id: result.public_id
-                    })
-                }
-            });
+    return cloudinary.uploader.upload(imagePath,
+        {
+            resource_type: "auto",
+            folder: folder
+        },
+        function(error, result) {
+            if (error) {
+                // handle error
+                throw error;
+            } else {
+                // console.log(result);
+                // return result
+                return Promise.resolve({
+                    url: result.url,
+                    id: result.public_id
+                })
+            }
+        });
 };
 
 exports.updates = (imagePath, _id, folder) => {//.substring(_id.indexOf("/") + 1)
@@ -44,6 +45,7 @@ exports.updates = (imagePath, _id, folder) => {//.substring(_id.indexOf("/") + 1
         function(error, result) {
             if (error) {
                 // handle error
+                throw error;
             } else {
                 return Promise.resolve({
                     url: result.url,
@@ -52,3 +54,16 @@ exports.updates = (imagePath, _id, folder) => {//.substring(_id.indexOf("/") + 1
             }
         });
 };
+
+exports.delete = (_id) => {
+    console.log(_id);//api.delete_resources(public_ids, options, callback);
+    return cloudinary.uploader.destroy(_id,
+        function(error, result) {
+            if (error) {
+                // handle error
+                throw error;
+            } else {
+                console.log(result)
+            }
+        });
+}

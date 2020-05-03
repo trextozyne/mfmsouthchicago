@@ -66,6 +66,7 @@ function sortDataByDateAsc(data) {
 function combineAllEvents(arrayData){
     let combineAllEvents = [];
     $.each(arrayData, function (i, value) {
+        value.event_recur = JSON.parse(value.event_recur);
         combineAllEvents = [...combineAllEvents, ...value.event_recur];
     });
     return combineAllEvents;
@@ -84,6 +85,8 @@ jQuery(($) => {
         url: uri,
         dataType: "json",
         success: function (data) {
+            debugger;
+
             let combeinedEvents = combineAllEvents(data);
             let sortedData = sortDataByDateAsc(combeinedEvents);
 
@@ -124,7 +127,7 @@ jQuery(($) => {
 
                         html2 += `<button onclick=goto_Event("${foundData._id}"` + `,` + `"${start_date}")>GOTO EVENT</button></form></div>`;
                         html2 += '<div class="circle"></div><div class="wrapper"><div class="header">'+ foundData.event_name +'</div><div class="stats">\n';
-                        html2 += '<img src="assets/images/gallery/' + foundData.event_imgName + '"></div><div class="dates"><div class="start"><strong>STARTS</strong>' + foundData.start_time + '<!--<span><span>-->\n';
+                        html2 += '<img src="' + foundData.event_imgPath + '"></div><div class="dates"><div class="start"><strong>STARTS</strong>' + foundData.start_time + '<!--<span><span>-->\n';
                         html2 += '</div><div class="ends"><strong>ENDS</strong>' + foundData.end_time + '</div></div></div></div>'
                         // ${foundData._id} ,
                         if (counter === 2) {

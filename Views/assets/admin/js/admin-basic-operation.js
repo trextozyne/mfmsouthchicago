@@ -19,10 +19,6 @@ $(document).on("click","button",function(evt) {//#sermon_submit
 
     evt.preventDefault();
 
-    if(this.id === "ImgForm_submit") {
-        $("#img_gallery_form").submit(); //Trigger the Submit Here
-    }
-
     if(this.id === "sermonFile_submit") {
         $("#sermonFile_form").submit(); //Trigger the Submit Here
     }
@@ -70,6 +66,10 @@ $("#verse_form").submit(function(evt) {
             if (!_bibleVerseId) _bibleVerseId = response;
             alert("Saved");
             $form.find("input[type=text], textarea").val("");
+
+            toggleClasses();
+            showModal();
+            showModalChildren();
         }).fail(function (data) {
             // alert("it must be an image");
         });
@@ -77,13 +77,18 @@ $("#verse_form").submit(function(evt) {
     }
 });
 
-$("#sermonFile_form").submit(function(evt) {
-    function doSermonUpdate(response){
-        console.log(response);
-        alert("Saved: " + response);
-        $form.find("input[type=text], textarea").val("");
-    }
+function doSermonUpdate(response){
+    console.log(response);
+    alert("Saved: " + response);
+    $form.find("input[type=text], textarea").val("");
 
+    toggleClasses();
+    showModal();
+    showModalChildren();
+}
+
+
+$("#sermonFile_form").submit(function(evt) {
     evt.preventDefault();
     let url = "/files/create";
 
@@ -95,16 +100,6 @@ $("#sermonFile_form").submit(function(evt) {
     }else {
         let formData = JSON.parse(JSON.stringify(getFormData($form)));
         delete formData.sermonFile;
-
-        // $(this).ajaxSubmit({
-        //     url: url,
-        //     method: "POST",
-        //     data: formData,
-        //     contentType: 'application/json',
-        //     dataType: "json",
-        //     success: doSermonUpdate
-        // });
-
 
         let settings = {
             "async": true,
@@ -154,12 +149,17 @@ $.ajax({
     }
 });
 
+function doAudioUpdate(response){
+    console.log(response);
+    alert("Saved: " + response);
+    $form.find("input[type=text], textarea").val("");
+
+    toggleClasses();
+    showModal();
+    showModalChildren();
+}
+
 $("#audio_form").submit(function(evt) {
-    function doAudioUpdate(response){
-        console.log(response);
-        alert("Saved: " + response);
-        $form.find("input[type=text], textarea").val("");
-    }
 
     evt.preventDefault();
     let url= "/tracks/create";
@@ -173,15 +173,6 @@ $("#audio_form").submit(function(evt) {
     }else {
         let formData = JSON.parse(JSON.stringify(getFormData($form)));
         delete formData.sermonAudio;
-
-        // $(this).ajaxSubmit({
-        //     url: url,
-        //     method: "POST",
-        //     data: formData,
-        //     contentType: 'application/json',
-        //     dataType: "json",
-        //     success: doAudioUpdate
-        // });
 
         let settings = {
             "async": true,
