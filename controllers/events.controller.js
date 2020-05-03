@@ -59,12 +59,6 @@ exports.events_create = async (req, res, next) => {
 exports.events_all = function (req, res, next) {
     // let itemsPerPage = 10;
     // console.log(req.params.pageNum);
-    Events.findById(req.params.id, function (err, events) {
-        if (err) return next(err);
-
-        res.send(events);
-    })
-
     try {
         Events.find(({}), function (err, events) {//query
             if (err) return next(err);

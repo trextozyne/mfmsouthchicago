@@ -6,28 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/success-modal-dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/success-modal-dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/index-additional/js/index-gallery-count.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/index-additional/js/index-gallery-count.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/mobirise/css/event-all.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/index-additional/css/event-all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/mobirise/css/event-single.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/index-additional/css/event-single.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/mobirise/js/events-all.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/mobirise/js/events-single.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/index-additional/js/events-single.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/slick/js/image-slider-slick.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/slick/js/image-slider-slick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/events-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/events-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/events-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/events-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cloudinaryConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/cloudinaryConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/events.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/events.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/photoalbum.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/photoalbum.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/slides.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/slides.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-calendar-module/js/caleandar.js" beforeDir="false" afterPath="$PROJECT_DIR$/event-calendar-module/js/caleandar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/events.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/events.route.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -58,13 +40,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="739" column="10" selection-start-line="739" selection-start-column="10" selection-end-line="739" selection-end-column="10" />
+            <state relative-caret-position="187">
+              <caret line="728" column="18" lean-forward="true" selection-start-line="728" selection-start-column="18" selection-end-line="728" selection-end-column="18" />
               <folding>
                 <element signature="e#51654#51674#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.slides.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/create.slides.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,17 +85,8 @@
       <file leaf-file-name="events.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="167" column="71" selection-start-line="167" selection-start-column="71" selection-end-line="167" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cloudinaryConfig.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/cloudinaryConfig.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="54" column="11" lean-forward="true" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+            <state relative-caret-position="119">
+              <caret line="56" column="2" lean-forward="true" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -103,8 +94,8 @@
       <file leaf-file-name="photoalbum.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="172" column="31" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="52" />
+            <state relative-caret-position="323">
+              <caret line="130" column="26" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -112,17 +103,17 @@
       <file leaf-file-name="slides.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/slides.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="237" column="55" selection-start-line="237" selection-start-column="55" selection-end-line="237" selection-end-column="55" />
+            <state relative-caret-position="476">
+              <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-event-calendar.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin-event-calendar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="380" column="9" lean-forward="true" selection-start-line="380" selection-start-column="9" selection-end-line="380" selection-end-column="9" />
+            <state relative-caret-position="-928">
+              <caret line="375" column="26" selection-start-line="375" selection-start-column="26" selection-end-line="375" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -137,34 +128,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-image-form.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
+      <file leaf-file-name="events-all.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="226" column="28" selection-start-line="226" selection-start-column="28" selection-end-line="226" selection-end-column="28" />
+            <state relative-caret-position="126">
+              <caret line="84" column="57" lean-forward="true" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
               <folding>
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#123#129#0" expanded="true" />
-                <element signature="e#102#108#1" expanded="true" />
-                <element signature="e#109#116#1" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="e#101#108#1" expanded="true" />
-                <element signature="n#!!block;n#onEditItem#0" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-basic-operation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
+      <file leaf-file-name="images.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/images.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="10" />
+              <caret line="247" column="43" lean-forward="true" selection-start-line="247" selection-start-column="43" selection-end-line="247" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="images.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/assets/technical/image/js/images.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               <folding>
-                <element signature="n#!!block;n#_onClickItem#0" />
-                <element signature="n#!!block;n#onDelete#0" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,10 +174,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dropdown-menu</find>
-      <find>;</find>
-      <find>event_imgName</find>
-      <find>link</find>
       <find>loadData</find>
       <find>color operation</find>
       <find>getEvents</find>
@@ -211,8 +198,12 @@
       <find>img_gallery_form</find>
       <find>req.body</find>
       <find>readystatechange</find>
-      <find>ajax</find>
       <find>dismiss</find>
+      <find>img</find>
+      <find>removeSpecificSlidesDBData</find>
+      <find>slidesDBData</find>
+      <find>ajax</find>
+      <find>2</find>
     </findStrings>
     <replaceStrings>
       <replace>Klose</replace>
@@ -265,8 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Views/assets/web/assets/fancybox/fancybox.min.css" />
-        <option value="$PROJECT_DIR$/Views/assets/video/video.css" />
         <option value="$PROJECT_DIR$/routes/verse.route.js" />
         <option value="$PROJECT_DIR$/models/ytplayList.model.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/css/admin.css" />
@@ -290,7 +279,6 @@
         <option value="$PROJECT_DIR$/cloudinaryconfig.env" />
         <option value="$PROJECT_DIR$/routes/slides.route.js" />
         <option value="$PROJECT_DIR$/Views/assets/index-additional/js/index-slide.js" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" />
         <option value="$PROJECT_DIR$/event-calendar-module/js/demo.js" />
         <option value="$PROJECT_DIR$/Views/assets/calendar/js/calendar.js" />
@@ -303,19 +291,22 @@
         <option value="$PROJECT_DIR$/Views/index.html" />
         <option value="$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js" />
         <option value="$PROJECT_DIR$/event-calendar-module/js/caleandar.js" />
-        <option value="$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js" />
         <option value="$PROJECT_DIR$/routes/events.route.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-form.js" />
         <option value="$PROJECT_DIR$/config/cloudinaryConfig.js" />
         <option value="$PROJECT_DIR$/controllers/photoalbum.controller.js" />
         <option value="$PROJECT_DIR$/controllers/slides.controller.js" />
-        <option value="$PROJECT_DIR$/controllers/events.controller.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/success-modal-dialog.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
-        <option value="$PROJECT_DIR$/admin/admin.ejs" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
+        <option value="$PROJECT_DIR$/Views/assets/technical/image/js/images.js" />
+        <option value="$PROJECT_DIR$/Views/images.html" />
+        <option value="$PROJECT_DIR$/admin/admin.ejs" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" />
+        <option value="$PROJECT_DIR$/controllers/events.controller.js" />
+        <option value="$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js" />
       </list>
     </option>
   </component>
@@ -622,42 +613,7 @@
       <workItem from="1587742413942" duration="29071000" />
       <workItem from="1587783757945" duration="61652000" />
       <workItem from="1588033154017" duration="88292000" />
-      <workItem from="1588461335164" duration="11200000" />
-    </task>
-    <task id="LOCAL-00115" summary="Default Changelist">
-      <created>1579307944445</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1579307944445</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Default Changelist">
-      <created>1579308299770</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1579308299770</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Default Changelist">
-      <created>1579308465458</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1579308465458</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Default Changelist">
-      <created>1579308694168</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1579308694168</updated>
-    </task>
-    <task id="LOCAL-00119" summary="Default Changelist">
-      <created>1579308986519</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1579308986519</updated>
+      <workItem from="1588461335164" duration="16688000" />
     </task>
     <task id="LOCAL-00120" summary="Default Changelist">
       <created>1579309160785</created>
@@ -967,11 +923,46 @@
       <option name="project" value="LOCAL" />
       <updated>1588040390898</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="Default Changelist">
+      <created>1588482095317</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1588482095317</updated>
+    </task>
+    <task id="LOCAL-00165" summary="Default Changelist">
+      <created>1588488280432</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1588488280433</updated>
+    </task>
+    <task id="LOCAL-00166" summary="Default Changelist">
+      <created>1588488400077</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1588488400077</updated>
+    </task>
+    <task id="LOCAL-00167" summary="Default Changelist">
+      <created>1588496010579</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1588496010579</updated>
+    </task>
+    <task id="LOCAL-00168" summary="Default Changelist">
+      <created>1588496511808</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1588496511808</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2259826000" />
+    <option name="totallyTimeSpent" value="2265314000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1094,20 +1085,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Views/assets/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/gallery/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="449" selection-start-line="449" selection-end-line="449" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/video.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
@@ -1191,13 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/create.slides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="49" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/gallery_count.route.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1219,13 +1189,6 @@
     <entry file="file://$PROJECT_DIR$/Views/assets/slick/js/slick.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/index-slide.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/church-slider.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510" />
@@ -1238,6 +1201,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1305,13 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backup form  admn.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1361,13 +1320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="172" column="31" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1397,20 +1349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="167" column="71" selection-start-line="167" selection-start-column="71" selection-end-line="167" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/slides.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="237" column="55" selection-start-line="237" selection-start-column="55" selection-end-line="237" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/success-modal-dialog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1421,20 +1359,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
+    <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="739" column="10" selection-start-line="739" selection-start-column="10" selection-end-line="739" selection-end-column="10" />
+        <state relative-caret-position="323">
+          <caret line="130" column="26" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/images.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="247" column="43" lean-forward="true" selection-start-line="247" selection-start-column="43" selection-end-line="247" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/technical/image/js/images.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           <folding>
-            <element signature="e#51654#51674#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/index-slide.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/create.slides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/slides.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="56" column="2" lean-forward="true" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="380" column="9" lean-forward="true" selection-start-line="380" selection-start-column="9" selection-end-line="380" selection-end-column="9" />
+        <state relative-caret-position="-928">
+          <caret line="375" column="26" selection-start-line="375" selection-start-column="26" selection-end-line="375" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -1444,6 +1433,26 @@
             <element signature="e#110#117#1" expanded="true" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
             <element signature="e#101#108#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="84" column="57" lean-forward="true" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="728" column="18" lean-forward="true" selection-start-line="728" selection-start-column="18" selection-end-line="728" selection-end-column="18" />
+          <folding>
+            <element signature="e#51654#51674#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

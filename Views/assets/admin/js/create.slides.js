@@ -35,8 +35,14 @@ debugger;
     "use strict";
     const dataList = Object.values(slidesDataClone);
     for (const data in dataList) {
-        deleteSlidesDBData(slidesDataClone[data]._id, function (response) { alert(response)})
+        deleteSlidesDBData(slidesDataClone[data]._id, function (response) {
+            alert(response)
+        })
     }
+
+    toggleClasses();
+    showModal();
+    showModalChildren();
 }
 
 function deleteSlidesDBData(id, callback){

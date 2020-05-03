@@ -77,7 +77,7 @@ let eventHtmlBodyEnd =
 
 function loadEventData() {
     debugger;
-    let uri = '/events/find/2';
+    let uri = '/events/find';
     $.ajax({
         url: uri,
         dataType: "json",
