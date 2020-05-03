@@ -196,6 +196,10 @@ function onEditItem(id) {
         document.getElementById('album_title').value = response.albums[0].u_title;
         img = response.img;
         imgName = response.imgName;
+
+        toggleClasses();
+        showModal();
+        showModalChildren();
     });
     document.getElementById('ImgForm_submit').innerText = "Update Form"
     $("a#nav-add-image-tab").click();

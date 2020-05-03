@@ -1,3 +1,12 @@
+document.addEventListener('paste', function(e){
+    debugger;
+    if(e.target && (e.target.id === "playlistId" || e.target.id === "playlistName") && document.getElementsByName('live')[0].checked) {
+        document.getElementsByClassName('saveYTPlaylistId')[0].disabled = false;
+    } else {
+        document.getElementsByClassName('saveYTPlaylistId')[0].disabled = true;
+    }
+});
+
 document.addEventListener('click',function(e) {debugger
     if (e.target && e.target.type === "checkbox" && e.target.getAttribute('name') === "live" && e.target.checked === true) {
         let parentElement = e.target.parentElement.parentElement.parentElement.parentElement;
@@ -8,6 +17,7 @@ document.addEventListener('click',function(e) {debugger
 
         inputs[1].value ="";
         inputs[1].focus();
+        document.getElementsByClassName('saveYTPlaylistId')[0].disabled = true;
     }else if (e.target && e.target.type === "checkbox" && e.target.getAttribute('name') === "live"){
         let parentElement = e.target.parentElement.parentElement.parentElement.parentElement;
         let inputs = parentElement.querySelectorAll("input");
@@ -208,8 +218,13 @@ debugger;
 
         $.ajax(settings).done(
             (ytplayLiveId) => {
+
                 console.log('Saved!!!');
                 document.getElementsByName("live")[0].setAttribute("data-id", ytplayLiveId);
+
+                toggleClasses();
+                showModal();
+                showModalChildren();
             });
     }else{
         let _id = document.getElementsByName("live")[0].getAttribute("data-id").trim();
@@ -221,13 +236,20 @@ debugger;
             data: ytData,
         };
 
-        $.ajax(settings).done((response)=>{console.log(response)});
+        $.ajax(settings).done((response)=>{
+            console.log(response);
+
+            toggleClasses();
+            showModal();
+            showModalChildren();
+        });
     }
-    alert("saved");
+    // alert("saved");
 
     inputs[0].removeAttribute("disabled");
     inputs[0].value = "";
     inputs[0].focus();
+    btnElement.setAttribute("disabled", "disabled");
 
     inputs[1].value = "";
 

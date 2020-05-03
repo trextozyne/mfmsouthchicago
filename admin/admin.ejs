@@ -39,6 +39,13 @@
         right: 15px;
         top: 0;
     }
+
+    #nav-event-list #draggablePanelList1, #nav-image-list #draggablePanelList, #nav-add-ytplayList .fixed_header {
+        max-height: 450px;
+        height: auto;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
 </style>
 
 <div class="header">
@@ -514,7 +521,7 @@
                                          <div class="form-inline">
                                             <div class="form-group" style="margin: 0 auto">
                                                 <label for="playlistName">Playlist Name</label>
-                                                <input type="text"  onkeyup="checkEmpty()"
+                                                <input type="text" onkeyup="checkEmpty()"
                                                        class="form-control" id="playlistName" placeholder="Sunday Service">
                                             </div>
                                             <div class="form-group" style="margin: 0 auto">
