@@ -35,15 +35,15 @@ $(document).ready(function(){
                 //for gallery image
                 galleryDiv += '<div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false" data-tags="' + dbData.albums[0].u_name + '">';
                 galleryDiv += '<div href="#lb-gallery2-2y" data-slide-to="' + gallerySlideCounter + '" data-toggle="modal">';
-                // galleryDiv += '<img src="assets/images/gallery' +gallerySlideCounter + '.png" alt="mfm_gallery" title="'+ dbData.title +'"/>';
-                galleryDiv += '<img src="assets/images/gallery/' + dbData.imgName + '" alt="mfm_gallery" title="' + dbData.title + '"/>';
+                // galleryDiv += '<img src="' +gallerySlideCounter + '.png" alt="mfm_gallery" title="'+ dbData.title +'"/>';
+                galleryDiv += '<img src="' + dbData.img + '" alt="mfm_gallery" title="' + dbData.title + '"/>';
                 galleryDiv += '<span class="icon-focus"></span></div></div>';
                 //for modal images
                 if (gallerySlideCounter === 0)
                     modalDiv += '<div class="carousel-item active">';
                 else
                     modalDiv += '<div class="carousel-item">';
-                modalDiv += '<img src="assets/images/gallery/' + dbData.imgName + '" alt="mfm_gallery" title="' + dbData.title + '"/>';
+                modalDiv += '<img src="' + dbData.img + '" alt="mfm_gallery" title="' + dbData.title + '"/>';
                 modalDiv += '</div>';
 
                 /// do stuff
