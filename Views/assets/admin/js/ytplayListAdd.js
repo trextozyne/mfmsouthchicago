@@ -9,7 +9,7 @@ document.addEventListener('paste', function(e){
 
 document.addEventListener('click',function(e) {debugger
     if (e.target && e.target.type === "checkbox" && e.target.getAttribute('name') === "live" && e.target.checked === true) {
-        let parentElement = e.target.parentElement.parentElement.parentElement.parentElement;
+        let parentElement = e.target.parentElement.parentElement;
         let inputs = parentElement.querySelectorAll("input");
 
         inputs[0].value = "Live";
@@ -19,7 +19,7 @@ document.addEventListener('click',function(e) {debugger
         inputs[1].focus();
         document.getElementsByClassName('saveYTPlaylistId')[0].disabled = true;
     }else if (e.target && e.target.type === "checkbox" && e.target.getAttribute('name') === "live"){
-        let parentElement = e.target.parentElement.parentElement.parentElement.parentElement;
+        let parentElement = e.target.parentElement.parentElement;
         let inputs = parentElement.querySelectorAll("input");
 
         inputs[0].value = "";
@@ -172,8 +172,8 @@ function addTableRow(inputData, ytPlaylistId) {
 
 function addData(btnElement) {
     debugger;
-    let parentElement = btnElement.parentElement.parentElement;
-    let inputs =  parentElement.querySelectorAll("input");
+    let parentElement = btnElement.parentElement;
+    let inputs =  parentElement.querySelectorAll("input:not([type=checkbox])");
 
     let ytData = {
         playlisttiltle: inputs[0].value,
@@ -199,7 +199,7 @@ function addData(btnElement) {
 }
 
 function saveLive(btnElement) {
-    let parentElement = btnElement.parentElement.parentElement;
+    let parentElement = btnElement.parentElement;
     let inputs = parentElement.querySelectorAll("input");
 
     let ytData = {

@@ -175,7 +175,7 @@ exports.events_delete = async (req, res, next) => {
             promises.push(await uploader(id));
 
             Promise.all(promises).then(function () {
-                res.send("deleted");
+                res.send(event);
             });
 
         } catch (err) {

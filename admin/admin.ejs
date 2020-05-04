@@ -518,29 +518,48 @@
                                     <h2 style="text-align: center; text-transform: capitalize">Insert the playlist title along with playlist video id for easy identification</h2>
 
                                     <div class="col-sm-12 col-md-12 text-center" style="margin-bottom: 50px;">
-                                         <div class="form-inline">
-                                            <div class="form-group" style="margin: 0 auto">
-                                                <label for="playlistName">Playlist Name</label>
-                                                <input type="text" onkeyup="checkEmpty()"
-                                                       class="form-control" id="playlistName" placeholder="Sunday Service">
-                                            </div>
-                                            <div class="form-group" style="margin: 0 auto">
-                                                <label for="playlistId">Playlsit ID</label>
-                                                <input type="text" onkeyup="checkEmpty()"
-                                                       class="form-control" id="playlistId" placeholder="PLlJYwvWje3JdcF5XwV1A_mqadc-R3PgH2">
-                                            </div>
-                                             <div class="form-group" style="margin: 0 auto">
-                                                 <div class="checkbox" style="margin: 0 auto">
-                                                     <label>
-                                                         <input type="checkbox" name="live" value="live">
-                                                         live
-                                                     </label>
-                                                 </div>
-                                             </div>
-                                            <div class="form-group" style="margin: 0 auto">
-                                                <button disabled class="btn btn-success saveYTPlaylistId">Save</button>
-                                            </div>
+                                         <!--<div class="form-inline">-->
+                                            <!--<div class="form-group" style="margin: 0 auto">-->
+                                                <!--<label for="playlistName">Playlist Name</label>-->
+                                                <!--<input type="text"-->
+                                                       <!--class="form-control"  onkeyup="checkEmpty()" id="playlistName" placeholder="Sunday Service">-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group" style="margin: 0 auto">-->
+                                                <!--<label for="playlistId">Playlsit ID</label>-->
+                                                <!--<input type="text"-->
+                                                       <!--class="form-control"  onkeyup="checkEmpty()" id="playlistId" placeholder="PLlJYwvWje3JdcF5XwV1A_mqadc-R3PgH2">-->
+                                            <!--</div>-->
+                                             <!--<div class="form-group" style="margin: 0 auto">-->
+                                                 <!--<div class="checkbox" style="margin: 0 auto">-->
+                                                     <!--<label>-->
+                                                         <!--<input type="checkbox" name="live" value="live">-->
+                                                         <!--live-->
+                                                     <!--</label>-->
+                                                 <!--</div>-->
+                                             <!--</div>-->
+                                            <!--<div class="form-group" style="margin: 0 auto">-->
+                                                <!--<button disabled class="btn btn-success saveYTPlaylistId">Save</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--<form>-->
+                                        <div class="form-group">
+                                            <label for="playlistName">Playlist Name</label>
+                                            <input type="text" class="form-control" aria-describedby="nameHelp"
+                                                   onkeyup="checkEmpty()" id="playlistName" placeholder="Sunday Service">
+                                            <small id="nameHelp" class="form-text text-muted">The playlist name must be put in manually</small>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="playlistId">Playlsit ID</label>
+                                            <input type="password" class="form-control" onkeyup="checkEmpty()" aria-describedby="idHelp"
+                                                   id="playlistId" placeholder="PLlJYwvWje3JdcF5XwV1A_mqadc-R3PgH2">
+                                            <small id="idHelp" class="form-text text-muted">The playlist ID must be copied form the youtube playlist url, after the ?list=...</small>
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" name="live" id="live" value="Live">
+                                            <label class="form-check-label" for="live">Live</label>
+                                        </div>
+                                        <button disabled type="submit" class="btn btn-primary saveYTPlaylistId">Save</button>
+                                    <!--</form>-->
                                     </div>
 
                                     <table class="fixed_header">

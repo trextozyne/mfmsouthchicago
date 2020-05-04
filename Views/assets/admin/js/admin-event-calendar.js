@@ -68,9 +68,9 @@ function loadData() {
             let getModalDialog, getModalContent, getModalHeader;
             let getModalHeaderCounter = document.querySelectorAll('*[id^="largeModal"]').length;
             $.each(data, function(key, content) {
-                content.event_recur = JSON.parse(content.event_recur);
+                let content_event_recur = JSON.parse(content.event_recur);
 
-                getEvents_recur = [...getEvents_recur, ...content.event_recur];
+                getEvents_recur = [...getEvents_recur, ...content_event_recur];
 
                 html += '<li data-event_name="'+ content.event_name +'" data-start_date="'+ content.start_date +'" data-end_date="'+ content.end_date +'" class="card" style="background-color: #d9edf7; border-color: #bce8f1;">\n';
                 html +='<div class="card-body panel-heading"><div class="row"><div class="col-lg-2"><a href="javascript:void(0)" data-toggle="modal" data-target="#largeModal'+ getModalHeaderCounter +'">\n';
@@ -134,11 +134,10 @@ jQuery(($) => {
 
 //=======================================events form validation================================================
 function getTotalMinutes(time) {
-    let hms = time;   // your input string
-    let a = hms.split(':'); // split it at the colons
+    let a = time.split(':'); // split it at the colons
 debugger;
     // Hours are worth 60 minutes.
-    let minutes = (+a[0]) * 60 + (+a[1]);
+    return (+a[0]) * 60 + (+a[1]);
 }
 
 function canSubmit() {
@@ -189,17 +188,42 @@ function canSubmit() {
             someDate.getFullYear() === today.getFullYear()
     };
 
+    // const isGreaterDay = (someDate, someOtherDate) => {
+    //     debugger;
+    //     let startDate = new Date(someDate);
+    //     startDate.setHours(0,0,0,0);
+    //     let endDate = new Date(someOtherDate);
+    //     endDate.setHours(0,0,0,0);
+    //
+    //     return startDate < endDate;
+    // };
+    const isSameDay =  (someDate, someOtherDate) => {
+        return someDate.getFullYear() === someOtherDate.getFullYear() &&
+            someDate.getMonth() === someOtherDate.getMonth() &&
+            someDate.getDate() === someOtherDate.getDate();
+    };
+
     if (new Date(start_date).getTime() < new Date().getTime()  && !isToday(new Date(start_date))){
         alert('the event you are creating would be a past event as the supplied start date is a previous date');
     }
     if (new Date(end_date).getTime() < new Date(start_date).getTime()){
         alert('the start date cannot be greater than the end date');
         return false;
+    } else {
+        if(isSameDay(new Date(start_date), new Date(end_date))){
+            if (getTotalMinutes(end_time) < getTotalMinutes(start_time)){
+                alert('the start time cannot be greater than the end time on the same day');
+                return false;
+            }
+        }
+        // if(!isGreaterDay(start_date, end_date)) {
+        //     if (getTotalMinutes(end_time) < getTotalMinutes(start_time)){
+        //         alert('the start time cannot be greater than the end time on the same date');
+        //         return false;
+        //     }
+        // }
     }
-    if (getTotalMinutes(end_time) < getTotalMinutes(start_time)){
-        alert('the start time cannot be greater than the end time');
-        return false;
-    }
+
     return true;
 }
 //======================form validation end=======================================
@@ -219,6 +243,7 @@ $(document).on("click","#event_submit",function(evt){
 });
 
 function updateCalendar(_event_recur) {
+    debugger;
     let events = [..._event_recur];
     // getEvents_recur.push(..._event_recur);
     let settings = {};
@@ -233,13 +258,14 @@ function doJoin(val){
 }
 
 function getTimeAmorPm(time) {//debugger;
+    debugger;
     let hms = time + ":00";
     let dt = new Date("1970-01-01 " + hms);
 
     let hours = dt.getHours() ; // gives the value in 24 hours format
     let AmOrPm = hours >= 12 ? 'pm' : 'am';
     hours = (hours % 12) || 12;
-    let minutes = dt.getMinutes() === 0 ? dt.getMinutes()+"0" : dt.getMinutes();
+    let minutes = dt.getMinutes() < 10 ? "0" + dt.getMinutes() : dt.getMinutes();
     let finalTime = hours + ":" + minutes + " " + AmOrPm;
     return finalTime;
 }
@@ -301,7 +327,7 @@ $("#event_form").submit(function(evt) {
         else {//update
             // check iff recurrence is checked
             //debugger;
-            event_recurClone.push(...getEvents);
+            // event_recurClone.push(...getEvents);
             doUpdate(editResponse, event_recurClone);
             getEvents = [];
 
@@ -321,7 +347,7 @@ $("#event_form").submit(function(evt) {
 });
 
 function doUpdate (response, clone_eventRecur) {
-    //debugger
+    debugger;
 
     let isArray = (data) => {
         return (Object.prototype.toString.call(data) === "[object Array]");
@@ -341,8 +367,9 @@ function doUpdate (response, clone_eventRecur) {
     event_img = response.event_imgPath;
     event_imgName = response.event_imgName;
 
+
     if (isArray(clone_eventRecur) && clone_eventRecur.length > 0)
-        clone_eventRecur.forEach(function (value) {
+        getEvents.forEach(function (value) {
             value._id = response._id;
         });
     else
@@ -350,7 +377,7 @@ function doUpdate (response, clone_eventRecur) {
             value._id = response._id;
         });
 
-    let event_recur = isArray(clone_eventRecur) && clone_eventRecur.length > 0 ? clone_eventRecur : response.event_recur;
+    let event_recur = isArray(clone_eventRecur) && clone_eventRecur.length > 0 ? getEvents : response.event_recur;
 
     let url = "/events/" + response._id + "/update";
 
@@ -366,6 +393,7 @@ function doUpdate (response, clone_eventRecur) {
             // if (__id === null)
             //debugger;;
             getEvents_recur =[];
+            debugger;
             loadData();
 
             setTimeout(()=>{
@@ -420,6 +448,7 @@ function _onEditItem(id) {
         event_recurClone = [];
         event_recurClone.push(...getEvents_recur);
         let counterDel = 0;
+        debugger;
 
         getEvents_recur.forEach(function (eventVal, index) {
             if (eventVal._id === response._id){
