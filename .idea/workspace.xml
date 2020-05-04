@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/events.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/events.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9452">
-              <caret line="556" column="50" selection-start-line="556" selection-start-column="50" selection-end-line="556" selection-end-column="50" />
+            <state relative-caret-position="340">
+              <caret line="552" column="61" selection-start-line="552" selection-start-column="61" selection-end-line="552" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -104,10 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recurring_schedule.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recurring_schedule.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="3621">
               <caret line="213" selection-start-line="213" selection-end-line="213" />
             </state>
           </provider>
@@ -265,9 +261,9 @@
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
         <option value="$PROJECT_DIR$/controllers/events.controller.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
-        <option value="$PROJECT_DIR$/admin/admin.ejs" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" />
         <option value="$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js" />
+        <option value="$PROJECT_DIR$/admin/admin.ejs" />
       </list>
     </option>
   </component>
@@ -299,6 +295,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,7 +307,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -498,6 +494,8 @@
       <workItem from="1588543620655" duration="2093000" />
       <workItem from="1588546936417" duration="26724000" />
       <workItem from="1588623523243" duration="469000" />
+      <workItem from="1588624038379" duration="289000" />
+      <workItem from="1588624364470" duration="544000" />
     </task>
     <task id="LOCAL-00122" summary="Default Changelist">
       <created>1579309576616</created>
@@ -846,7 +844,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2294600000" />
+    <option name="totallyTimeSpent" value="2295433000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -859,13 +857,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info id="npm" order="1" sideWeight="0.50282484" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32838285" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32991454" />
+      <window_info id="npm" order="1" sideWeight="0.50282484" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32673267" />
       <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49339935" visible="true" weight="0.19375" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -1219,9 +1218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="297" column="61" selection-start-line="297" selection-start-column="54" selection-end-line="297" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1239,10 +1235,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
+    <entry file="file://$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9452">
-          <caret line="556" column="50" selection-start-line="556" selection-start-column="50" selection-end-line="556" selection-end-column="50" />
+        <state relative-caret-position="3621">
+          <caret line="213" selection-start-line="213" selection-end-line="213" />
         </state>
       </provider>
     </entry>
@@ -1253,10 +1249,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js">
+    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="340">
+          <caret line="552" column="61" selection-start-line="552" selection-start-column="61" selection-end-line="552" selection-end-column="61" />
         </state>
       </provider>
     </entry>
