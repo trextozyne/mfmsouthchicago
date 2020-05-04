@@ -120,7 +120,7 @@ $.ajax({
     url: '/files/find',
     dataType: "json",
     success: function (data) {
-        let html = "<table>\n" +
+        let html = "<table class=\"fixed_header\">\n" +
             "  <thead>\n" +
             "    <tr>\n" +
             "      <th scope=\"col\">Data</th>\n" +
