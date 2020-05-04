@@ -77,39 +77,41 @@ $("#verse_form").submit(function(evt) {
     }
 });
 
-function doSermonUpdate(response){
-    console.log(response);
-    alert("Saved: " + response);
-    $form.find("input[type=text], textarea").val("");
-
-    toggleClasses();
-    showModal();
-    showModalChildren();
-}
-
 
 $("#sermonFile_form").submit(function(evt) {
     evt.preventDefault();
     let url = "/files/create";
 
     let $form = $("#sermonFile_form");
+
+    let data = new FormData($form[0]);
     debugger;
     if ($form[0]["filename"].value === null || $form[0]["filename"].value === "", $form[0]["pdfFile"].files.length === 0) {
         alert("Please Fill All Required Field");
         return false;
     }else {
-        let formData = JSON.parse(JSON.stringify(getFormData($form)));
-        delete formData.sermonFile;
+        // let formData = JSON.parse(JSON.stringify(getFormData($form)));
+        // delete formData.sermonFile;
+        data.append("pdfFile", $form[0]["pdfFile"].files[0]);
 
-        let settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": url,
-            "method": "POST",
-            data: formData,
-        };
+        let xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
 
-        $.ajax(settings).done(doSermonUpdate);
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+
+                toggleClasses();
+                showModal();
+                showModalChildren();
+            }
+        });
+
+        xhr.open("POST", url);
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
+
+        xhr.send(data);
     }
 });
 // ###########################find#########################################
@@ -149,16 +151,6 @@ $.ajax({
     }
 });
 
-function doAudioUpdate(response){
-    console.log(response);
-    alert("Saved: " + response);
-    $form.find("input[type=text], textarea").val("");
-
-    toggleClasses();
-    showModal();
-    showModalChildren();
-}
-
 $("#audio_form").submit(function(evt) {
 
     evt.preventDefault();
@@ -166,23 +158,37 @@ $("#audio_form").submit(function(evt) {
     debugger;
 
     let $form = $("#audio_form");
-    if ($form[0]["speaker"].value === null || $form[0]["speaker"].value === "", $form[0]["name"].value === null || $form[0]["name"].value === "",
-            $form[0]["track"].files.length === 0, $form[0]["duration"].value === null || $form[0]["duration"].value === "") {
+
+    let data = new FormData($form[0]);
+
+    if ($form[0]["speaker"].value === null || $form[0]["speaker"].value === "", $form[0]["name"].value === null || $form[0]["name"].value === "" ||
+            $form[0]["track"].files.length === 0 || $form[0]["duration"].value === null || $form[0]["duration"].value === "") {
         alert("Please Fill All Required Field");
         return false;
     }else {
-        let formData = JSON.parse(JSON.stringify(getFormData($form)));
-        delete formData.sermonAudio;
+        // let formData = JSON.parse(JSON.stringify(getFormData($form)));
+        // delete formData.sermonAudio;
 
-        let settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": url,
-            "method": "POST",
-            data: formData
-        };
+        data.append("track", $form[0]["track"].files[0]);
 
-        $.ajax(settings).done(doAudioUpdate);
+        let xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+
+                toggleClasses();
+                showModal();
+                showModalChildren();
+            }
+        });
+
+        xhr.open("POST", url);
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("postman-token", "fb4e4d0c-26b1-ef6c-3beb-5f791abc83b0");
+
+        xhr.send(data);
     }
 });
 // ############################find########################################
@@ -191,8 +197,9 @@ $.ajax({
     url: '/tracks/find',
     dataType: "json",
     success: function (data) {
-        let html = "<table>\n" +
-            "  <caption>Statement Summary</caption>\n" +
+        let html =
+            "  <p style=\"text-align: center;\">Statement Summary</p>\n" +
+            "<table class=\"fixed_header\">\n" +
             "  <thead>\n" +
             "    <tr>\n" +
             "      <th scope=\"col\">Data</th>\n" +
@@ -207,7 +214,7 @@ $.ajax({
             html +=
                 "<tr>"+
                 '<td data-label="Data">' +
-                '<a  href="javascript:void(0)" onclick="_onClickItem(\''+ data._id +'\')">' + data.metadata.speaker+' - ' + data.filename + '(' +data.metadata.duration + 'hr) </a>' +
+                '<a  href="javascript:void(0)" onclick="_onClickItem(\''+ data._id +'\')">' + data.metadata.speaker+' - ' + data.filename + '(' +data.metadata.duration + 'minutes) </a>' +
                 '</td>'+
             '<td data-label="Date Created">'+data.uploadDate+'</td>\n' +
                 '      <td data-label="Link"><a target="_blank"  href="/tracks/download/'+ data._id +'">Download</a></td>\n' +
@@ -218,14 +225,14 @@ $.ajax({
         html+=
             '  </tbody>\n' +
             '</table>\n' +
-            '<div id="css" hidden="hidden">\n' +
-            '                                <css id="myAudio" controls>\n' +
-            '                                    <source src="" type="css/mp3">\n' +
-            '                                    Your browser does not support the css element.\n' +
-            '                                </css>\n' +
+            '<div id="audio" hidden="hidden">\n' +
+            '                                <audio id="myAudio" controls>\n' +
+            '                                    <source src="" type="audio/mp3">\n' +
+            '                                    Your browser does not support the audio element.\n' +
+            '                                </audio>\n' +
             '                            </div>'
 
-        if (boolDataExist === true) document.getElementById("nav-css-list").innerHTML = html;
+        if (boolDataExist === true) document.getElementById("nav-audio-list").innerHTML = html;
 
         boolDataExist = false;
     }
@@ -233,10 +240,10 @@ $.ajax({
 
 function _onClickItem(trackId){
     debugger;
-    let audioContainer = document.getElementById("css");
+    let audioContainer = document.getElementById("audio");
     audioContainer.removeAttribute("hidden");
-    // document.getElementById("css").innerHTML =
-    // '<video controls="" autoplay="" name="media"><source src="/tracks/' + trackId + '" type="css/mp3"></video>';
+    // document.getElementById("audio").innerHTML =
+    // '<video controls="" autoplay="" name="media"><source src="/tracks/' + trackId + '" type="audio/mp3"></video>';
     let url = "/tracks/" + trackId;
     // let video = document.getElementById("myVideo");
     let audio = document.getElementById("myAudio");
@@ -256,6 +263,10 @@ function onDelete(url ) {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             console.log(this.responseText);
+
+            toggleClasses();
+            showModal();
+            showModalChildren();
         }
     });
 

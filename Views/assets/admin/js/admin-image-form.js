@@ -201,7 +201,7 @@ function onEditItem(id) {
         showModal();
         showModalChildren();
     });
-    document.getElementById('ImgForm_submit').innerText = "Update Form"
+    document.getElementById('ImgForm_submit').innerText = "Update Form";
     $("a#nav-add-image-tab").click();
 }
 

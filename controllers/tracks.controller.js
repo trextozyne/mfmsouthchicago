@@ -16,8 +16,9 @@ const { Readable } = require('stream');
  * POST /tracks
  */
 exports.tracks_create =  (req, res) => {
-    console.log(req.body);
-    let trackNmae = req.body.name;
+    // console.log(req.body);
+    console.log(req.file);
+    let trackName = req.body.name;
 
     // Covert buffer to Readable Stream
     const readableTrackStream = new Readable();
@@ -32,6 +33,7 @@ exports.tracks_create =  (req, res) => {
 
     let id = uploadStream.id;
     readableTrackStream.pipe(uploadStream);
+    console.log(id)
 
     uploadStream.on('error', () => {
         return res.status(500).json({message: "Error uploading file"});
