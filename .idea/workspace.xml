@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="552" column="61" selection-start-line="552" selection-start-column="61" selection-end-line="552" selection-end-column="61" />
+            <state relative-caret-position="9384">
+              <caret line="552" column="60" selection-start-line="552" selection-start-column="60" selection-end-line="552" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -58,8 +57,8 @@
       <file leaf-file-name="admin-basic-operation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4165">
-              <caret line="245" column="101" selection-start-line="245" selection-start-column="96" selection-end-line="245" selection-end-column="101" />
+            <state relative-caret-position="2142">
+              <caret line="126" selection-start-line="126" selection-end-line="126" />
             </state>
           </provider>
         </entry>
@@ -85,17 +84,27 @@
       <file leaf-file-name="events.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3043">
-              <caret line="179" selection-start-line="179" selection-end-line="179" />
+            <state relative-caret-position="2720">
+              <caret line="160" column="59" selection-start-line="160" selection-start-column="59" selection-end-line="160" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-event-calendar.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin-event-calendar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8228">
-              <caret line="484" column="33" selection-start-line="484" selection-start-column="33" selection-end-line="484" selection-end-column="33" />
+            <state relative-caret-position="204">
+              <caret line="415" column="19" lean-forward="true" selection-start-line="415" selection-start-column="19" selection-end-line="415" selection-end-column="19" />
+              <folding>
+                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#127#133#0" expanded="true" />
+                <element signature="e#102#108#1" expanded="true" />
+                <element signature="e#110#117#1" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+                <element signature="e#101#108#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,8 +112,8 @@
       <file leaf-file-name="recurring_schedule.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3621">
-              <caret line="213" selection-start-line="213" selection-end-line="213" />
+            <state relative-caret-position="3859">
+              <caret line="227" column="35" selection-start-line="227" selection-start-column="35" selection-end-line="227" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -131,8 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>submit</find>
-      <find>.submit</find>
       <find>xhr</find>
       <find>img_gallery_form</find>
       <find>req.body</find>
@@ -153,14 +160,16 @@
       <find>css</find>
       <find>getTotalMinutes</find>
       <find>validatea</find>
-      <find>convertDate</find>
       <find>some</find>
       <find>bgColor</find>
       <find>myAudio</find>
       <find>loadData</find>
       <find>getEvents_recur</find>
-      <find>you</find>
       <find>addTableRow</find>
+      <find>convertDate</find>
+      <find>you</find>
+      <find>localS</find>
+      <find>switch</find>
     </findStrings>
     <replaceStrings>
       <replace>right-klose</replace>
@@ -258,12 +267,12 @@
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" />
         <option value="$PROJECT_DIR$/controllers/tracks.controller.js" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
         <option value="$PROJECT_DIR$/controllers/events.controller.js" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" />
         <option value="$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js" />
         <option value="$PROJECT_DIR$/admin/admin.ejs" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
       </list>
     </option>
   </component>
@@ -284,10 +293,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1435" />
-    <option name="y" value="-26" />
-    <option name="width" value="1346" />
-    <option name="height" value="757" />
+    <option name="x" value="690" />
+    <option name="y" value="18" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -295,18 +304,125 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="mfmsouthchicago" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mfmsouthchicago" type="462c0819:PsiDirectoryNode" />
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="event-calendar-module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="event-calendar-module" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="index-additional" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="index-additional" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="mobirise" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfm - git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfm - git" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="mobirise" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -317,7 +433,7 @@
     <property name="editor.config.ad.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.14.2" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Restaurant - Copy" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -496,13 +612,13 @@
       <workItem from="1588623523243" duration="469000" />
       <workItem from="1588624038379" duration="289000" />
       <workItem from="1588624364470" duration="544000" />
-    </task>
-    <task id="LOCAL-00122" summary="Default Changelist">
-      <created>1579309576616</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1579309576616</updated>
+      <workItem from="1588716545178" duration="1127000" />
+      <workItem from="1588800909826" duration="96000" />
+      <workItem from="1588901667488" duration="1791000" />
+      <workItem from="1589150166604" duration="1197000" />
+      <workItem from="1589177383703" duration="5436000" />
+      <workItem from="1589818638486" duration="1821000" />
+      <workItem from="1590282307301" duration="2333000" />
     </task>
     <task id="LOCAL-00123" summary="Default Changelist">
       <created>1579309949335</created>
@@ -840,11 +956,18 @@
       <option name="project" value="LOCAL" />
       <updated>1588557993698</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="Default Changelist">
+      <created>1588625282790</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1588625282790</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2295433000" />
+    <option name="totallyTimeSpent" value="2310626000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -856,8 +979,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1592" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
@@ -866,23 +988,23 @@
       <window_info anchor="bottom" id="Run" order="6" weight="0.32991454" />
       <window_info id="npm" order="1" sideWeight="0.50282484" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32673267" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49339935" visible="true" weight="0.19375" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49339935" visible="true" weight="0.21482602" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298217" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" sideWeight="0.5066007" side_tool="true" weight="0.21028744" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.3919598" />
-      <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3298292" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3298292" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="14" weight="0.3283082" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32838285" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32343236" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="14" weight="0.3283082" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32838285" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1207,13 +1329,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3043">
-          <caret line="179" selection-start-line="179" selection-end-line="179" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/event-calendar-module/js/caleandar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -1221,24 +1336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8228">
-          <caret line="484" column="33" selection-start-line="484" selection-start-column="33" selection-end-line="484" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4165">
-          <caret line="245" column="101" selection-start-line="245" selection-start-column="96" selection-end-line="245" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="3859">
+          <caret line="227" column="35" selection-start-line="227" selection-start-column="35" selection-end-line="227" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1251,8 +1352,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="552" column="61" selection-start-line="552" selection-start-column="61" selection-end-line="552" selection-end-column="61" />
+        <state relative-caret-position="9384">
+          <caret line="552" column="60" selection-start-line="552" selection-start-column="60" selection-end-line="552" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="160" column="59" selection-start-line="160" selection-start-column="59" selection-end-line="160" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="415" column="19" lean-forward="true" selection-start-line="415" selection-start-column="19" selection-end-line="415" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#127#133#0" expanded="true" />
+            <element signature="e#102#108#1" expanded="true" />
+            <element signature="e#110#117#1" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#101#108#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
