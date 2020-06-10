@@ -83,8 +83,8 @@
       <file leaf-file-name="video.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/video.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="312" column="2" lean-forward="true" selection-start-line="312" selection-start-column="2" selection-end-line="312" selection-end-column="2" />
+            <state relative-caret-position="228">
+              <caret line="315" lean-forward="true" selection-start-line="315" selection-end-line="315" />
               <folding>
                 <element signature="n#style#0;n#figure#0;n#!!top" expanded="true" />
               </folding>
@@ -159,8 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dismiss</find>
-      <find>img</find>
       <find>removeSpecificSlidesDBData</find>
       <find>slidesDBData</find>
       <find>ajax</find>
@@ -189,9 +187,10 @@
       <find>south chi</find>
       <find>South</find>
       <find>and Miracles,</find>
+      <find>and Miracles</find>
+      <find>Regional Headquarters.</find>
     </findStrings>
     <replaceStrings>
-      <replace>javascript:void(0)</replace>
       <replace>javascript:void(0) onclick=&quot;getSelectEntries()&quot;</replace>
       <replace>javascript:void(0) onclick='getSelectEntries()'</replace>
       <replace>javascript:void(0)&quot; onclick='getSelectEntries()'</replace>
@@ -221,6 +220,7 @@
       <replace>audio</replace>
       <replace>&lt;br&gt; South Chicago Regional Headquarters</replace>
       <replace>and Miracles</replace>
+      <replace>Regional Headquarters</replace>
     </replaceStrings>
     <dirStrings>
       <dir />
@@ -645,14 +645,7 @@
       <workItem from="1591331162016" duration="575000" />
       <workItem from="1591420682092" duration="2098000" />
       <workItem from="1591523455785" duration="206000" />
-      <workItem from="1591725940465" duration="2082000" />
-    </task>
-    <task id="LOCAL-00125" summary="Default Changelist">
-      <created>1579310726555</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1579310726555</updated>
+      <workItem from="1591725940465" duration="2584000" />
     </task>
     <task id="LOCAL-00126" summary="Default Changelist">
       <created>1579315974597</created>
@@ -990,11 +983,18 @@
       <option name="project" value="LOCAL" />
       <updated>1591756399139</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="Default Changelist">
+      <created>1591756737623</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1591756737623</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2320413000" />
+    <option name="totallyTimeSpent" value="2320915000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1410,8 +1410,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/video.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="312" column="2" lean-forward="true" selection-start-line="312" selection-start-column="2" selection-end-line="312" selection-end-column="2" />
+        <state relative-caret-position="228">
+          <caret line="315" lean-forward="true" selection-start-line="315" selection-end-line="315" />
           <folding>
             <element signature="n#style#0;n#figure#0;n#!!top" expanded="true" />
           </folding>
