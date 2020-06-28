@@ -585,25 +585,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript">
         function validateEmail(email) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }
 
         function htmlDecode(input){
-            var e = document.createElement('div');
+            let e = document.createElement('div');
             e.innerHTML = input;
             return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
         }
 
-        var users = JSON.parse(htmlDecode("<%= JSON.stringify(Users) %>"));
+        let users = JSON.parse(htmlDecode("<%= JSON.stringify(Users) %>"));
 
 
-        var $username = $("#username");
-        var $firstname = $("#firstname");
-        var $lastname = $("#lastname");
-        var $email = $("#email");
-        var $password = $("#password");
-        var $confirmPass = $("#re-password");
+        let $username = $("#username");
+        let $firstname = $("#firstname");
+        let $lastname = $("#lastname");
+        let $email = $("#email");
+        let $password = $("#password");
+        let $confirmPass = $("#re-password");
 
         //does not match email
         function checkEmail($input) {
