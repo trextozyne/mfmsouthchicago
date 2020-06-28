@@ -249,7 +249,7 @@
 
       getYoutubePlaylist (function(ytplayLists) {
 
-          ytplayLists.forEach((ytplayList) => {
+          ytplayLists.sort().reverse().forEach((ytplayList) => {
               let settings = {
                   "async": true,
                   "crossDomain": true,
@@ -265,8 +265,10 @@
                                   <ul class="video-list featured">
                                   `;
 
-              $.ajax(settings).done(function (response) {
-                  const keys = Object.entries(response);
+              $.ajax(settings).done(function (ytVidoeList) {
+                  const sortedYtVideos = ytVidoeList.slice().sort((a, b) => new Date(b.contentDetails.videoPublishedAt) - new Date(a.contentDetails.videoPublishedAt));
+
+                  const keys = Object.entries(sortedYtVideos);
                   let ytvideoinnerHtml = ``;
                   for (const key of keys) {
                       for (const k of key) {

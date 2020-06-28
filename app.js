@@ -24,6 +24,7 @@ const app = express();
 // Set up mongoose connection
 const mongoose = require('mongoose');
 let dev_db_url = 'mongodb://Trex_son:Salvat1on1987@ds243254.mlab.com:43254/photoalbumdb';//change to mfmdb
+
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });//mongoose.set('useFindAndModify', false);
 
@@ -50,14 +51,13 @@ app.use((req, res, next) => {
 app.use(bodyParser.json({limit: '10mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 
-app.use(session({secret: "S@lv@t10n_G0d", resave: false, saveUninitialized:true, cookie: { maxAge: Date.now() + (30 * 86400 * 1000)  } }));//shouldnt be storing secret in a public repository, should be in an environment variable
-app.use(flash());
 
-app.use(express.static(path.join(__dirname, 'Views')));
+app.use(express.static(path.join(__dirname, 'Views')));//important
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/event-calendar-module', express.static(path.join(__dirname, 'event-calendar-module')));
 
-app.set('views', path.join(__dirname, './Views'));
+app.set('views', path.join(__dirname, './Views'));//important
+
 app.get('/.well-known/acme-challenge/:content', function(req, res) {
     res.send('d_eKQ-hHmpBFdFRNJyssKNi4n4RYdkLQIhzyMLi1-EI.Fdf1QYQc20L-eH7l9XV-rIdRtS8ae3XHetX0zvMUY6U')
 })
