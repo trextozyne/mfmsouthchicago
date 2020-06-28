@@ -51,6 +51,8 @@ app.use((req, res, next) => {
 app.use(bodyParser.json({limit: '10mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 
+app.use(session({secret: "S@lv@t10n_G0d", resave: false, saveUninitialized:true, cookie: { maxAge: Date.now() + (30 * 86400 * 1000)  } }));//shouldnt be storing secret in a public repository, should be in an environment variable
+app.use(flash());
 
 app.use(express.static(path.join(__dirname, 'Views')));//important
 app.use(express.static(path.join(__dirname, 'node_modules')));
