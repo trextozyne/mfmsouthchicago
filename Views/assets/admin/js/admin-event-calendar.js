@@ -4,11 +4,11 @@ let _eventId = "";
 let start_time, end_time = "";
 
 //======check if windows just loaded=======
-loaded_on = true;
-function is_Load(){
-    loaded_on;
-}
-window.onload = is_Load;
+// loaded_on = true;
+// function is_Load(){
+//     loaded_on;
+// }
+// window.onload = is_Load;
 //======check if windows just loaded=======
 
 //======================perform all delete list(cards) operations======================
@@ -127,10 +127,10 @@ function loadData() {
         }
     }).done(function(data){
 
-        if(loaded_on)
-            loadScript();
-
-        loaded_on = false;
+        // if(loaded_on)
+        //     loadScript();
+        //
+        // loaded_on = false;
 
         prepare_isDeleteListCards();
     });

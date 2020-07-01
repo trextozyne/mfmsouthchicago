@@ -819,12 +819,7 @@
     //     return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
     // }
 
-    function getLoggedDetails() {
-        console.log(JSON.parse(localStorage.getItem("user-login")));
-    }
-
     function ready() {
-        getLoggedDetails();
         debugger;
         let script = document.createElement('script');
         script.id = 'calendar-script';

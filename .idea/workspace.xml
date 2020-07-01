@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/Views/assets/admin/css/admin-alert-modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/assets/admin/css/admin-login-alert-modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-alert-modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/assets/login-logout/js/auto.logout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/assets/login-logout/js/pre-login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-draggable-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-draggable-cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-dynamic-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-dynamic-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/create.slides.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/login-logout/js/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/login-logout/js/logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/login-logout/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/login-logout/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/dashboard/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/dashboard/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/dashboard/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Views/login.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-calendar-module/js/caleandar.js" beforeDir="false" afterPath="$PROJECT_DIR$/event-calendar-module/js/caleandar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-calendar-module/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/event-calendar-module/js/demo.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -84,20 +67,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="792" column="50" selection-start-line="792" selection-start-column="50" selection-end-line="792" selection-end-column="50" />
+            <state relative-caret-position="425">
+              <caret line="843" lean-forward="true" selection-start-line="843" selection-end-line="843" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-event-calendar.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin-event-calendar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="65" column="16" lean-forward="true" selection-start-line="57" selection-start-column="18" selection-end-line="65" selection-end-column="16" />
+            <state relative-caret-position="187">
+              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -170,7 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>eventData</find>
       <find>../event-calendar-module/js/caleandar.js</find>
       <find>let aTab = document.getElementsByTagName(&quot;a&quot;);</find>
       <find>rel='</find>
@@ -198,8 +180,9 @@
       <find>let events;</find>
       <find>let element = new Image;</find>
       <find>detectBrowserOpen</find>
-      <find>loadScript</find>
       <find>element</find>
+      <find>loadScript</find>
+      <find>loaded_on</find>
     </findStrings>
     <replaceStrings>
       <replace>javascript:void(0)&quot; onclick='getSelectEntries()'</replace>
@@ -301,8 +284,8 @@
         <option value="$PROJECT_DIR$/event-calendar-module/js/caleandar.js" />
         <option value="$PROJECT_DIR$/Views/assets/login-logout/js/auto.logout.js" />
         <option value="$PROJECT_DIR$/event-calendar-module/js/demo.js" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
         <option value="$PROJECT_DIR$/admin/admin.ejs" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
       </list>
     </option>
   </component>
@@ -632,14 +615,7 @@
       <workItem from="1593215049614" duration="60244000" />
       <workItem from="1593509150927" duration="30577000" />
       <workItem from="1593583607114" duration="10167000" />
-      <workItem from="1593616447326" duration="5288000" />
-    </task>
-    <task id="LOCAL-00128" summary="Default Changelist">
-      <created>1579317328438</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1579317328438</updated>
+      <workItem from="1593616447326" duration="5589000" />
     </task>
     <task id="LOCAL-00129" summary="Default Changelist">
       <created>1579318303180</created>
@@ -977,11 +953,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593334063745</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="Default Changelist">
+      <created>1593633056526</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1593633056527</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2454002000" />
+    <option name="totallyTimeSpent" value="2454303000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1387,10 +1370,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/login-logout/js/auto.logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="204" column="30" lean-forward="true" selection-start-line="204" selection-start-column="30" selection-end-line="204" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="843" lean-forward="true" selection-start-line="843" selection-end-line="843" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="65" column="16" lean-forward="true" selection-start-line="57" selection-start-column="18" selection-end-line="65" selection-end-column="16" />
+        <state relative-caret-position="187">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -1401,20 +1398,6 @@
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
             <element signature="e#101#108#1" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/login-logout/js/auto.logout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="204" column="30" lean-forward="true" selection-start-line="204" selection-start-column="30" selection-end-line="204" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="792" column="50" selection-start-line="792" selection-start-column="50" selection-end-line="792" selection-end-column="50" />
         </state>
       </provider>
     </entry>
