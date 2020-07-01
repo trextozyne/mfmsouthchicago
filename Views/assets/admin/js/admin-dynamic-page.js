@@ -6,7 +6,7 @@ $(function(){
     $("li a[rel='tab']").click(function(e){
         e.preventDefault();
 
-        debugger;
+        //debugger;
         let pageurl =  $(this).attr('href');
 
         let data = pageurl,
@@ -84,7 +84,7 @@ $(function(){
     });
 
     function pageNavigation(pageurl, $this) {
-        debugger;
+        //debugger;
         $.ajax({type: "GET",
             url:pageurl+'?rel=tab',
             dataType: 'text',

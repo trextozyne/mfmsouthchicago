@@ -45,7 +45,7 @@ $(document).ready(function() {
                     h4s += `<br>`;
             });
             h4s += "</h4>";
-debugger;
+//debugger;
             slide += `
                  <!-- Slider #${parseInt(key) + 1} -->
           <div class="slider slide-${parseInt(key) + 1}" style="background: url(${response[key].bgImgPath}) no-repeat 0 0;background-size: cover; box-shadow: inset 0 0 0 2000px rgba(187, 89, 184, 0.37);">
@@ -122,7 +122,8 @@ debugger;
                             checkNewMonth = false;
                             return firstOfNextMonth
                         }
-                        if (weekNumber === 3 && sType === 4 && firstSpecificDay === false) {debugger;
+                        if (weekNumber === 3 && sType === 4 && firstSpecificDay === false) {
+                            // debugger;
                             checkNewMonth = false;
                             return firstOfNextMonth
                         } else if (firstSpecificDayWkCount === sType-1 && sType === 4 && firstSpecificDay === true){

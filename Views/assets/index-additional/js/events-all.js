@@ -26,7 +26,8 @@ function sortDataByDateAsc(data) {
 
 //combine all events_recur into one
 function combineAllEvents(arrayData){
-    let combineAllEvents = [];debugger;
+    let combineAllEvents = [];
+    //debugger;
     $.each(arrayData, function (i, value) {
         value.event_recur = JSON.parse(value.event_recur);
         combineAllEvents = [...combineAllEvents, ...value.event_recur];
@@ -76,7 +77,7 @@ let eventHtmlBodyEnd =
     '              </div>';
 
 function loadEventData() {
-    debugger;
+    //debugger;
     let uri = '/events/find';
     $.ajax({
         url: uri,
@@ -84,13 +85,13 @@ function loadEventData() {
         success: function (data) {
             let combeinedEvents = combineAllEvents(data);
             let sortedData = sortDataByDateAsc(combeinedEvents);
-            debugger;
+            //debugger;
 
             if (data.length === 1 || data.length === 0)//
                 $('#services6-1.row').html("<strong>No Upcoming Events</strong>");
 
             $.each(sortedData, function (i, value) {
-                debugger;
+                //debugger;
 
                 let start_date = doJoin(value.Date);
                 if (new Date(start_date) > new Date())//.setHours(0,0,0,0)

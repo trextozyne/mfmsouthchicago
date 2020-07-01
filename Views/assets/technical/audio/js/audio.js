@@ -5,7 +5,7 @@ $.ajax({
     url: uri,
     dataType: "json",
     success: function (data) {
-        debugger;
+        //debugger;
         let html = '<div class="container container-table">\n' +
             '      <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Sermon List</h2>\n' +
             '      \n' +
@@ -71,7 +71,7 @@ $.ajax({
             '        </div>\n' +
             '      </div>\n' +
             '    </div>';
-        debugger;
+        //debugger;
         let referenceNode = document.getElementById("header1-1w");
         let htmlObject = document.createElement('section');
         htmlObject.setAttribute("id", "table1-2z");
@@ -96,7 +96,7 @@ function applyPagination() {
     let htmlPagination = document.createElement('p');
     htmlPagination.setAttribute("id", "pagination-here");
     referenceNode = document.getElementById("DataTables_Table_0_wrapper");
-    debugger;
+    //debugger;
     insertAfter(htmlPagination, referenceNode);
 
     htmlPagination = document.createElement('p');
@@ -111,7 +111,8 @@ function applyPagination() {
     let table = document.getElementById("DataTables_Table_0");
     let totalPageData = 5;
     let page = 1;
-    for (let i = 1, row; row = table.rows[i]; i++) {//debugger;
+    for (let i = 1, row; row = table.rows[i]; i++) {
+        //debugger;
         //iterate through rows  rows would be accessed using the "row" variable assigned in the for loop
         row.setAttribute('data-page', page);
 
@@ -157,7 +158,8 @@ function applyPagination() {
     //=========lock all the click events for pagination in============
 }
 //========================select pagination by data attribute===============================
-function selectPageByData(dataPage, table){debugger
+function selectPageByData(dataPage, table){
+    //debugger
     for (let i = 1, row; row = table.rows[i]; i++) {
         //iterate through rows  rows would be accessed using the "row" variable assigned in the for loop
         let dataPageTable = row.getAttribute('data-page');

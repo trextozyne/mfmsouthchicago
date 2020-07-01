@@ -102,7 +102,7 @@ function canSubmit($input) {
 //     return ;
 // }
 
-function enableSubmitButton() {debugger;
+function enableSubmitButton() {//debugger;
     $("#register").prop("disabled", !canSubmit());
 }
 

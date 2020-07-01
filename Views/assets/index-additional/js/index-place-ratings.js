@@ -31,7 +31,7 @@ function logPlaceDetails() {
             "<span class=\"sr-only\">Next</span></a></div></div></div></section>";
 
         $(reviewHtml).insertAfter("#churchEvents");
-        debugger;
+        //debugger;
         dynamicallyLoadScript("assets/mbr-testimonials-slider/mbr-testimonials-slider.js")
     });
 }

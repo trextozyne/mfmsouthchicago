@@ -6,7 +6,8 @@ function doJoin(val){
         return val;
 }
 
-function getTimeAmorPm(time) {debugger;
+function getTimeAmorPm(time) {
+    //debugger;
     let hms = time + ":00";
     let dt = new Date("1970-01-01 " + hms);
 
@@ -48,7 +49,7 @@ function longDate(date) {
     let counter = 0;
 
     function checker(value) {
-        debugger;
+        //debugger;
         let match = [arr_Dates[counter]];
         return match.every(function(v) {
             return value.indexOf(v) == 0;
@@ -66,14 +67,14 @@ var months = ["January", "February", "March", "April", "May", "June", "July", "A
 var days =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function loadEventData(__id, __date) {
-    debugger;
+    //debugger;
     let uri = "/events/" + __id;
     $.ajax({
         url: uri,
         "method": "GET",
         dataType: "json",
         success: function (data) {
-            debugger;
+            //debugger;
             document.getElementsByTagName("title")[0].innerHTML = data.event_name;
             document.getElementsByClassName("event-title")[0].innerHTML = data.event_name;
             document.getElementsByClassName("event-description")[0].innerHTML = data.event_desc;

@@ -31,7 +31,7 @@ $(document).ready(function(){
             divModalTarget.innerHTML = "";
         }else {
             $.each(result, function (k, dbData) {
-                debugger;
+                //debugger;
                 //for gallery image
                 galleryDiv += '<div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false" data-tags="' + dbData.albums[0].u_name + '">';
                 galleryDiv += '<div href="#lb-gallery2-2y" data-slide-to="' + gallerySlideCounter + '" data-toggle="modal">';

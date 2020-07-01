@@ -19,7 +19,7 @@ $(document).ready(function(){
         $.each(result, function (k, dbData) {
             imgNames.push(dbData);
         });
-        debugger;
+        //debugger;
         $(".grid li").each((i, li)=>{
             let bg = 'assets/images/gallery/' + imgNames[Math.floor(Math.random() * imgNames.length) + 1  ].imgName ;
             $(li).css('background-image', 'url('  + bg + ')');

@@ -653,17 +653,17 @@ $(document).ready(function(){
 
     let mouseleave = true;
     $('#tile1:not(#tile1.animate .circle)').mouseleave(function(){
-        debugger;
+        //debugger;
         mouseleave = true;
     });
 
     $('.wrapper').hover(function(){
-        debugger;
+        //debugger;
         if(mouseleave === false)
             return
 
         mouseleave = false;
-        debugger;
+        //debugger;
 
         $('#tile1').addClass('animate');
         $('#tile1 div.settings-form').css('display', 'block').delay('40').animate({'opacity': 1});

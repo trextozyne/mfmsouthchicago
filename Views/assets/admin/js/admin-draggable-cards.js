@@ -1,7 +1,7 @@
 //draggable cards
 setTimeout(()=>{
     jQuery(function($) {
-        debugger;
+        //debugger;
         var panelList = $('#draggablePanelList');
 
         panelList.sortable({

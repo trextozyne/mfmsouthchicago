@@ -144,7 +144,7 @@ jQuery(($) => {
 //=======================================events form validation================================================
 function getTotalMinutes(time) {
     let a = time.split(':'); // split it at the colons
-debugger;
+//debugger;
     // Hours are worth 60 minutes.
     return (+a[0]) * 60 + (+a[1]);
 }
@@ -240,7 +240,8 @@ function canSubmit() {
 let __id = null, event_img = null, event_imgName = null, editResponse = {}, event_recurClone = [];
 
 $(document).on("click","#event_submit",function(evt){
-    evt.preventDefault();//debugger;
+    evt.preventDefault();
+    //debugger;
     start_time  = document.getElementById("start_time").value;
     end_time = document.getElementById("end_time").value;
 
@@ -252,7 +253,7 @@ $(document).on("click","#event_submit",function(evt){
 });
 
 function updateCalendar(_event_recur) {
-    debugger;
+    //debugger;
     let events = [..._event_recur];
     // getEvents_recur.push(..._event_recur);
     let settings = {};
@@ -266,8 +267,8 @@ function doJoin(val){
     return val;
 }
 
-function getTimeAmorPm(time) {//debugger;
-    debugger;
+function getTimeAmorPm(time) {
+    //debugger;
     let hms = time + ":00";
     let dt = new Date("1970-01-01 " + hms);
 
@@ -356,7 +357,7 @@ $("#event_form").submit(function(evt) {
 });
 
 function doUpdate (response, clone_eventRecur) {
-    debugger;
+    //debugger;
 
     let isArray = (data) => {
         return (Object.prototype.toString.call(data) === "[object Array]");
@@ -402,7 +403,6 @@ function doUpdate (response, clone_eventRecur) {
             // if (__id === null)
             //debugger;;
             getEvents_recur =[];
-            debugger;
             loadData();
 
             setTimeout(()=>{
@@ -457,7 +457,7 @@ function _onEditItem(id) {
         event_recurClone = [];
         event_recurClone.push(...getEvents_recur);
         let counterDel = 0;
-        debugger;
+        //debugger;
 
         getEvents_recur.forEach(function (eventVal, index) {
             if (eventVal._id === response._id){

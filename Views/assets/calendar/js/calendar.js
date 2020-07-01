@@ -7,7 +7,7 @@ $(window).load(function(){
 });
 
 function doJoin(val){
-    debugger;
+    //debugger;
     val = val.split(',');
     val = val[1]+ '/' + val[2] + '/' + val[0];
     return val;
@@ -30,14 +30,14 @@ function loadScript() {
 }
 
 function loadData() {
-    debugger;
+    //debugger;
     let uri = '/events/find';
     $.ajax({
         url: uri,
         dataType: "json",
         success: function (data) {
             $.each(data, function (key, content) {
-                debugger;
+                //debugger;
                 content.event_recur = JSON.parse(content.event_recur);
                 getEvents_recur = [...getEvents_recur,...content.event_recur];
             });
@@ -46,7 +46,7 @@ function loadData() {
 }
 
 $(document).ready(function () {
-    debugger;
+    //debugger;
     loadData();
     loadScript();
     if(window.innerWidth > window.innerHeight) {

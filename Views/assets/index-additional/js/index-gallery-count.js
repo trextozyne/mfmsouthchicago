@@ -1,5 +1,5 @@
 $(document).ready(()=>{
-    debugger;
+    //debugger;
     var photoAdd = '/photoalbums/find';
 
     function getGalleryCount(AjaxSucceeded) {
@@ -37,7 +37,7 @@ let imageDiv = "";
 
 //start here get callback
     getGalleryCount( function dataResponse(data) {
-        debugger;
+        //debugger;
         //start final get callnbck
         getPhoto( function AjaxSucceeded(result) {
             if(result.length === 0){

@@ -3,7 +3,7 @@
 //==================================pull saved image-gallery datas==========================================
 
 jQuery(($) => {
-    debugger;
+    //debugger;
     loadSavedData();
 });
 
@@ -31,7 +31,7 @@ function loadSavedData () {
                 html +='<button type="button"onclick="onDeleteItem(\''+ content._id +'\')"  class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>\n';
                 html +='<!--=======================================/modal=============================-->\n';
                 html +='<!-- large modal -->\n';
-                debugger;
+                //debugger;
                 html2 += '<img src="' + content.img + '" alt="mfmsouth-church-events" style="width:100%">\n';
                 html2 += '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>\n';
                 html2 += '</button>';
@@ -63,7 +63,7 @@ function loadSavedData () {
                 html2 = "";
                 html += "</li>";
             });
-            debugger;
+            //debugger;
             document.getElementById("draggablePanelList").innerHTML = html;
         }
     })
@@ -110,7 +110,7 @@ $(document).on("click","button",function(evt) {//#sermon_submit
 let _id = null, img = null, imgName = null;
 //for save and update function
 $("#img_gallery_form").submit(function (event) {
-    debugger;
+    //debugger;
     if (validateForm() === false) {
         alert("the forms info is not valid");
         return false;
@@ -121,7 +121,7 @@ $("#img_gallery_form").submit(function (event) {
     let fData = new FormData($('form#img_gallery_form')[0]);
 
     if (_id === null) {//save
-        debugger;
+        //debugger;
         let url = "/photoalbums/create";
 
         let xhr = new XMLHttpRequest();
@@ -207,7 +207,8 @@ function onEditItem(id) {
 
 //perform delete functions
 
-function onDeleteItem(id){debugger;
+function onDeleteItem(id){
+    //debugger;
     _id = id;
     let settings = {
         "async": true,

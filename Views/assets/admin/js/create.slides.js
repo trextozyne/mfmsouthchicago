@@ -3,7 +3,7 @@ let aTab = document.getElementsByTagName("a");
 Array.from(aTab).forEach((a)=>{
     a.addEventListener("click", (event)=>{
         event.preventDefault();
-        debugger;
+        //debugger;
         if(event.target.id === "nav-add-text_on_slider-tab")
             document.getElementById("slideSelector").removeAttribute("hidden");
         else
@@ -16,7 +16,7 @@ Array.from(aTab).forEach((a)=>{
 
 //=====================The Slides on the Index==============================
 function emptySlidesDBData(slidesData) {
-    debugger;
+    //debugger;
     "use strict";
     const dataList = Object.values(slidesData);
     for (const data in dataList) {
@@ -26,7 +26,7 @@ function emptySlidesDBData(slidesData) {
 
 let slidesDataClone = [];
 function removeSpecificSlidesDBData(slidesData, removeSlideTotal) {
-debugger;
+//debugger;
     slidesDataClone = slidesData;
     slidesData.forEach(function (slidesVal, index) {
         if (removeSlideTotal > 0){
@@ -77,7 +77,7 @@ function findAllSlides(callback) {
 function saveSlides($this) {
     let url= "/slides/create";
     let formData = $this.serializeArray();
-    debugger;
+    //debugger;
 
     let data = new FormData();
 
@@ -129,7 +129,7 @@ function checkExistence($this, evt, button){
     let bool_exist = false;
     findAllSlides(function (response) {
         "use strict";
-        debugger;
+        //debugger;
         const dataList = Object.values(response);
         for (const data in dataList) {
             if (sliderType.trim() === response[data].sliderType) {
@@ -169,7 +169,7 @@ function checkExistence($this, evt, button){
 let forms = null;
 function doSliderUpdate($this){
     "use strict";
-    debugger;
+    //debugger;
     let data = new FormData();
     const entries = Object.entries(slides);
     for (const [key, slideData] of entries) {
@@ -227,7 +227,7 @@ function doSliderUpdate($this){
 
 $(`body`).on("submit", forms).submit(function(evt) {
     evt.preventDefault();
-    debugger;
+    //debugger;
     let button = $('#'+evt.target.id).find($(`button[id^='slider-'][id$='-submit']`));
     sliderType = $(`form#${evt.target.id} :input[name ="sliderType"]`).val();
 
@@ -252,7 +252,7 @@ $(`body`).on("submit", forms).submit(function(evt) {
 })();
 
 $('body').on("click",`[id^=slider-][id $=-submit]`,function(evt) {//#sermon_submit
-debugger
+//debugger
     evt.preventDefault();
     let id = this.id.match(/\d+/);
     sliderType = `slider${id[0]}`;
@@ -265,7 +265,7 @@ let count = 1;
 let slideSaved = 0;
 let slidesDBData = null;
 function createSlidesMulti($this) {
-    debugger;
+    //debugger;
     findAllSlides(function (response) {
         slidesDBData = response;
         slideSaved = response.length;
@@ -418,7 +418,7 @@ function createSlidesMulti($this) {
         count++;
     }
 
-    debugger;
+    //debugger;
     let dateArr = $(`body [id^=slider-][id $=-date]`);
     $.each(dateArr, (i, val)=>{
         $(val).datepicker();

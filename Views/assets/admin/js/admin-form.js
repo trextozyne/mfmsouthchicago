@@ -17,7 +17,8 @@ $(document).ready(function () {
     });
 });
 
-function setGalleryImages($this, quantity){debugger;
+function setGalleryImages($this, quantity){
+    //debugger;
     let url ="";
     let method ="";
 
@@ -66,7 +67,7 @@ function insertText($this, ops){
     // }
     if ($($this).parents('ul').hasClass('img-gallery-list')) {
         document.getElementById("search").value = $this.innerText.trim();
-        debugger;
+        //debugger;
         let child = null;
         if (ops === 'Title') {
             child = document.getElementById("img_gallery_dropdown").childNodes[1];
@@ -108,7 +109,7 @@ $('#datepicker').datepicker({
 //=======================================actual user select for searches========================================
 var $dropdown_this = "";//do determine if this dropdown is for the image or the events
 $(".dropdown-menu a").click(function(){
-    debugger;
+    //debugger;
 
        if ($dropdown_this !== "") {
            g1 = $dropdown_this.parent().parent().parent().parent().attr('id');

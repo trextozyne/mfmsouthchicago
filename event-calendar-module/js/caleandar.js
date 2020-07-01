@@ -293,7 +293,7 @@ function createCalendar(calendar, element, adjuster){
                     title.className += "cld-title"
 
                     // -------------color operation-------------------
-                    debugger;
+                    //debugger;
                     if(eventData.includes(calendar.Model[n].Title.trim())) {
                         title.style.backgroundColor = bgColor[eventData.indexOf(calendar.Model[n].Title.trim())];
                     }

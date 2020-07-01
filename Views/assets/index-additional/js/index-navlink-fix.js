@@ -24,7 +24,7 @@ $('body').on('click', function (e) {
 let toggle = false;
 let hambugerBtn = document.getElementsByClassName("navbar-toggler")[0];
 hambugerBtn.addEventListener("click", (event)=>{
-    debugger;
+    //debugger;
     if(toggle === false){
         hambugerBtn.classList.remove("collapsed");
         hambugerBtn.parentElement.children[2].classList.add("show");

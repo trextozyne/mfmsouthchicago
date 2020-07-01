@@ -29,7 +29,8 @@
         let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 
-        xhr.addEventListener("readystatechange", function () {debugger;
+        xhr.addEventListener("readystatechange", function () {
+            //debugger;
             if (this.readyState === 4) {
                 if (this.status === 200)
                     window.location = "admin";
@@ -112,7 +113,7 @@
         }else {
 
             let formData = JSON.parse(JSON.stringify(getFormData($form)));
-            debugger;
+            //debugger;
             getAllUsers((users)=>{
                 let foundUser = users.find(item => item.username === formData.username);
 
@@ -136,7 +137,7 @@
                             method: method,
                             data: formData
                         }).done(function (response) {
-                            debugger;
+                            //debugger;
                             // Store data
                             localStorage.setItem('user', response.user._id);
 

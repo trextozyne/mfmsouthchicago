@@ -1,4 +1,4 @@
-(()=>{debugger;
+(()=>{//debugger;
     // Get data
     let user = localStorage.getItem('user');
     let login_admin = document.getElementsByClassName("login_admin")[0];

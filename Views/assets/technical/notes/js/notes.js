@@ -1,11 +1,11 @@
 
-debugger;
+//debugger;
 let uri = '/files/find';
 $.ajax({
     url: uri,
     dataType: "json",
     success: function (data) {
-        debugger;
+        //debugger;
         let html = '<div class="container container-table">\n' +
             '      <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Sermon List</h2>\n' +
             '      \n' +
@@ -88,7 +88,7 @@ function applyPagination() {
     let htmlPagination = document.createElement('p');
     htmlPagination.setAttribute("id", "pagination-here");
     referenceNode = document.getElementById("DataTables_Table_0_wrapper");
-    debugger;
+    //debugger;
     insertAfter(htmlPagination, referenceNode);
 
     htmlPagination = document.createElement('p');

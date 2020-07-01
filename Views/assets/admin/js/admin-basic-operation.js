@@ -85,7 +85,7 @@ $("#sermonFile_form").submit(function(evt) {
     let $form = $("#sermonFile_form");
 
     let data = new FormData($form[0]);
-    debugger;
+    //debugger;
     if ($form[0]["filename"].value === null || $form[0]["filename"].value === "", $form[0]["pdfFile"].files.length === 0) {
         alert("Please Fill All Required Field");
         return false;
@@ -155,7 +155,7 @@ $("#audio_form").submit(function(evt) {
 
     evt.preventDefault();
     let url= "/tracks/create";
-    debugger;
+    //debugger;
 
     let $form = $("#audio_form");
 
@@ -239,7 +239,7 @@ $.ajax({
 });
 
 function _onClickItem(trackId){
-    debugger;
+    //debugger;
     let audioContainer = document.getElementById("audio");
     audioContainer.removeAttribute("hidden");
     // document.getElementById("audio").innerHTML =

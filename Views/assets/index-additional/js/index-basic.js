@@ -85,7 +85,7 @@ jQuery(($) => {
         url: uri,
         dataType: "json",
         success: function (data) {
-            debugger;
+            //debugger;
 
             let combeinedEvents = combineAllEvents(data);
             let sortedData = sortDataByDateAsc(combeinedEvents);

@@ -1,5 +1,5 @@
 document.addEventListener('paste', function(e){
-    debugger;
+    //debugger;
     if(e.target && (e.target.id === "playlistId" || e.target.id === "playlistName") && document.getElementsByName('live')[0].checked) {
         document.getElementsByClassName('saveYTPlaylistId')[0].disabled = false;
     } else {
@@ -7,7 +7,8 @@ document.addEventListener('paste', function(e){
     }
 });
 
-document.addEventListener('click',function(e) {debugger
+document.addEventListener('click',function(e) {
+    //debugger
     if (e.target && e.target.type === "checkbox" && e.target.getAttribute('name') === "live" && e.target.checked === true) {
         let parentElement = e.target.parentElement.parentElement;
         let inputs = parentElement.querySelectorAll("input");
@@ -80,7 +81,7 @@ function deleteData(id) {
 }
 
 function checkEmpty(){
-    debugger;
+    //debugger;
     if(document.getElementById("playlistId").value.length > 0 && document.getElementById("playlistName").value.length > 0) {
         document.getElementsByClassName('saveYTPlaylistId')[0].disabled = false;
     } else {
@@ -150,7 +151,8 @@ function addTableRow(inputData, ytPlaylistId) {
     let inputs = [];
 
     $.ajax(settings).done(
-        (response) => {debugger;
+        (response) => {
+            //debugger;
         response.forEach((ytPlaylist)=>{
             inputs.push(ytPlaylist.playlisttiltle);
             inputs.push(ytPlaylist.playlistid);
@@ -165,13 +167,13 @@ function addTableRow(inputData, ytPlaylistId) {
 
     $.ajax(liveSettings).done(
         (response) => {
-            debugger;
+            //debugger;
             document.getElementsByName("live")[0].setAttribute("data-id", response[0]._id);
         });
 })();
 
 function addData(btnElement) {
-    debugger;
+    //debugger;
     let parentElement = btnElement.parentElement;
     let inputs =  parentElement.querySelectorAll("input:not([type=checkbox])");
 
@@ -205,7 +207,7 @@ function saveLive(btnElement) {
     let ytData = {
         ytlivelink: inputs[1].value
     };
-debugger;
+//debugger;
     if(!document.getElementsByName("live")[0].hasAttribute("data-id")) {
         let url = "/ytplayLive/create";
         let settings = {
@@ -259,7 +261,7 @@ debugger;
 function save(btnElement) {
     let parentElement = btnElement.parentElement.parentElement;
     let inputs = parentElement.querySelectorAll("input");
-    debugger;
+    //debugger;
     inputs.forEach((i) => {
         // Remove the input
         let parent = i.parentElement;
@@ -293,7 +295,7 @@ function save(btnElement) {
 }
 
 function edit(event) {
-    debugger;
+    //debugger;
     let element, spans, input, text;
 
     // Get the event (handle MS difference)
@@ -321,13 +323,13 @@ function edit(event) {
         span.parentNode.insertBefore(input, span);
 
         //  hook blur to undo
-        debugger;
+        //debugger;
         input.addEventListener("blur", blurEffect);
     })
 }
 
 function blurEffect(e) {
-    debugger;
+    //debugger;
     // Remove the input
     let parent = e.target.parentElement;
     parent.removeChild(e.target);

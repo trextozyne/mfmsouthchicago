@@ -31,7 +31,7 @@ let questions = document.getElementsByClassName('questions');
 
 for (let i = 0; i < questions.length; i++) {
     questions[i].addEventListener('click', function() {
-        debugger;
+        //debugger;
         let wrapper = document.getElementsByClassName('wrapper')[0];
         wrapper.childNodes[0].textContent = "";
         document.querySelector('#answers p').classList.add('hide');

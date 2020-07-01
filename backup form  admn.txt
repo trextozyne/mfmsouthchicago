@@ -4,7 +4,7 @@ let searchInput = null;
 let dateSearchInput = null
 //insert a tag search when you click text
 function insertText($this, ops){
-    debugger;
+    //debugger;
     let uniqueSearchInput = document.getElementById("search");
     let elAncestors = [];
     while (uniqueSearchInput) {
@@ -12,7 +12,7 @@ function insertText($this, ops){
         uniqueSearchInput = uniqueSearchInput.parentNode;
     }
     document.getElementById("search").value = $this.innerText.trim();
-    debugger;
+    //debugger;
     let child = null
     if(ops === 'Title') {
         child = document.getElementById("dropdown").childNodes[1];
@@ -37,7 +37,7 @@ $('#datepicker').datepicker({
 $(".dropdown-menu a").click(function(){
     selText = $(this).text();
     $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
-    debugger;
+    //debugger;
     if(selText === "Date Created") {
         // input = document.getElementById("datepicker");
         searchInput = document.getElementById("search");
@@ -71,7 +71,7 @@ $(".dropdown-menu a").click(function(){
 //============================================do Actual filter search==================================================
 function myFunction() {
     // Declare letiables
-    debugger
+    //debugger
     let input, filter, ul, li, i, txtValue;
 
     input = document.getElementById("search");
@@ -117,7 +117,7 @@ jQuery(($) => {
         success: function(data) {
             let html = '';
             $.each(data, function(key, content) {
-                debugger;
+                //debugger;
                 let dateCreated = content.updatedAt;
                 let dateCreatedModified = dateCreated.substring(5,7)+'/'+ dateCreated.substring(8,10)+'/'+ dateCreated.substring(0,4);
                 html += '<li data-title="'+ content.title +'" data-album_name="'+ content.albums[0].u_name +'" data-date="'+ dateCreatedModified +'" class="card" style="background-color: #d9edf7; border-color: #bce8f1;">\n';
@@ -147,7 +147,7 @@ function validateForm() {
     let album_name = document.forms["formId"]["album_name"].value;
     let album_title = document.forms["formId"]["album_title"].value;
     let fileInput = document.forms["formId"]["fileInput"];
-    debugger;
+    //debugger;
     if(_id === null) {
         if (title === "") {
             alert("Please: Whats the name of this events i.e Holy Ghost crossover night");
@@ -178,14 +178,14 @@ let _id = null, img = null, imgName = null;
 $("#formId").submit(function (event) {
     if (validateForm() === false)
         return false;
-    debugger;
+    //debugger;
     let title= document.getElementById('title').value;
 
     // let img= {data: blob};
     let albums = { u_name : document.getElementById('album_name').value, u_title : document.getElementById('album_title').value};
     event.preventDefault();
 
-    debugger;
+    //debugger;
     if (_id === null)//save
         $(this).ajaxSubmit({
             url: "http://localhost:5000/photoalbums/create",
@@ -254,7 +254,7 @@ function onEditItem(id){
     }
 
     $.ajax(settings).done(function (response) {
-        debugger;
+        //debugger;
         document.getElementById('title').value = response.title;
         document.getElementById('album_name').value = response.albums[0].u_name;
         document.getElementById('album_title').value = response.albums[0].u_title;
@@ -280,7 +280,7 @@ function onDeleteItem(id){
     }
 
     $.ajax(settings).done(function (response) {
-        debugger;
+        //debugger;
         alert(response);
     });
 }
