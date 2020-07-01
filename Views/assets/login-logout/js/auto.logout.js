@@ -11,6 +11,7 @@ function removeElement(elementId) {
     var element = document.getElementsByClassName(elementId)[0];
     element.parentNode.removeChild(element);
 }
+
 function createLoginScreen (instruction) {
     if (document.querySelectorAll('.md-modal').length > 0 && document.querySelectorAll('.md-overlay').length > 0 && !boolCloseLockModal) {
         boolCloseLockModal = true;
