@@ -1,11 +1,21 @@
 function logOut(logout){
     let data = null;
 
+    localStorage.removeItem("users-login");
+
+    localStorage.removeItem("admin");
+    localStorage.removeItem("admin-clicked");
+
+    if(localStorage.getItem("roles-clicked") !== null || localStorage.getItem("admin-clicked") !== null) {
+        localStorage.removeItem("add-roles");
+        localStorage.removeItem("roles-clicked");
+    }
+
     let loc = window.location;
     let url = loc.protocol + '//' + loc.hostname;
     url = (loc.port ? url + ":" + loc.port : url) + '/';
 
-    if (url+"user/admin" === loc.href || url+"dashboard/dashboard.html" === loc.href || url+"dashboard/users.html" === loc.href) {
+    if (url+"user/admin" === loc.href || url+"dashboard/dashboard.ejs" === loc.href || url+"dashboard/users.html" === loc.href) {
         let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 

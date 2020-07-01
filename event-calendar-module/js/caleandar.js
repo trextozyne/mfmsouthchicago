@@ -46,8 +46,8 @@ var Calendar = function(model, options, date){
 
 // ---Random colors for events on calendar-----
 // --------------------------------------------------------------
-let eventData =[];
-let bgColor = [];
+var eventData =[];
+var bgColor = [];
 function getRandomColor() {
     // var letters = '0123456789ABCDEF';
     // for (var i = 0; i < 6; i++) {

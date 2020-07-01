@@ -81,6 +81,24 @@
         return indexed_array;
     }
 
+    function getAllUsers(callBack){
+        let url = "/user/find";
+       let method = "GET";
+
+        $.ajax({
+            async: true,
+            crossDomain: true,
+            url: url,
+            method: method
+        }).done(function (response) {
+            callBack(response);
+
+        }).fail(function (data) {
+            console.log("Fail!!!")
+        });
+
+    };
+
     $("#login_form").submit(function(evt) {
         evt.preventDefault();
         let url ="";
@@ -95,43 +113,48 @@
 
             let formData = JSON.parse(JSON.stringify(getFormData($form)));
             debugger;
-            let foundUser = users.find(item => item.username === formData.username);
-            if (!foundUser) {
-                alert("You likely do not exist on our server, Please contact Admin");
-            }else {
-                let foundPswd = users.find(item => item.password === formData.password);
-                let foundRole = foundUser.roles.find(item => item.role === "userOnly");
-                if (!foundPswd && foundUser) {
-                    alert("Password not exist/Incorrect!!!");
-                } else if (foundUser && !foundRole) {
-                    url = "/user/login";
-                    method = "POST";
+            getAllUsers((users)=>{
+                let foundUser = users.find(item => item.username === formData.username);
 
-                    $.ajax({
-                        async: true,
-                        crossDomain: true,
-                        url: url,
-                        method: method,
-                        data: formData
-                    }).done(function (response) {
-                        debugger;
-                        // Store data
-                        localStorage.setItem('user', response.user._id);
+                localStorage.setItem("user-login", JSON.stringify(foundUser));//write a code for unique user name, cant exist multiple
 
-                        $form.find("input[type=text], textarea").val("");
-                        loadAnimation();
-                        setTimeout(() => {
-                            loadAdmin();
-                        }, 5000);
+                if (!foundUser) {
+                    alert("You likely do not exist on our server, Please contact Admin");
+                }else {
+                    let foundPswd = users.find(item => item.password === formData.password);
+                        let foundRole = foundUser.roles.find(item => item.role === "userOnly");
+                    if (!foundPswd && foundUser) {
+                        alert("Password not exist/Incorrect!!!");
+                    } else if (foundUser && !foundRole) {
+                        url = "/user/login";
+                        method = "POST";
 
-                    }).fail(function (data) {
-                        // alert("it must be an image");
-                    });
+                        $.ajax({
+                            async: true,
+                            crossDomain: true,
+                            url: url,
+                            method: method,
+                            data: formData
+                        }).done(function (response) {
+                            debugger;
+                            // Store data
+                            localStorage.setItem('user', response.user._id);
 
-                } else {
-                    alert('You\'re not an Administrative, Please check with Admin')
+                            $form.find("input[type=text], textarea").val("");
+                            loadAnimation();
+                            setTimeout(() => {
+                                loadAdmin();
+                            }, 5000);
+
+                        }).fail(function (data) {
+                            console.log("Fail!!!")
+                        });
+
+                    } else {
+                        alert('You\'re not an Administrative, Please check with Admin')
+                    }
                 }
-            }
+            });
         }
     });
 
@@ -153,12 +176,12 @@ debugger;
         }else {
             let formData = JSON.parse(JSON.stringify(getFormData($form)));
 
-            let mirrorUser = {
-                roles: [{role: "userOnly"}],
-                username: formData.username,
-                password: formData.password
-            };
-            users.push(mirrorUser);
+            // let mirrorUser = {
+            //     roles: [{role: "userOnly"}],
+            //     username: formData.username,
+            //     password: formData.password
+            // };
+            // users.push(mirrorUser);
 
             url = "/user/create";
             method = "POST";

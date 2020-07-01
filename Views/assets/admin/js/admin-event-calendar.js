@@ -55,6 +55,15 @@ function loadScript() {
 
         document.body.appendChild(script2);
     }, 2000);
+    // setTimeout(()=> {
+    //
+    //     script3 = document.createElement('script');
+    //     script3.type = 'text/javascript';
+    //     script3.id = 'auto.logout';
+    //     script3.src = '../assets/login-logout/js/auto.logout.js';
+    //
+    //     document.body.appendChild(script3);
+    // }, 2000);
 }
 //==================================pull saved event datas==========================================
 function loadData() {
@@ -515,20 +524,22 @@ function _onDeleteItem(id){
     });
 }
 
-//================start perform submit, edit, update delete functions================
-// ====================================Date addon For Events========================================
+function loadDateTimePicker() {
 
-$("#start_date").datepicker({
-    uiLibrary: 'bootstrap4'
-});
-$("#end_date").datepicker({
-    uiLibrary: 'bootstrap4'
-});
-$("#start_time").timepicker({
-    uiLibrary: 'bootstrap4'
-});
-$("#end_time").timepicker({
-    uiLibrary: 'bootstrap4'
-});
+    $("#start_date").datepicker({
+        uiLibrary: 'bootstrap4'
+    });
+    $("#end_date").datepicker({
+        uiLibrary: 'bootstrap4'
+    });
+    $("#start_time").timepicker({
+        uiLibrary: 'bootstrap4'
+    });
+    $("#end_time").timepicker({
+        uiLibrary: 'bootstrap4'
+    });
 
+}
+
+loadDateTimePicker();
 

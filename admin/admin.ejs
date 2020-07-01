@@ -1,53 +1,67 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
-<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
-<link rel="stylesheet" href="../assets/admin/css/admin.css">
-<link rel="stylesheet" href="../gijgo/css/gijgo.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../event-calendar-module/css/theme1.css"/>
-<link rel="stylesheet" href="../event-calendar-module/css/additional.css"/>
+<!DOCTYPE html>
+<html >
+<head>
+    <!-- Site made with Mobirise Website Builder v4.8.10, https://mobirise.com -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.10, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/mfm-logo-png-122x122.png" type="image/x-icon">
+    <meta name="description" content="Website Generator Description">
+    <title>MFM - Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
 
-<style type="text/css">
-    .borderpad{
-        border: 1px solid deepskyblue;
-        padding: 10px 15px;
-    }
-    .thumbnail{
-        width: 180px;
-        height: 100px;
-        margin: 10px;
-    }
+    <link rel="stylesheet" href="../assets/admin/css/admin-login-alert-modal.css">
+    <link rel="stylesheet" href="../assets/admin/css/admin-alert-modal.css">
+    <link rel="stylesheet" href="../gijgo/css/gijgo.css">
+    <link rel="stylesheet" href="../event-calendar-module/css/theme1.css"/>
+    <link rel="stylesheet" href="../event-calendar-module/css/additional.css"/>
+    <link rel="stylesheet" href="../assets/admin/css/admin.css">
+    <style type="text/css">
+        .borderpad{
+            border: 1px solid deepskyblue;
+            padding: 10px 15px;
+        }
+        .thumbnail{
+            width: 180px;
+            height: 100px;
+            margin: 10px;
+        }
 
-    .gj-modal .gj-picker-bootstrap{
-        top: 0 !important;
-    }
-    input[id*='slider-'].gj-textbox-md{
-        background: #FFFFFF;
-        padding: 8px;
-        border: 1px solid #ced4da;
-    }
-    .gj-datepicker-md [role="right-icon"] {
-        margin-top: 6px;
-    }
+        .gj-modal .gj-picker-bootstrap{
+            top: 0 !important;
+        }
+        input[id*='slider-'].gj-textbox-md{
+            background: #FFFFFF;
+            padding: 8px;
+            border: 1px solid #ced4da;
+        }
+        .gj-datepicker-md [role="right-icon"] {
+            margin-top: 6px;
+        }
 
-    .left-side {
-        color: #FFFFFF;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: absolute;
-        right: 15px;
-        top: 0;
-    }
+        .left-side {
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: absolute;
+            right: 15px;
+            top: 0;
+        }
 
-    #nav-event-list #draggablePanelList1, #nav-image-list #draggablePanelList, #nav-add-ytplayList .fixed_header {
-        max-height: 450px;
-        height: auto;
-        overflow: hidden;
-        overflow-y: scroll;
-    }
-</style>
+        #nav-event-list #draggablePanelList1, #nav-image-list #draggablePanelList, #nav-add-ytplayList .fixed_header {
+            max-height: 450px;
+            height: auto;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
 
+<body class="ext-content">
 <div class="header">
     <a href="#" id="menu-action">
         <i class="fa fa-bars"></i>
@@ -65,12 +79,12 @@
 <% if (JSON.stringify(Users).length > 0 ) { %>
 <div class="sidebar">
     <ul>
-        <li><a rel='tab' href="/dashboard/dashboard.ejs" class="active"><i class="fa fa-desktop"></i><span>Dashboard</span></a></li>
+        <li><a rel='tab' href="admin" class="active"><i class="fa fa-desktop"></i><span>Dashboard</span></a></li>
 
-        <% for (var role in Users.roles) { %>
-            <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
-                <li><a rel='tab' href="/dashboard/users.html"><i class="fa fa-server"></i><span>Server</span></a></li>
-            <% } %>
+        <% for (let role in Users.roles) { %>
+        <% if(Users.roles[role].role === "userAdminAnyDatabase"){%>
+        <li><a rel='tab' href="add-roles"><i class="fa fa-server"></i><span>Server</span></a></li>
+        <% } %>
         <% } %>
 
         <li><a rel='tab' href="#" data-content="admin_content3"><i class="fa fa-calendar"></i><span>Calendar</span></a></li>
@@ -78,7 +92,6 @@
         <li><a rel='tab' href="#" data-content="admin_content5"><i class="fa fa-table"></i><span>Data Table</span></a></li>
     </ul>
 </div>
-<body class="ext-content">
     <!--============================Tabs for Image Save, Update, Edit, Delete===============================================-->
     <!-- Tabs -->
     <section id="tabs">
@@ -95,7 +108,7 @@
                         </div>
                     </nav>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "userPhotoDb"){%>
                                 <!--Start Add Image Tab-->
                                 <div class="tab-pane fade show active" id="nav-add-image" role="tabpanel" aria-labelledby="nav-add-image-tab">
@@ -144,7 +157,7 @@
                             <% } %>
                         <% } %>
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "userPhotoDb"){%>
                                 <!--Start Image List Tab-->
                                 <div class="tab-pane fade" id="nav-image-list" role="tabpanel" aria-labelledby="nav-image-list-tab">
@@ -199,7 +212,7 @@
                             <% } %>
                         <% } %>
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
                                 <!--Start Add Event Tab-->
                                 <div class="tab-pane fade" id="nav-add-event" role="tabpanel" aria-labelledby="nav-add-event-tab">
@@ -396,7 +409,7 @@
                             <% } %>
                         <% } %>
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
                                 <!--Start Event List Tab-->
                                 <div class="tab-pane fade" id="nav-event-list" role="tabpanel" aria-labelledby="nav-event-list-tab">
@@ -450,7 +463,7 @@
                             </div>
                     </nav>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent2">
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
                                 <!--Start Add Bible Tab-->
                                 <div class="tab-pane fade show active" id="nav-add-bible_verse" role="tabpanel" aria-labelledby="nav-add-bible_verse-tab">
@@ -479,7 +492,7 @@
                             <% } %>
                         <% } %>
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
                                 <!--Start Add Slider Tab-->
 
@@ -509,7 +522,7 @@
                         <% } %>
                         <% } %>
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                         <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserContentDb"){%>
 
                                 <!--Start Add YoutubeplayList Tab-->
@@ -605,7 +618,7 @@
                     </nav>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent3">
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserFileDb"){%>
                                 <!--Start Add sermon Tab-->
                                 <div class="tab-pane fade show active" id="nav-add-sermon" role="tabpanel" aria-labelledby="nav-add-sermon-tab">
@@ -655,7 +668,7 @@
                             <% } %>
                         <% } %>
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserFileDb"){%>
                                 <!--Start sermon List Tab-->
                                 <div class="tab-pane fade" id="nav-sermon-list" role="tabpanel" aria-labelledby="nav-sermon-list-tab">
@@ -673,7 +686,7 @@
                             <% } %>
                         <% } %>
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserTrackDb"){%>
                                 <!--Start Add Audio Tab-->
                                 <div class="tab-pane fade" id="nav-add-audio" role="tabpanel" aria-labelledby="nav-add-audio-tab">
@@ -741,7 +754,7 @@
                             <% } %>
                         <% } %>
 
-                        <% for (var role in Users.roles) { %>
+                        <% for (let role in Users.roles) { %>
                             <% if(Users.roles[role].role === "userAdminAnyDatabase" || Users.roles[role].role === "superUsers" || Users.roles[role].role === "UserTrackDb"){%>
                                 <!--Start Audio List Tab-->
                                 <div class="tab-pane fade" id="nav-audio-list" role="tabpanel" aria-labelledby="nav-audio-list-tab">
@@ -766,42 +779,86 @@
     </div>
 
 
-<script src="../assets/web/assets/jquery/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="../assets/login-logout/js/logout.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/2.0.4/js/Jcrop.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>-->
-<script src="http://malsup.github.com/jquery.form.js"></script>
-
-<script src="../assets/popper/popper.min.js"></script>
-<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>-->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="../js-files/dynamics-1.1.5.js"></script>
-<script src="../gijgo/js/gijgo.min.js"></script>
-    <script src="../assets/admin/js/success-modal-dialog.js" type="text/javascript"></script>
-<script src="../assets/admin/js/admin-input-file.js" type="text/javascript"></script>
-<script type="text/javascript" src="../assets/admin/js/admin-basic-operation.js"></script>
-<script src="../assets/admin/js/admin-form.js" type="text/javascript"></script>
-<script src="../assets/admin/js/admin-image-form.js" type="text/javascript"></script>
-<script src="../assets/admin/js/ytplayListAdd.js" type="text/javascript"></script>
-<script src="../assets/admin/js/create.slides.js" type="text/javascript"></script>
-<script src="../assets/admin/js/admin-page-menu.js" type="text/javascript"></script>
-<script src="../assets/admin/js/admin-draggable-cards.js" type="text/javascript"></script>
-<script type="text/javascript" src="../event-calendar-module/js/recurring_schedule.js"></script>
-<script type="text/javascript" src="../assets/admin/js/admin-event-calendar.js"></script>
-<script type="text/javascript" src="../assets/admin/js/admin-dynamic-page.js"></script>
-
-    <script type="text/javascript">
-        function htmlDecode(input){
-            var e = document.createElement('div');
-            e.innerHTML = input;
-            return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
-        }
-
-        var users = JSON.parse(htmlDecode("<%= JSON.stringify(Users) %>"));
-        // alert(users
-    </script>
-
-</body>
 <% } %>
+<pre id="output"></pre>
+<pre id="output2"></pre>
+</body>
+
+<script id="1" src="../assets/web/assets/jquery/jquery.min.js"></script>
+<script id="22" type="text/javascript" src="../assets/admin/js/admin-dynamic-page.js"></script>
+<script id="2" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script id="24" src="../assets/admin/js/admin-alert-modal.js" type="text/javascript"></script>
+<script id="3" src="../assets/login-logout/js/auto.logout.js" type="text/javascript"></script>
+<script id="3" src="../assets/login-logout/js/logout.js" type="text/javascript"></script>
+<script id="4" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/2.0.4/js/Jcrop.js"></script>
+<!--<script id="" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>-->
+<script id="5" src="http://malsup.github.com/jquery.form.js"></script>
+
+<script id="6" src="../assets/popper/popper.min.js"></script>
+<script id="7" src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<!--<script id="" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>-->
+<script id="8" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script id="9" src="../js-files/dynamics-1.1.5.js"></script>
+<script id="10" src="../gijgo/js/gijgo.min.js"></script>
+<script id="11" src="../assets/admin/js/success-modal-dialog.js" type="text/javascript"></script>
+<script id="12" src="../assets/admin/js/admin-input-file.js" type="text/javascript"></script>
+<script id="13" type="text/javascript" src="../assets/admin/js/admin-basic-operation.js"></script>
+<script id="14" src="../assets/admin/js/admin-form.js" type="text/javascript"></script>
+<script id="15" src="../assets/admin/js/admin-image-form.js" type="text/javascript"></script>
+<script id="16" src="../assets/admin/js/ytplayListAdd.js" type="text/javascript"></script>
+<script id="17" src="../assets/admin/js/create.slides.js" type="text/javascript"></script>
+<script id="18" src="../assets/admin/js/admin-page-menu.js" type="text/javascript"></script>
+<script id="21" type="text/javascript" src="../assets/admin/js/admin-event-calendar.js"></script>
+<script id="19" src="../assets/admin/js/admin-draggable-cards.js" type="text/javascript"></script>
+<script id="20" type="text/javascript" src="../event-calendar-module/js/recurring_schedule.js"></script>
+
+<script id="23" type="text/javascript">
+    // function htmlDecode(input){
+    //     let e = document.createElement('div');
+    //     e.innerHTML = input;
+    //     return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    // }
+
+    function getLoggedDetails() {
+        console.log(JSON.parse(localStorage.getItem("user-login")));
+    }
+
+    function ready() {
+        getLoggedDetails();
+        debugger;
+        let script = document.createElement('script');
+        script.id = 'calendar-script';
+        script.type = 'text/javascript';
+        script.src = '../event-calendar-module/js/caleandar.js';
+        document.body.appendChild(script);
+
+        let script2 = document.createElement('script');
+        script2.id = 'demo-script';
+        script2.type = 'text/javascript';
+        script2.src = '../event-calendar-module/js/demo.js';
+        document.body.appendChild(script2);
+
+        localStorage.setItem("admin", document.body.innerHTML);
+
+        document.getElementById('calendar-script').remove();
+        document.getElementById('demo-script').remove();
+    }
+
+    if(localStorage.getItem("admin") === null)//based on admin dashboard side tab links clicked
+        document.addEventListener("DOMContentLoaded", ready);
+
+    debugger;
+    let myEvent = window.attachEvent || window.addEventListener;
+    let chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compitable
+
+    myEvent(chkevent, function(e) { // For >=IE7, Chrome, Firefox
+        let confirmationMessage = 'Are you sure to leave the page?';  // a space
+        (e || window.event).returnValue = confirmationMessage;
+
+        localStorage.removeItem("admin");
+        localStorage.removeItem("admin-clicked");
+        return confirmationMessage;
+    });
+</script>
+
+</html>

@@ -180,7 +180,9 @@ exports.user_create = async (req, res, next) => {
                 // return res.status(500).send();
             }
         });
-        console.log(user);
+
+        localStorage.setItem("user-login", user);
+            console.log();
         res.send(user._id);
         // return res.status(200).send();
     });

@@ -2,11 +2,14 @@
 let aTab = document.getElementsByTagName("a");
 Array.from(aTab).forEach((a)=>{
     a.addEventListener("click", (event)=>{
+        event.preventDefault();
         debugger;
         if(event.target.id === "nav-add-text_on_slider-tab")
             document.getElementById("slideSelector").removeAttribute("hidden");
         else
             document.getElementById("slideSelector").setAttribute("hidden", "hidden");
+
+        // event.stopPropagation();
     });
 })
 
