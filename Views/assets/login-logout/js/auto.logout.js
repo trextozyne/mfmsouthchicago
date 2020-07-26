@@ -6,9 +6,9 @@ const timoutNow = 100000;
 let warningTimerID, timeoutTimerID;
 
 
-function removeElement(elementId) {
+function removeElement(elementClassName) {
     // Removes an element from the document
-    var element = document.getElementsByClassName(elementId)[0];
+    var element = document.getElementsByClassName(elementClassName)[0];
     element.parentNode.removeChild(element);
 }
 
@@ -68,12 +68,15 @@ function resetTimer() {
     startTimer();
 }
 
+function lockLoginScreen() {
+    boolLoginLock = true;
+    localStorage.setItem("boolLoginLock", boolLoginLock.toString());
+    createLoginScreen("You will need to login");
+}
+
 // Logout the user.
 function IdleTimeout() {
-    // alert("logged out")
-    // document.getElementsByClassName('logout-form').submit();
-    boolLoginLock = true;
-    createLoginScreen("You will need to login");
+    lockLoginScreen();
 }
 
 function setupTimers () {
@@ -191,22 +194,29 @@ function preventContinousLockScreen() {
         clearInterval(createDetectIntervalId);
 }
 
-function detectLockScreen() {
-    detectBrowserOpen();
-
-    if (boolLoginLock) {
-        createLoginScreen("Dont do that Bro!!!, You need to login");
-    }
-}
+// function detectLockScreen() {
+//     detectBrowserOpen();
+//
+//     if (boolLoginLock) {
+//         createLoginScreen("Dont do that Bro!!!, You need to login");
+//     }
+// }
 
 function createContinousLockScreen() {
-    createDetectIntervalId = setInterval(detectLockScreen, 1000);
+    createDetectIntervalId = setInterval(detectBrowserOpen, 1000);
 }
 
 function detectBrowserOpen() {
     devtoolsOpen = false;
     console.log(devElement);
+    // debugger;
     // document.getElementById('output').innerHTML += (devtoolsOpen ? "dev tools is open\n" : "dev tools is closed\n");
+    localStorage.getItem("boolLoginLock") !== null && parseBoolean(localStorage.getItem("boolLoginLock")) === true ?
+        boolLoginLock = parseBoolean(localStorage.getItem("boolLoginLock")) : boolLoginLock;
+
+    if (boolLoginLock) {
+        createLoginScreen("Dont do that Bro!!!, You need to login");
+    }
 
     if(devtoolsOpen) {
         if (createDetectIntervalId) {
@@ -228,4 +238,10 @@ window.oncontextmenu = function ()    {
     getIntervalId = interval(detectBrowserOpen, 1000, 10);
 };
 
+document.addEventListener("click", (event)=>{
+    if(event.target && event.target.id === "lockScreen")
+        lockLoginScreen();
+});
+
+// localStorage.removeItem("boolLoginLock");
 detectBrowserOpen();
