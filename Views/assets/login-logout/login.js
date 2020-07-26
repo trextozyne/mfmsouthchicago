@@ -122,7 +122,7 @@
                 if (!foundUser) {
                     alert("You likely do not exist on our server, Please contact Admin");
                 }else {
-                    let foundPswd = users.find(item => item.password === formData.password);
+                    let foundPswd = foundUser.password === formData.password;
                         let foundRole = foundUser.roles.find(item => item.role === "userOnly");
                     if (!foundPswd && foundUser) {
                         alert("Password not exist/Incorrect!!!");
@@ -140,6 +140,7 @@
                             //debugger;
                             // Store data
                             localStorage.setItem('user', response.user._id);
+                            localStorage.setItem("boolLoginLock", "false");
 
                             $form.find("input[type=text], textarea").val("");
                             loadAnimation();
