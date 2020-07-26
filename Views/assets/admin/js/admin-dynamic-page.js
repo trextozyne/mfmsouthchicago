@@ -16,6 +16,11 @@ $(function(){
         if(pageurl === "admin" && (localStorage.getItem("admin-clicked") === "false" || localStorage.getItem("admin-clicked") === null)) {
             $('body').html(localStorage.getItem("admin"));
 
+            if (localStorage.getItem("admin-clicked") === "false" || localStorage.getItem("admin-clicked") === null) {
+                localStorage.setItem("admin-clicked", "true");
+                localStorage.setItem("roles-clicked", "false");
+            }
+
             let script = document.getElementsByTagName('script');
             for (let i = 0; i < script.length; i++) {
                 if (script[i].getAttribute('src') !== null) {
@@ -57,8 +62,18 @@ $(function(){
             if(localStorage.getItem("add-roles") === null) {
                 pageurl = "/dashboard/users.html";
                 pageNavigation(pageurl, $(this));
+
+                if (localStorage.getItem("roles-clicked") === "false" || localStorage.getItem("roles-clicked") === null) {
+                    localStorage.setItem("roles-clicked", "true");
+                    localStorage.setItem("admin-clicked", "false");
+                }
             }else {
                 $('body').html(localStorage.getItem("add-roles"));
+
+                if (localStorage.getItem("roles-clicked") === "false" || localStorage.getItem("roles-clicked") === null) {
+                    localStorage.setItem("roles-clicked", "true");
+                    localStorage.setItem("admin-clicked", "false");
+                }
 
                 let script = document.getElementsByTagName('script');
                 for (let i = 0; i < script.length; i++) {
@@ -103,17 +118,9 @@ $(function(){
     }
 
     aRel.addEventListener("click", (e)=> {
-        if (localStorage.getItem("admin-clicked") === "false" || localStorage.getItem("admin-clicked") === null) {
-            localStorage.setItem("admin-clicked", "true");
-            localStorage.setItem("roles-clicked", "false");
-        }
     });
 
     aRel2.addEventListener("click", (e)=> {
-        if (localStorage.getItem("roles-clicked") === "false" || localStorage.getItem("roles-clicked") === null) {
-            localStorage.setItem("roles-clicked", "true");
-            localStorage.setItem("admin-clicked", "false");
-        }
     });
 
 //     let get = $this.type;
