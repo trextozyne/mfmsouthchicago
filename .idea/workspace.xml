@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/tracks.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/tracks.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +39,17 @@
       <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="836" selection-start-line="836" selection-end-line="836" />
+            <state relative-caret-position="345">
+              <caret line="132" column="118" selection-start-line="132" selection-start-column="118" selection-end-line="132" selection-end-column="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-input-file.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -56,15 +62,6 @@
               <folding>
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="photoalbum.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -123,7 +120,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-image-form.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin-image-form.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="455">
@@ -155,7 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gj</find>
       <find>start_time</find>
       <find>localStorage.getItem(&quot;clicked&quot;)</find>
       <find>aTab</find>
@@ -185,6 +181,7 @@
       <find>122</find>
       <find>photo</find>
       <find>new FormData</find>
+      <find>file</find>
     </findStrings>
     <replaceStrings>
       <replace>javascript:void(0)&quot; onclick='getSelectEntries()'</replace>
@@ -256,7 +253,6 @@
         <option value="$PROJECT_DIR$/Views/images.html" />
         <option value="$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/css/admin.css" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js" />
         <option value="$PROJECT_DIR$/controllers/tracks.controller.js" />
         <option value="$PROJECT_DIR$/controllers/events.controller.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" />
@@ -288,6 +284,7 @@
         <option value="$PROJECT_DIR$/controllers/photoalbum.controller.js" />
         <option value="$PROJECT_DIR$/routes/tracks.route.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js" />
       </list>
     </option>
   </component>
@@ -607,14 +604,7 @@
       <workItem from="1593509150927" duration="30577000" />
       <workItem from="1593583607114" duration="10167000" />
       <workItem from="1593616447326" duration="6535000" />
-      <workItem from="1599973089090" duration="14337000" />
-    </task>
-    <task id="LOCAL-00130" summary="Default Changelist">
-      <created>1579320294881</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1579320294881</updated>
+      <workItem from="1599973089090" duration="16209000" />
     </task>
     <task id="LOCAL-00131" summary="Default Changelist">
       <created>1579320405123</created>
@@ -952,11 +942,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593633322722</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="Default Changelist">
+      <created>1600197458261</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1600197458262</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2469586000" />
+    <option name="totallyTimeSpent" value="2471458000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -969,6 +966,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
@@ -1052,13 +1050,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Views/events-single.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/assets/technical/video/css/video.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1323,13 +1314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="836" selection-start-line="836" selection-end-line="836" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1403,6 +1387,20 @@
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
             <element signature="e#101#108#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="132" column="118" selection-start-line="132" selection-start-column="118" selection-end-line="132" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="40" />
         </state>
       </provider>
     </entry>

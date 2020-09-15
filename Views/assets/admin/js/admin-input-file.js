@@ -22,6 +22,14 @@ function bs_input_file() {
                             output = document.getElementById('sermonResult');
                         else
                             output = document.getElementById('result');
+
+                        if(event.target.hasAttribute("multiple")) {
+                            if (parseInt(files.length) > 20){
+                                alert("You can only upload a maximum of 20 files");
+                                return;
+                            }
+                        }
+
                         for(let i = 0; i< files.length; i++)
                         {
                             let file = files[i];

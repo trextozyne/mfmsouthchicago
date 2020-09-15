@@ -34,7 +34,7 @@ var upload = multer({storage: storage});
 const photoalbum_controller = require('../controllers/photoalbum.controller');
 //
 // router.post('/create', upload.single("file"), photoalbum_controller.photoalbum_create);
-router.post('/create', upload.array('file', 12), photoalbum_controller.photoalbum_create);
+router.post('/create', upload.array('file', 20), photoalbum_controller.photoalbum_create);
 router.get('/find', photoalbum_controller.photoalbum_all);
 router.get('/:id', photoalbum_controller.photoalbum_details);
 router.put('/:id/update', upload.single("file"), photoalbum_controller.photoalbum_update);
