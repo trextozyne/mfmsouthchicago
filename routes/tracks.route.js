@@ -4,7 +4,7 @@ const multer = require('multer');
 var path = require('path');
 
 
-const storage = multer.memoryStorage()
+const storage = multer.memoryStorage();
 const upload = multer({ storage: storage});
 
 const tracks_controller = require('../controllers/tracks.controller');

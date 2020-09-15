@@ -85,14 +85,14 @@ $("#sermonFile_form").submit(function(evt) {
     let $form = $("#sermonFile_form");
 
     let data = new FormData($form[0]);
-    //debugger;
+    debugger;
     if ($form[0]["filename"].value === null || $form[0]["filename"].value === "", $form[0]["pdfFile"].files.length === 0) {
         alert("Please Fill All Required Field");
         return false;
     }else {
         // let formData = JSON.parse(JSON.stringify(getFormData($form)));
         // delete formData.sermonFile;
-        data.append("pdfFile", $form[0]["pdfFile"].files[0]);
+        // data.append("pdfFile", $form[0]["pdfFile"].files[0]);
 
         let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -168,8 +168,6 @@ $("#audio_form").submit(function(evt) {
     }else {
         // let formData = JSON.parse(JSON.stringify(getFormData($form)));
         // delete formData.sermonAudio;
-
-        data.append("track", $form[0]["track"].files[0]);
 
         let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;

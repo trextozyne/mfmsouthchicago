@@ -835,8 +835,11 @@
 
         localStorage.setItem("admin", document.body.innerHTML);
 
-        document.getElementById('calendar-script').remove();
-        document.getElementById('demo-script').remove();
+        setTimeout(()=>{
+            document.getElementById('calendar-script').remove();
+            document.getElementById('demo-script').remove();
+        }, 2000)
+
     }
 
     if(localStorage.getItem("admin") === null)//based on admin dashboard side tab links clicked
