@@ -16,8 +16,8 @@ const { Readable } = require('stream');
  * POST /files
  */
 exports.files_create =  (req, res) => {
-    console.log(req.body.filename[0]);
-    let fileName = req.body.filename[0];
+    console.log(req.body.filename);
+    let fileName = req.body.filename;
 
     // Covert buffer to Readable Stream
     const readableFileStream = new Readable();
