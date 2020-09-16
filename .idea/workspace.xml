@@ -4,10 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -602,14 +599,7 @@
       <workItem from="1593509150927" duration="30577000" />
       <workItem from="1593583607114" duration="10167000" />
       <workItem from="1593616447326" duration="6535000" />
-      <workItem from="1599973089090" duration="31191000" />
-    </task>
-    <task id="LOCAL-00136" summary="Default Changelist">
-      <created>1579336848330</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1579336848330</updated>
+      <workItem from="1599973089090" duration="31568000" />
     </task>
     <task id="LOCAL-00137" summary="Default Changelist">
       <created>1579386191169</created>
@@ -947,11 +937,18 @@
       <option name="project" value="LOCAL" />
       <updated>1600234240621</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="Default Changelist">
+      <created>1600235186213</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1600235186213</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2486440000" />
+    <option name="totallyTimeSpent" value="2486817000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -964,7 +961,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
