@@ -357,7 +357,7 @@ $("#event_form").submit(function(evt) {
 });
 
 function doUpdate (response, clone_eventRecur) {
-    //debugger;
+    debugger;
 
     let isArray = (data) => {
         return (Object.prototype.toString.call(data) === "[object Array]");

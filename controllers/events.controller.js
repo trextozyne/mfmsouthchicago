@@ -7,6 +7,8 @@ const cloudinary =  require('../config/cloudinaryConfig');
 let mongodb = require('mongodb');
 var Datauri = require('datauri');
 
+const dUri = new Datauri();
+
 
 exports.events_create = async (req, res, next) => {
     // let title = req.body.title.toString().toString().split(",").pop();
@@ -26,8 +28,6 @@ exports.events_create = async (req, res, next) => {
 
         try {
             let promises = [];
-
-            const dUri = new Datauri();
 
             const uploader = async (path) => await cloudinary.uploads(path, 'Event-Images');
 
@@ -56,11 +56,9 @@ exports.events_create = async (req, res, next) => {
                     }
                 });
 
-                if (i === arguments[0].length-1) {
-                    console.log("sent");
-                    if(!res.headersSent)
-                        res.send(events);//res is important to ajax in order to proceed else error
-                }
+                console.log("sent");
+                if (!res.headersSent)
+                    res.send(events);//res is important to ajax in order to proceed else error
             });
         } catch (err) {
             next(err);
@@ -136,14 +134,14 @@ exports.events_update = async (req, res, next) => {
             let promises = [];
             const uploader = async (path, _id) => await cloudinary.updates(path, _id, 'Event-Images');
 
-            const {path} = req.file;
+            // const {path} = req.file;
+
+            const dataUri = req => dUri.format(path.extname(req.file.originalname).toString(), req.file.buffer);
+
+            const file = dataUri(req).content;
 
             let id = req.body.event_imgName;
-            promises.push(await uploader(path, id));
-
-            fs.unlink('./' + path, (err) => {
-                if (err) console.log(err);
-            });
+            promises.push(await uploader(file, id));
 
             Promise.all(promises).then(function () {
                 // returned data is in arguments[0], arguments[1], ... arguments[n]
