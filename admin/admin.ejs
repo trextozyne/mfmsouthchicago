@@ -827,18 +827,19 @@
         script.src = '../event-calendar-module/js/caleandar.js';
         document.body.appendChild(script);
 
-        let script2 = document.createElement('script');
-        script2.id = 'demo-script';
-        script2.type = 'text/javascript';
-        script2.src = '../event-calendar-module/js/demo.js';
-        document.body.appendChild(script2);
+        setTimeout(()=> {
+            script.id = 'demo-script';
+            script.type = 'text/javascript';
+            script.src = '../event-calendar-module/js/demo.js';
+            document.body.appendChild(script);
+        }, 2000)
 
         localStorage.setItem("admin", document.body.innerHTML);
 
-        // setTimeout(()=>{
+        //
         //     document.getElementById('calendar-script').remove();
         //     document.getElementById('demo-script').remove();
-        // }, 10000)
+        //
 
     }
 
