@@ -5,6 +5,7 @@ var fs = require('fs');
 var path = require('path');
 const cloudinary =  require('../config/cloudinaryConfig');
 let mongodb = require('mongodb');
+var Datauri = require('datauri');
 
 
 exports.events_create = async (req, res, next) => {
@@ -25,16 +26,23 @@ exports.events_create = async (req, res, next) => {
 
         try {
             let promises = [];
+
+            const dUri = new Datauri();
+
             const uploader = async (path) => await cloudinary.uploads(path, 'Event-Images');
 
-            const {path} = req.file;
-            // console.log(path);
+            // const {path} = req.file;
 
-            promises.push(await uploader(path));
 
-            fs.unlink('./' + path, (err) => {
-                if (err) console.log(err);
-            });
+            const dataUri = req => dUri.format(path.extname(req.file.originalname).toString(), req.file.buffer);
+
+            const file = dataUri(req).content;
+
+            promises.push(await uploader(file));
+
+            // fs.unlink('./' + path, (err) => {
+            //     if (err) console.log(err);
+            // });
 
             Promise.all(promises).then(function () {
                 // returned data is in arguments[0], arguments[1], ... arguments[n]
@@ -47,7 +55,12 @@ exports.events_create = async (req, res, next) => {
                         return next(err);
                     }
                 });
-                res.send(events)
+
+                if (i === arguments[0].length-1) {
+                    console.log("sent");
+                    if(!res.headersSent)
+                        res.send(events);//res is important to ajax in order to proceed else error
+                }
             });
         } catch (err) {
             next(err);

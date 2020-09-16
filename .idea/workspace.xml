@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/routes/events.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/events.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/events.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/events.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/photoalbum.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/photoalbum.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/slides.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/slides.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/photoalbum.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/photoalbum.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/slides.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/slides.route.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,58 +43,35 @@
       <file leaf-file-name="photoalbum.route.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/photoalbum.route.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photoalbum.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="56" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slides.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/slides.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="events.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="30" selection-start-line="30" selection-end-line="48" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="events.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/events.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slides.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/slides.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tracks.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/tracks.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="33" lean-forward="true" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/user.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="verse.route.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/verse.route.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="gallery_count.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/gallery_count.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
+              <caret line="52" column="44" lean-forward="true" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -109,20 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="files.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/files.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="18" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin-image-form.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="148" column="32" lean-forward="true" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+            <state relative-caret-position="986">
+              <caret line="156" column="22" lean-forward="true" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -135,6 +105,29 @@
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cloudinaryConfig.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/cloudinaryConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="840" column="13" selection-start-line="840" selection-start-column="13" selection-end-line="840" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="verse.route.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/verse.route.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -150,8 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>localStorage.getItem(&quot;clicked&quot;)</find>
-      <find>aTab</find>
       <find>window</find>
       <find>&lt;label for=&quot;start_date&quot;&gt;Start Date&lt;/label&gt;</find>
       <find>localStorage.getItem('user'</find>
@@ -180,6 +171,8 @@
       <find>new FormData</find>
       <find>file</find>
       <find>onDelete</find>
+      <find>sent</find>
+      <find>cloudinary</find>
     </findStrings>
     <replaceStrings>
       <replace>javascript:void(0)&quot; onclick='getSelectEntries()'</replace>
@@ -224,10 +217,15 @@
       <command text="npm update --save multer" />
       <command text="npm install --save multer" />
       <command text="npm i dotenv" />
+      <command text="npm i datauri" />
+      <command text="npm install datauri" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -242,14 +240,12 @@
         <option value="$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-form.js" />
         <option value="$PROJECT_DIR$/config/cloudinaryConfig.js" />
-        <option value="$PROJECT_DIR$/controllers/slides.controller.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/success-modal-dialog.js" />
         <option value="$PROJECT_DIR$/Views/assets/technical/image/js/images.js" />
         <option value="$PROJECT_DIR$/Views/images.html" />
         <option value="$PROJECT_DIR$/Views/assets/index-additional/js/events-all.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/css/admin.css" />
         <option value="$PROJECT_DIR$/controllers/tracks.controller.js" />
-        <option value="$PROJECT_DIR$/controllers/events.controller.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/ytplayListAdd.js" />
         <option value="$PROJECT_DIR$/event-calendar-module/js/recurring_schedule.js" />
         <option value="$PROJECT_DIR$/Views/assets/technical/video/css/video.css" />
@@ -273,16 +269,18 @@
         <option value="$PROJECT_DIR$/Views/assets/login-logout/js/auto.logout.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
         <option value="$PROJECT_DIR$/event-calendar-module/js/demo.js" />
-        <option value="$PROJECT_DIR$/admin/admin.ejs" />
-        <option value="$PROJECT_DIR$/controllers/photoalbum.controller.js" />
         <option value="$PROJECT_DIR$/routes/tracks.route.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js" />
         <option value="$PROJECT_DIR$/controllers/files.controller.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" />
-        <option value="$PROJECT_DIR$/routes/photoalbum.route.js" />
         <option value="$PROJECT_DIR$/routes/events.route.js" />
         <option value="$PROJECT_DIR$/routes/slides.route.js" />
+        <option value="$PROJECT_DIR$/admin/admin.ejs" />
+        <option value="$PROJECT_DIR$/routes/photoalbum.route.js" />
+        <option value="$PROJECT_DIR$/controllers/photoalbum.controller.js" />
+        <option value="$PROJECT_DIR$/controllers/slides.controller.js" />
+        <option value="$PROJECT_DIR$/controllers/events.controller.js" />
       </list>
     </option>
   </component>
@@ -320,6 +318,11 @@
             <path>
               <item name="mfmsouthchicago" type="b2602c69:ProjectViewProjectNode" />
               <item name="mfmsouthchicago" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mfmsouthchicago" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mfmsouthchicago" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mfmsouthchicago" type="b2602c69:ProjectViewProjectNode" />
@@ -602,14 +605,7 @@
       <workItem from="1593509150927" duration="30577000" />
       <workItem from="1593583607114" duration="10167000" />
       <workItem from="1593616447326" duration="6535000" />
-      <workItem from="1599973089090" duration="22581000" />
-    </task>
-    <task id="LOCAL-00134" summary="Default Changelist">
-      <created>1579321084264</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1579321084264</updated>
+      <workItem from="1599973089090" duration="30506000" />
     </task>
     <task id="LOCAL-00135" summary="Default Changelist">
       <created>1579321209489</created>
@@ -947,11 +943,18 @@
       <option name="project" value="LOCAL" />
       <updated>1600215816785</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="Default Changelist">
+      <created>1600216992585</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1600216992585</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2477830000" />
+    <option name="totallyTimeSpent" value="2485755000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -964,7 +967,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
@@ -973,7 +975,7 @@
       <window_info anchor="bottom" id="Run" order="6" weight="0.32991454" />
       <window_info id="npm" order="1" sideWeight="0.50282484" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32673267" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49339935" visible="true" weight="0.1859375" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49339935" visible="true" weight="0.19739583" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32343236" />
@@ -986,7 +988,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3298292" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="14" weight="0.3283082" />
+      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="14" weight="0.32799247" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32838285" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -1048,23 +1050,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/add-user-role.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/ytplayLive.route.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/reset-user.ejs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1292,24 +1277,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="132" column="118" selection-start-line="132" selection-start-column="118" selection-end-line="132" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1327,33 +1298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="280" column="41" lean-forward="true" selection-start-line="280" selection-start-column="41" selection-end-line="280" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="148" column="32" lean-forward="true" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#123#129#0" expanded="true" />
-            <element signature="e#102#108#1" expanded="true" />
-            <element signature="e#109#116#1" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#101#108#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/files.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1368,24 +1312,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/photoalbum.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="48" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/events.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
           <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/slides.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>
@@ -1405,6 +1335,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/verse.route.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="840" column="13" selection-start-line="840" selection-start-column="13" selection-end-line="840" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/photoalbum.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/cloudinaryConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="280" column="41" lean-forward="true" selection-start-line="280" selection-start-column="41" selection-end-line="280" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="156" column="22" lean-forward="true" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#123#129#0" expanded="true" />
+            <element signature="e#102#108#1" expanded="true" />
+            <element signature="e#109#116#1" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#101#108#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/slides.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/photoalbum.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="56" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/slides.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="52" column="44" lean-forward="true" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

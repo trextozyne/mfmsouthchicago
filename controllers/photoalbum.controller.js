@@ -3,13 +3,18 @@ var fs = require('fs');
 let mongodb = require('mongodb');
 const cloudinary =  require('../config/cloudinaryConfig');
 var path = require('path');
+var Datauri = require('datauri');
 let counter = 0;
 
 
 exports.photoalbum_create = async (req, res, next) => {
     // console.log(req.files);
     console.log(req.body);
+
+    const dUri = new Datauri();
+
     req.files.forEach(async function (value, index) {
+        console.log(`value: ${value}`);
 
         let photoalbum = new PhotoAlbum(
             {
@@ -24,13 +29,12 @@ exports.photoalbum_create = async (req, res, next) => {
             let promises = [];
             const uploader = async (path) => await cloudinary.uploads(path, 'Photos');
 
-            const {path} = value;
+            const dataUri = req => dUri.format(path.extname(value.originalname).toString(), value.buffer);
 
-            promises.push(await uploader(path));
+            const file = dataUri(req).content;
 
-            fs.unlink('./' + path, (err) => {
-                if (err) console.log(err);
-            });
+            promises.push(await uploader(file));
+
 
             Promise.all(promises).then(function () {
                 // returned data is in arguments[0], arguments[1], ... arguments[n]
@@ -47,8 +51,9 @@ exports.photoalbum_create = async (req, res, next) => {
                     });
 
                     if (i === arguments[0].length-1) {
-                        res.send('Product Created successfully');//res is important to ajax in order to proceed else error
-                        console.log("sent")
+                        console.log("sent");
+                        if(!res.headersSent)
+                            res.send('Product Created successfully');//res is important to ajax in order to proceed else error
                     }
                 }
             });

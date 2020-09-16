@@ -28,23 +28,23 @@ var path = require('path');
 //         callback("Error: Images Only!!!.")
 //     }
 // }
-const storage = multer({
-    fileFilter: function (req, file, callback) {
+// const storage = multer({
+//     fileFilter: function (req, file, callback) {
+//
+//         const filetypes = /jpeg|jpg|png|gif/;
+//         //check ext
+//         const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+//         const mimetype = filetypes.test(path.extname(file.mimeType));
+//
+//         if (mimetype && extname) {
+//             return callback(null, true)
+//         } else {
+//             callback("Error: Images Only!!!.")
+//         }
+//     }
+// });
 
-        const filetypes = /jpeg|jpg|png|gif/;
-        //check ext
-        const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-        const mimetype = filetypes.test(path.extname(file.mimeType));
-
-        if (mimetype && extname) {
-            return callback(null, true)
-        } else {
-            callback("Error: Images Only!!!.")
-        }
-    }
-});
-
-// const storage = multer.memoryStorage();
+const storage = multer.memoryStorage();
 
 var upload = multer({storage});
 

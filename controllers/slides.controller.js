@@ -2,6 +2,7 @@ const Slide = require('../models/slides.model');
 let fs = require('fs');
 let mongodb = require('mongodb');
 const cloudinary =  require('../config/cloudinaryConfig');
+var Datauri = require('datauri');
 
 exports.slides_create = async (req, res, next) => {
     let sliderType = req.body.sliderType;
@@ -21,6 +22,9 @@ exports.slides_create = async (req, res, next) => {
 
     try {
         let promises = [];
+
+        const dUri = new Datauri();
+
         const uploader = async (path) => await cloudinary.uploads(path, 'Mfm-Images');
 
         let files = [];
@@ -33,33 +37,45 @@ exports.slides_create = async (req, res, next) => {
         for (const file in files) {
 
             if (files[file].fieldname === 'bg-img' && typeof files[file].fieldname !== "undefined") {
-                const {path} = files[file];
+                // const {path} = files[file];
 
-                promises.push(await uploader(path));
+                const dataUri = req => dUri.format(path.extname(files[file].originalname).toString(), files[file].buffer);
 
-                fs.unlink('./' + path, (err) => {
-                    if (err) console.log(err);
-                });
+                const file = dataUri(req).content;
+
+                promises.push(await uploader(file));
+
+                // fs.unlink('./' + path, (err) => {
+                //     if (err) console.log(err);
+                // });
             }
 
             if (files[file].fieldname === 'img-1' && typeof files[file].fieldname !== "undefined") {
-                const {path} = files[file];
+                // const {path} = files[file];
 
-                promises.push(await uploader(path));
+                const dataUri = req => dUri.format(path.extname(files[file].originalname).toString(), files[file].buffer);
 
-                fs.unlink('./' + path, (err) => {
-                    if (err) console.log(err);
-                });
+                const file = dataUri(req).content;
+
+                promises.push(await uploader(file));
+
+                // fs.unlink('./' + path, (err) => {
+                //     if (err) console.log(err);
+                // });
             }
 
             if (files[file].fieldname === 'img-2' && typeof files[file].fieldname !== "undefined") {
-                const {path} = files[file];
+                // const {path} = files[file];
 
-                promises.push(await uploader(path));
+                const dataUri = req => dUri.format(path.extname(files[file].originalname).toString(), files[file].buffer);
 
-                fs.unlink('./' + path, (err) => {
-                    if (err) console.log(err);
-                });
+                const file = dataUri(req).content;
+
+                promises.push(await uploader(file));
+
+                // fs.unlink('./' + path, (err) => {
+                //     if (err) console.log(err);
+                // });
             }
         }
 
@@ -80,6 +96,12 @@ exports.slides_create = async (req, res, next) => {
                     return next(err);
                 }
             });
+
+            if (i === arguments[0].length-1) {
+                console.log("sent");
+                if(!res.headersSent)
+                    res.send('Created successfully');//res is important to ajax in order to proceed else error
+            }
         });
     } catch (err) {
         next(err);
@@ -89,7 +111,7 @@ exports.slides_create = async (req, res, next) => {
     // res.status(200).json({
     //     data: url
     // });
-    res.send('Created successfully')
+    // res.send('Created successfully')
 };
 
 exports.slides_all = function (req, res, next) {
