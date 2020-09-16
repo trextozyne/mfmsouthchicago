@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/admin/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -115,8 +115,8 @@
       <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="826" column="64" lean-forward="true" selection-start-line="826" selection-start-column="64" selection-end-line="826" selection-end-column="64" />
+            <state relative-caret-position="455">
+              <caret line="834" column="12" selection-start-line="834" selection-start-column="12" selection-end-line="834" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -601,21 +601,7 @@
       <workItem from="1593509150927" duration="30577000" />
       <workItem from="1593583607114" duration="10167000" />
       <workItem from="1593616447326" duration="6535000" />
-      <workItem from="1599973089090" duration="32255000" />
-    </task>
-    <task id="LOCAL-00138" summary="Default Changelist">
-      <created>1579564722103</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1579564722103</updated>
-    </task>
-    <task id="LOCAL-00139" summary="Default Changelist">
-      <created>1579658108272</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1579658108273</updated>
+      <workItem from="1599973089090" duration="32503000" />
     </task>
     <task id="LOCAL-00140" summary="Default Changelist">
       <created>1579761194715</created>
@@ -946,11 +932,25 @@
       <option name="project" value="LOCAL" />
       <updated>1600235683696</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="Default Changelist">
+      <created>1600236410310</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1600236410310</updated>
+    </task>
+    <task id="LOCAL-00188" summary="Default Changelist">
+      <created>1600236445180</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1600236445181</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2487504000" />
+    <option name="totallyTimeSpent" value="2487752000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -963,7 +963,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
@@ -1404,8 +1403,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="826" column="64" lean-forward="true" selection-start-line="826" selection-start-column="64" selection-end-line="826" selection-end-column="64" />
+        <state relative-caret-position="455">
+          <caret line="834" column="12" selection-start-line="834" selection-start-column="12" selection-end-line="834" selection-end-column="12" />
         </state>
       </provider>
     </entry>
