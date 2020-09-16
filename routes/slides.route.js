@@ -5,31 +5,31 @@ const multer = require('multer');
 let path = require('path');
 
 
-let storage = multer.diskStorage({
-    destination: function(req, file, callback){
-        callback(null, path.join('./Views', 'assets/images/slide')); // set the destination
-    },
-    filename: function(req, file, callback){
-        callback(null, 'slides' + new Date().toISOString().replace(/:/g,'-')  + path.extname(file.originalname)); // set the file name and extension
-    },
-    fileFilter: (req, file , callback)=> {
-        checkFileType(file, callback)
-    }
-});
-
-function checkFileType(file, callback) {
-    //Allowed ect
-    const filetypes = /jpeg|jpg|png|gif/;
-    //check ext
-    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-    const mimetype = filetypes.test(path.extname(file.mimeType));
-
-    if (mimetype && extname) {
-        return callback(null, true)
-    } else {
-        callback("Error: Images Only!!!.")
-    }
-}
+// let storage = multer.diskStorage({
+//     destination: function(req, file, callback){
+//         callback(null, path.join('./Views', 'assets/images/slide')); // set the destination
+//     },
+//     filename: function(req, file, callback){
+//         callback(null, 'slides' + new Date().toISOString().replace(/:/g,'-')  + path.extname(file.originalname)); // set the file name and extension
+//     },
+//     fileFilter: (req, file , callback)=> {
+//         checkFileType(file, callback)
+//     }
+// });
+//
+// function checkFileType(file, callback) {
+//     //Allowed ect
+//     const filetypes = /jpeg|jpg|png|gif/;
+//     //check ext
+//     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+//     const mimetype = filetypes.test(path.extname(file.mimeType));
+//
+//     if (mimetype && extname) {
+//         return callback(null, true)
+//     } else {
+//         callback("Error: Images Only!!!.")
+//     }
+// }
 
 // import Datauri from 'datauri';
 //
@@ -53,7 +53,27 @@ function checkFileType(file, callback) {
 //
 // export { dataUri1, dataUri2, dataUri3 };
 //
-let upload = multer({storage: storage});
+// let upload = multer({storage: storage});
+
+const storage = multer({
+    fileFilter: function (req, file, callback) {
+
+        const filetypes = /jpeg|jpg|png|gif/;
+        //check ext
+        const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+        const mimetype = filetypes.test(path.extname(file.mimeType));
+
+        if (mimetype && extname) {
+            return callback(null, true)
+        } else {
+            callback("Error: Images Only!!!.")
+        }
+    }
+});
+
+// const storage = multer.memoryStorage();
+
+var upload = multer({storage});
 
 const slides_controller = require('../controllers/slides.controller');
 //
