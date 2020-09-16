@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/events.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/events.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/events.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/events.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="events.controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="events.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1989">
-              <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="799">
+              <caret line="173" column="23" lean-forward="true" selection-start-line="173" selection-start-column="23" selection-end-line="173" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -69,8 +67,8 @@
       <file leaf-file-name="admin-event-calendar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="323" column="28" selection-start-line="323" selection-start-column="20" selection-end-line="323" selection-end-column="28" />
+            <state relative-caret-position="535">
+              <caret line="86" column="95" selection-start-line="86" selection-start-column="95" selection-end-line="86" selection-end-column="95" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -80,6 +78,29 @@
                 <element signature="e#110#117#1" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
                 <element signature="e#101#108#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="449" column="47" lean-forward="true" selection-start-line="449" selection-start-column="47" selection-end-line="449" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index-basic.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="97" column="51" lean-forward="true" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
+              <folding>
+                <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,15 +146,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cloudinaryConfig.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/cloudinaryConfig.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
@@ -156,8 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>JSON.parse(localStorage.getItem(&quot;users-login&quot;))</find>
-      <find>users</find>
       <find>clearT</find>
       <find>createContinousLockScreen</find>
       <find>createLoginScreen</find>
@@ -186,6 +196,8 @@
       <find>loadSavedData</find>
       <find>JSON.parse</find>
       <find>doUpdate</find>
+      <find>.cld-t</find>
+      <find>INFORMATION</find>
     </findStrings>
     <replaceStrings>
       <replace>javascript:void(0)&quot; onclick='getSelectEntries()'</replace>
@@ -250,7 +262,6 @@
         <option value="$PROJECT_DIR$/Views/assets/slick/js/image-slider-slick.js" />
         <option value="$PROJECT_DIR$/Views/assets/index-additional/js/index-gallery-count.js" />
         <option value="$PROJECT_DIR$/Views/index.html" />
-        <option value="$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-form.js" />
         <option value="$PROJECT_DIR$/config/cloudinaryConfig.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/success-modal-dialog.js" />
@@ -294,6 +305,7 @@
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
         <option value="$PROJECT_DIR$/routes/events.route.js" />
         <option value="$PROJECT_DIR$/controllers/events.controller.js" />
+        <option value="$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js" />
       </list>
     </option>
   </component>
@@ -619,20 +631,6 @@
       <workItem from="1593583607114" duration="10167000" />
       <workItem from="1593616447326" duration="6535000" />
       <workItem from="1599973089090" duration="32503000" />
-    </task>
-    <task id="LOCAL-00140" summary="Default Changelist">
-      <created>1579761194715</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1579761194731</updated>
-    </task>
-    <task id="LOCAL-00141" summary="Default Changelist">
-      <created>1579889899676</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1579889899690</updated>
     </task>
     <task id="LOCAL-00142" summary="Default Changelist">
       <created>1580155142713</created>
@@ -963,11 +961,25 @@
       <option name="project" value="LOCAL" />
       <updated>1600236445181</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="Default Changelist">
+      <created>1600247378416</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1600247378439</updated>
+    </task>
+    <task id="LOCAL-00190" summary="Default Changelist">
+      <created>1600249077480</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1600249077480</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2489750000" />
+    <option name="totallyTimeSpent" value="2491816000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -980,7 +992,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
@@ -1091,13 +1102,6 @@
     <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-page-menu.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="159" column="19" lean-forward="true" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/dashboard/dashboard.ejs" />
     <entry file="file://$PROJECT_DIR$/node_modules/gijgo/js/gijgo.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1118,13 +1122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="9" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1378,23 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="323" column="28" selection-start-line="323" selection-start-column="20" selection-end-line="323" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#127#133#0" expanded="true" />
-            <element signature="e#102#108#1" expanded="true" />
-            <element signature="e#110#117#1" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#101#108#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/photoalbum.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -1418,8 +1398,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/events.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1989">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        <state relative-caret-position="799">
+          <caret line="173" column="23" lean-forward="true" selection-start-line="173" selection-start-column="23" selection-end-line="173" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="86" column="95" selection-start-line="86" selection-start-column="95" selection-end-line="86" selection-end-column="95" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#127#133#0" expanded="true" />
+            <element signature="e#102#108#1" expanded="true" />
+            <element signature="e#110#117#1" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#101#108#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="449" column="47" lean-forward="true" selection-start-line="449" selection-start-column="47" selection-end-line="449" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="97" column="51" lean-forward="true" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
