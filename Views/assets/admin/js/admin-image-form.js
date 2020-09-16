@@ -129,7 +129,10 @@ $("#img_gallery_form").submit(function (event) {
 
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
-                loadSavedData();
+                setTimeout(()=>{
+                    loadSavedData();
+                }, 2000);
+
 
                 toggleClasses();
                 showModal();
@@ -154,7 +157,9 @@ $("#img_gallery_form").submit(function (event) {
 
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
-                loadSavedData();
+                setTimeout(()=>{
+                    loadSavedData();
+                }, 2000);
 
                 toggleClasses();
                 showModal();
@@ -225,7 +230,9 @@ function onDeleteItem(id){
         _id = "";
         // document.getElementById("ImgForm_submit").reset();
         alert(response);
-        loadSavedData();
+        setTimeout(()=>{
+            loadSavedData();
+        }, 2000);
 
         toggleClasses();
         showModal();
