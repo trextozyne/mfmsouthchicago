@@ -2,11 +2,6 @@
 
 //==================================pull saved image-gallery datas==========================================
 
-jQuery(($) => {
-    //debugger;
-    loadSavedData();
-});
-
 function loadSavedData () {
     let uri = '/photoalbums/find';
     $.ajax({
@@ -68,6 +63,11 @@ function loadSavedData () {
         }
     })
 };
+
+jQuery(($) => {
+    //debugger;
+    loadSavedData();
+});
 
 //=======================================form validation================================================
 function validateForm() {

@@ -78,6 +78,44 @@ $("#verse_form").submit(function(evt) {
 });
 
 
+function addFileDataToTableList() {
+    let boolDataExist = false;
+    $.ajax({
+        url: '/files/find',
+        dataType: "json",
+        success: function (data) {
+            let html = "<table class=\"fixed_header\">\n" +
+                "  <thead>\n" +
+                "    <tr>\n" +
+                "      <th scope=\"col\">Data</th>\n" +
+                "      <th scope=\"col\">Date Created</th>\n" +
+                "      <th scope=\"col\">Link</th>\n" +
+                "      <th scope=\"col\">Remove</th>\n" +
+                "    </tr>\n" +
+                "  </thead>\n" +
+                "  <tbody>\n";
+            data.forEach((data, k) => {
+                boolDataExist = true;
+                html +=
+                    "<tr>" +
+                    '<td data-label="Data">' +
+                    '<p>' + data.filename + '</p>' +
+                    '</td>' +
+                    '<td data-label="Date Created">' + data.uploadDate + '</td>\n' +
+                    '      <td data-label="Link"><a target="_blank"  href="/files/download/' + data._id + '">Download</a></td>\n' +
+                    '      <td data-label="Remove"><a href="javascript:void(0)" onclick="onDelete(\'/files/delete/' + data._id + '\', this)">Delete</a></td>' +
+                    '</tr>';
+            });
+
+            html +=
+                '  </tbody>\n' +
+                '</table>\n'
+            if (boolDataExist === true) document.getElementById("pdf_files").innerHTML = html;
+            boolDataExist = false;
+        }
+    });
+}
+
 $("#sermonFile_form").submit(function(evt) {
     evt.preventDefault();
     let url = "/files/create";
@@ -104,6 +142,8 @@ $("#sermonFile_form").submit(function(evt) {
                 toggleClasses();
                 showModal();
                 showModalChildren();
+
+                addFileDataToTableList();
             }
         });
 
@@ -114,42 +154,59 @@ $("#sermonFile_form").submit(function(evt) {
         xhr.send(data);
     }
 });
-// ###########################find#########################################
-let boolDataExist = false;
-$.ajax({
-    url: '/files/find',
-    dataType: "json",
-    success: function (data) {
-        let html = "<table class=\"fixed_header\">\n" +
-            "  <thead>\n" +
-            "    <tr>\n" +
-            "      <th scope=\"col\">Data</th>\n" +
-            "      <th scope=\"col\">Date Created</th>\n" +
-            "      <th scope=\"col\">Link</th>\n" +
-            "      <th scope=\"col\">Remove</th>\n" +
-            "    </tr>\n" +
-            "  </thead>\n" +
-            "  <tbody>\n";
-        data.forEach((data, k) => {
-            boolDataExist = true;
-            html +=
-                "<tr>" +
-                '<td data-label="Data">' +
-                '<p>' + data.filename + '</p>' +
-                '</td>' +
-                '<td data-label="Date Created">' + data.uploadDate + '</td>\n' +
-                '      <td data-label="Link"><a target="_blank"  href="/files/download/' + data._id + '">Download</a></td>\n' +
-                '      <td data-label="Remove"><a href="javascript:void(0)" onclick="onDelete(\'files/delete/' + data._id + '\')">Delete</a></td>' +
-                '</tr>';
-        });
 
-        html +=
-            '  </tbody>\n' +
-            '</table>\n'
-        if (boolDataExist === true) document.getElementById("pdf_files").innerHTML = html;
-        boolDataExist = false;
-    }
-});
+// ###########################find#########################################
+addFileDataToTableList();
+
+function addTrackDataToTableList() {
+    let boolDataExist = false;
+
+
+    $.ajax({
+        url: '/tracks/find',
+        dataType: "json",
+        success: function (data) {
+            let html =
+                "  <p style=\"text-align: center;\">Statement Summary</p>\n" +
+                "<table class=\"fixed_header\">\n" +
+                "  <thead>\n" +
+                "    <tr>\n" +
+                "      <th scope=\"col\">Data</th>\n" +
+                "      <th scope=\"col\">Date Created</th>\n" +
+                "      <th scope=\"col\">Link</th>\n" +
+                "      <th scope=\"col\">Remove</th>\n" +
+                "    </tr>\n" +
+                "  </thead>\n" +
+                "  <tbody>\n";
+            data.forEach((data, k) => {
+                boolDataExist = true;
+                html +=
+                    "<tr>"+
+                    '<td data-label="Data">' +
+                    '<a  href="javascript:void(0)" onclick="_onClickItem(\''+ data._id +'\')">' + data.metadata.speaker+' - ' + data.filename + '(' +data.metadata.duration + 'minutes) </a>' +
+                    '</td>'+
+                    '<td data-label="Date Created">'+data.uploadDate+'</td>\n' +
+                    '      <td data-label="Link"><a target="_blank"  href="/tracks/download/'+ data._id +'">Download</a></td>\n' +
+                    '      <td data-label="Remove"><a href="javascript:void(0)" onclick="onDelete(\'/tracks/delete/'+ data._id +'\', this)">Delete</a></td>'+
+                    '</tr>';
+            });
+
+            html+=
+                '  </tbody>\n' +
+                '</table>\n' +
+                '<div id="audio" hidden="hidden">\n' +
+                '                                <audio id="myAudio" controls>\n' +
+                '                                    <source src="" type="audio/mp3">\n' +
+                '                                    Your browser does not support the audio element.\n' +
+                '                                </audio>\n' +
+                '                            </div>'
+
+            if (boolDataExist === true) document.getElementById("nav-audio-list").innerHTML = html;
+
+            boolDataExist = false;
+        }
+    });
+}
 
 $("#audio_form").submit(function(evt) {
 
@@ -179,6 +236,8 @@ $("#audio_form").submit(function(evt) {
                 toggleClasses();
                 showModal();
                 showModalChildren();
+
+                addTrackDataToTableList();
             }
         });
 
@@ -190,51 +249,8 @@ $("#audio_form").submit(function(evt) {
     }
 });
 // ############################find########################################
+addTrackDataToTableList();
 
-$.ajax({
-    url: '/tracks/find',
-    dataType: "json",
-    success: function (data) {
-        let html =
-            "  <p style=\"text-align: center;\">Statement Summary</p>\n" +
-            "<table class=\"fixed_header\">\n" +
-            "  <thead>\n" +
-            "    <tr>\n" +
-            "      <th scope=\"col\">Data</th>\n" +
-            "      <th scope=\"col\">Date Created</th>\n" +
-            "      <th scope=\"col\">Link</th>\n" +
-            "      <th scope=\"col\">Remove</th>\n" +
-            "    </tr>\n" +
-            "  </thead>\n" +
-            "  <tbody>\n";
-        data.forEach((data, k) => {
-            boolDataExist = true;
-            html +=
-                "<tr>"+
-                '<td data-label="Data">' +
-                '<a  href="javascript:void(0)" onclick="_onClickItem(\''+ data._id +'\')">' + data.metadata.speaker+' - ' + data.filename + '(' +data.metadata.duration + 'minutes) </a>' +
-                '</td>'+
-            '<td data-label="Date Created">'+data.uploadDate+'</td>\n' +
-                '      <td data-label="Link"><a target="_blank"  href="/tracks/download/'+ data._id +'">Download</a></td>\n' +
-                '      <td data-label="Remove"><a href="javascript:void(0)" onclick="onDelete(\'tracks/delete/'+ data._id +'\')">Delete</a></td>'+
-                '</tr>';
-        });
-
-        html+=
-            '  </tbody>\n' +
-            '</table>\n' +
-            '<div id="audio" hidden="hidden">\n' +
-            '                                <audio id="myAudio" controls>\n' +
-            '                                    <source src="" type="audio/mp3">\n' +
-            '                                    Your browser does not support the audio element.\n' +
-            '                                </audio>\n' +
-            '                            </div>'
-
-        if (boolDataExist === true) document.getElementById("nav-audio-list").innerHTML = html;
-
-        boolDataExist = false;
-    }
-});
 
 function _onClickItem(trackId){
     //debugger;
@@ -252,7 +268,25 @@ function _onClickItem(trackId){
     audio.play();
 }
 
-function onDelete(url ) {
+function onDelete(url, $this) {
+    debugger;
+    let table = $this.parentElement.parentElement.parentElement.parentElement;
+
+    $this.parentElement.parentElement.remove();
+
+    if(table.tBodies[0].rows.length < 1) {
+        // Insert a row in the table at the last row
+        var newRow   = table.tBodies[0].insertRow();
+
+        // Append a text node to the cell
+        var newP  = document.createElement("p");
+        newP.id = "tdEmpty";
+        newP.setAttribute("style", "text-align: center; padding: 20px; margin: 0;") ;
+        newP.innerText = "Empty";
+        newRow.appendChild(newP);
+        // table.tBodies[0].rows[0].innerHTML =
+    }
+
     var data = null;
 
     var xhr = new XMLHttpRequest();

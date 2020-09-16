@@ -4,7 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist" />
+    <list default="true" id="60feb7b5-24af-4bf4-8133-5d452b060095" name="Default Changelist" comment="Default Changelist">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -73,8 +77,8 @@
       <file leaf-file-name="admin-basic-operation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1676">
-              <caret line="169" column="39" selection-start-line="169" selection-start-column="39" selection-end-line="169" selection-end-column="39" />
+            <state relative-caret-position="408">
+              <caret line="280" column="41" lean-forward="true" selection-start-line="280" selection-start-column="41" selection-end-line="280" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
               </folding>
@@ -82,20 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="files.controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="files.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/files.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+              <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
+      <file leaf-file-name="tracks.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/tracks.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+            <state relative-caret-position="-731">
+              <caret line="47" column="3" lean-forward="true" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -118,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-image-form.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin-image-form.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+            <state relative-caret-position="-561">
+              <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -150,7 +154,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>start_time</find>
       <find>localStorage.getItem(&quot;clicked&quot;)</find>
       <find>aTab</find>
       <find>window</find>
@@ -180,6 +183,7 @@
       <find>photo</find>
       <find>new FormData</find>
       <find>file</find>
+      <find>onDelete</find>
     </findStrings>
     <replaceStrings>
       <replace>javascript:void(0)&quot; onclick='getSelectEntries()'</replace>
@@ -232,7 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/slides.route.js" />
         <option value="$PROJECT_DIR$/Views/assets/index-additional/js/index-slide.js" />
         <option value="$PROJECT_DIR$/Views/assets/calendar/js/calendar.js" />
         <option value="$PROJECT_DIR$/Views/assets/mobirise/js/events-all.js" />
@@ -277,12 +280,13 @@
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-event-calendar.js" />
         <option value="$PROJECT_DIR$/event-calendar-module/js/demo.js" />
         <option value="$PROJECT_DIR$/admin/admin.ejs" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" />
         <option value="$PROJECT_DIR$/controllers/photoalbum.controller.js" />
         <option value="$PROJECT_DIR$/routes/tracks.route.js" />
-        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
         <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-input-file.js" />
         <option value="$PROJECT_DIR$/routes/photoalbum.route.js" />
+        <option value="$PROJECT_DIR$/controllers/files.controller.js" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js" />
+        <option value="$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js" />
       </list>
     </option>
   </component>
@@ -400,19 +404,19 @@
     <property name="settings.editor.splitter.proportion" value="0.24975705" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\admin\css" />
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\admin\js" />
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\admin" />
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\index-additional\css" />
-      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\index-additional\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\admin\css" />
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets" />
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\models" />
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\routes" />
       <recent name="C:\Users\Tozyne\Desktop\mfm - git\controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\admin\css" />
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\admin\js" />
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\admin" />
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\index-additional\css" />
+      <recent name="C:\Users\Tozyne\Desktop\mfm - git\Views\assets\index-additional\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -602,14 +606,7 @@
       <workItem from="1593509150927" duration="30577000" />
       <workItem from="1593583607114" duration="10167000" />
       <workItem from="1593616447326" duration="6535000" />
-      <workItem from="1599973089090" duration="16510000" />
-    </task>
-    <task id="LOCAL-00132" summary="Default Changelist">
-      <created>1579320566297</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1579320566297</updated>
+      <workItem from="1599973089090" duration="21509000" />
     </task>
     <task id="LOCAL-00133" summary="Default Changelist">
       <created>1579320862993</created>
@@ -947,11 +944,18 @@
       <option name="project" value="LOCAL" />
       <updated>1600204476817</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="Default Changelist">
+      <created>1600204747155</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1600204747155</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2471759000" />
+    <option name="totallyTimeSpent" value="2476758000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -964,7 +968,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3283082" />
@@ -1312,13 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/tracks.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1337,33 +1333,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1676">
-          <caret line="169" column="39" selection-start-line="169" selection-start-column="39" selection-end-line="169" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#123#129#0" expanded="true" />
-            <element signature="e#102#108#1" expanded="true" />
-            <element signature="e#109#116#1" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#101#108#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1395,10 +1364,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/tracks.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-731">
+          <caret line="47" column="3" lean-forward="true" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/files.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-basic-operation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="280" column="41" lean-forward="true" selection-start-line="280" selection-start-column="41" selection-end-line="280" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/assets/admin/js/admin-image-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#123#129#0" expanded="true" />
+            <element signature="e#102#108#1" expanded="true" />
+            <element signature="e#109#116#1" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#101#108#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
