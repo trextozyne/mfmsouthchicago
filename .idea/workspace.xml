@@ -95,8 +95,8 @@
       <file leaf-file-name="index-basic.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="97" column="51" lean-forward="true" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
+            <state relative-caret-position="758">
+              <caret line="140" column="142" selection-start-line="140" selection-start-column="142" selection-end-line="140" selection-end-column="142" />
               <folding>
                 <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
@@ -632,13 +632,6 @@
       <workItem from="1593616447326" duration="6535000" />
       <workItem from="1599973089090" duration="32503000" />
     </task>
-    <task id="LOCAL-00142" summary="Default Changelist">
-      <created>1580155142713</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1580155142729</updated>
-    </task>
     <task id="LOCAL-00143" summary="Default Changelist">
       <created>1584206753670</created>
       <option name="number" value="00143" />
@@ -975,11 +968,18 @@
       <option name="project" value="LOCAL" />
       <updated>1600249077480</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="Default Changelist">
+      <created>1600251615228</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1600251615229</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2491816000" />
+    <option name="totallyTimeSpent" value="2494610000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1429,8 +1429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/assets/index-additional/js/index-basic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="97" column="51" lean-forward="true" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
+        <state relative-caret-position="758">
+          <caret line="140" column="142" selection-start-line="140" selection-start-column="142" selection-end-line="140" selection-end-column="142" />
           <folding>
             <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />

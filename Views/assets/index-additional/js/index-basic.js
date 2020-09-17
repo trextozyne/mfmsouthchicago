@@ -78,6 +78,20 @@ Date.prototype.addDays = function(days) {
     date.setDate(date.getDate() + days);
     return date;
 };
+
+//add milliseconds to get the endate of event base of time and start date
+Date.prototype.addMilliseconds = function(milliseconds) {
+    this.setMilliseconds(this.getMilliseconds() + milliseconds);
+    return this;
+};
+
+//format the date string to MM/DD/YYYY
+Date.prototype.formatDate = function(){
+    return (this.getMonth() + 1) +
+        "/" +  this.getDate() +
+        "/" +  this.getFullYear();
+}
+
 jQuery(($) => {
     let uri = '/events/find';
 
@@ -123,8 +137,8 @@ jQuery(($) => {
                         html2 += '<form action="" style="width: 100%;"><div><label>EVENT NAME</label><input type="text" value="' + foundData.event_name + '" disabled="disabled"/></div>\n';
                         html2 += '<div class="descr"><label>EVENT DESCRIPTION</label><textarea rows="3" disabled="disabled">' + foundData.event_desc + '</textarea></div>\n';
                         html2 += '<div class="short"><label>START DATE</label><input type="text" value="' + foundData.start_time + ' ' + start_date + '"  disabled="disabled"/></div>';
-                        html2 += '<div class="short"><label>END DATE</label><input type="text" value="' + foundData.end_time + ' ' + foundData.end_date + '"  disabled="disabled"/></div>';
-                        // html2 += '<div class="short"><label>END DATE</label><input type="text" value="' + foundData.end_time + ' ' + (start_date +(new Date(foundData.end_date)-new Date(foundData.start_date))) + '"  disabled="disabled"/></div>';
+                        html2 += '<div class="short"><label>END DATE</label><input type="text" value="' + foundData.end_time + ' ' +
+                            (new Date(start_date).addMilliseconds((new Date(foundData.end_date)-new Date(foundData.start_date)))).formatDate() + '"  disabled="disabled"/></div>';
 
                         html2 += `<button onclick=goto_Event("${foundData._id}"` + `,` + `"${start_date}")>GOTO EVENT</button></form></div>`;
                         html2 += '<div class="circle"></div><div class="wrapper"><div class="header">'+ foundData.event_name +'</div><div class="stats">\n';
