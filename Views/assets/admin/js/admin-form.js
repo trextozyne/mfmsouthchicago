@@ -12,13 +12,14 @@ $(document).ready(function () {
             console.log(response[0]._id);
             galleryCountId = response[0]._id;
         }else{
-            setGalleryImages("", 5);
+            setGalleryImages("", 25);
         }
     });
 });
 
 function setGalleryImages($this, quantity){
-    //debugger;
+    debugger;
+    $this.parentElement.parentElement.children[0].innerText = $this.innerText;
     let url ="";
     let method ="";
 

@@ -8,7 +8,17 @@ function loadSavedData () {
         url: uri,
         dataType: "json",
         success: function(data) {
-            let html = '', html2='';
+            let html = '', html2='',
+                sortimagrbyHtml=`<div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="album_name">Set the amount of Gallery images for the Home Page</label>
+
+                                            <div class="form-group col-md-2">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        25
+                                                    </button>
+                                                    <div id="homepage_gallery_dropdown" class="dropdown-menu">`;
             let getModal = "";
             let getModalDialog, getModalContent, getModalHeader;
 
@@ -57,6 +67,8 @@ function loadSavedData () {
                 getModalHeaderCounter += 1;
                 html2 = "";
                 html += "</li>";
+
+                // sortimagrbyHtml = `<a onclick="sortGalleryImages(this, ${content.albums[0].u_name})" class="dropdown-item" href="javascript:void(0)">${content.albums[0].u_name}</a>`;
             });
             //debugger;
             document.getElementById("draggablePanelList").innerHTML = html;
