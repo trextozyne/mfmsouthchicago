@@ -33,5 +33,7 @@
   "engines": {
     "node": "13.x"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "minimist": ">=0.2.1
+  }
 }
