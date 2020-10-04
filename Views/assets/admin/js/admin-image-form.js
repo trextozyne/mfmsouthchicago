@@ -38,6 +38,8 @@ function loadSavedData () {
                 html +='<!-- large modal -->\n';
                 //debugger;
                 html2 += '<img src="' + content.img + '" alt="mfmsouth-church-events" style="width:100%">\n';
+                //                 html2 += '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>\n';
+                //                 html2 += '</button>';
 
                 getModal = document.createElement('div');
                 getModal.id = "largeModal"+getModalHeaderCounter;
