@@ -23,7 +23,8 @@ const app = express();
 /////////////////////
 // Set up mongoose connection
 const mongoose = require('mongoose');
-let dev_db_url = 'mongodb://Trex_son:Salvat1on1987@ds243254.mlab.com:43254/photoalbumdb';//change to mfmdb
+// let dev_db_url = 'mongodb://Trex_son:@ds243254.mlab.com:43254/photoalbumdb';//change to mfmdb
+let dev_db_url = 'mongodb+srv://Trex_son:Salvat1on1987@photoalbumdb.zhhua.mongodb.net/photoalbumdb?retryWrites=true&w=majority';//change to mfmdb
 
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });//mongoose.set('useFindAndModify', false);
