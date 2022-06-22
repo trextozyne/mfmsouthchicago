@@ -10,7 +10,7 @@
   "author": "tosin",
   "license": "ISC",
   "dependencies": {
-    "async": "^3.1.0",
+    "async": "^3.2.2",
     "blob-to-buffer": "^1.2.8",
     "body-parser": "^1.18.3",
     "cloudinary": "^1.21.0",
