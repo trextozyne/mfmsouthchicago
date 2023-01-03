@@ -5,7 +5,7 @@
 <section section  id="churchEvent" class="features2 cid-rcQleMyZa3">
       <div class="container">
           <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
-              Upcoming Events
+              Upcoming Event(s)
           </h2>
           <div id="content">
               <div id="tile1" class="tile">
